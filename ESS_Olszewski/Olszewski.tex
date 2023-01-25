@@ -1,0 +1,394 @@
+
+\begin{document}
+\title{Will a~human always outsmart a~computer? An essay}
+\maketitle
+
+Adam Olszewski
+
+
+\section{Abstract}
+The title question of the paper has its empirical origin in the form of an individual's existential experience arising from the personal use of a~computer, which we attempt to describe in the first section. The rest of the entire paper can be understood as a~philosophical essay answering the question posed. First the connection between the main problem of the article and its ``premonition'' by mankind, which was expressed in the form of ancient myths and legends, is briefly suggested. After shortly discussing the problems that early considerations of AI focused on, i.e. whether machines can think at all, we move on to reformulate our title question, about the possibility of outsmarting AI. This outsmarting will be understood by us in a~rather limited way as to prevent a~machine from completing its implemented task. To achieve this objective, after softly clarifying the basic terms, an analogy is built between the ``outsmarting'' of a~machine by a~human (the target domain) and the playing of a~mathematical game between two players (the base domain), where this outsmarting is assigned a~``winning strategy'' in the certain game. This mathematical model is formed by games similar to Banach-Mazur games. The strict theorems of such games are then proved and applied to the target of the analogy. We then draw conclusions and look for counter-examples to our findings. The answer to the title question posed is negative, and it is not clear how far it should be taken seriously.
+
+\section{Keywords}
+Existential experience, myth, computer, machine, Banach-Mazur games, winning strategy
+
+\textit{\textcolor{black}{Much, if not all of the argument for existential risks from superintelligence seems to rest on mere logical possibility}}
+%\label{ref:RNDqYRaptkMI3}(Dubhashi and Lappin, 2017)
+\parencite[][]{dubhashi_ai_2017}%
+\textcolor{black}{.}
+
+\section{An existential ambient of the problem}
+The appearance of personal computers—which took place in the middle of 1970s in the world (USA) and a~decade later in Poland (due to the ``iron curtain'' which at that time separated this country from the rest of the world)—brought hope for providing man with a~useful tool with versatile applications and capable of performing certain very practical functions. Thus, in those days, from the perspective of an average user, a~computer standing on his desk was a~\textit{machine}, that is a~concrete,\textcolor{black}{ experiential} and \textit{human-friendly} device, supporting his activities, for example as a~typewriter or a~memory bank for storing data. Since then, over nearly fifty years, such a~notion of a~useful machine has considerably evolved. This has happened thanks to the extremely dynamic development of information technology (which included increasing the computational capabilities of machines, their speed and memory and developing new and better programming techniques and languages) and the emergence of the Internet. It seems that the present concept of a~\textit{machine} has undergone a~substantial modification. This machine, which was a~friendly tool supporting man and operating in virtual (non-real) time and separated from the outside world, suddenly became a~machine operating in real time and additionally started drawing us deeper and deeper into a~kind of addiction and making us undertake certain activities, which—although performed through a~machine standing on the desk—have far-reaching consequences in real time and, more importantly, in reality. This new machine on our desk is, in fact, a~terminal of an extremely vast network (\textit{inter-net}), in which powerful algorithms create the elements of the \textit{machine proper}. This \textit{new machine}, which has taken on \textit{a~new meaning}, is also interactive in a~double sense. First, it is able to learn in a~certain sense strictly defined by computability theory, and second, it is known that it must be managed by or is in the hands of a~person or a~group of people because it is not an independent entity (or at least we do not know about it yet). We can call such a~machine \textit{artificial intelligence} (AI). We deliberately omit here a~wide array of issues that need to be clarified or systematically listed\footnote{For some clarifications see
+%\label{ref:RNDasnA14J7h1}(Krzanowski and Polak, 2022).
+\parencite[][]{krzanowski_meta-ontology_2022}.%
+}; these shortcomings justify using the term \textit{essay} in the title of this work. Besides, this paper is my first attempt at analyzing this somewhat strange subject, so I~consider it to be the first of a~series of papers and an essayistic outline of my further work on the issue.
+
+\section{The difference between an algorithm, a~program, a~machine, and AI}
+For the sake of clarifying the approach adopted, it will be good to describe succinctly and in a~popular scientific way how we will understand the differences between an algorithm, a~program, a~machine and AI. The main philosophical issues in the relationship between an algorithm, a~program, and a~machine are:
+
+\begin{itemize}
+\item \begin{itemize}
+\item the existence and mode of existence of an algorithm;
+\item the existence and mode of existence of programs;
+\item mutual relations between an algorithm and a~program;
+\item the implementation of an algorithm of a~program on a~machine.
+\end{itemize}
+\end{itemize}
+For the sake of further considerations, We will adopt a~solution which refers to the solution of the problem of universals formulated by St. Thomas Aquinas. One \textit{universal} (or idea) may exist and take one of three forms, depending on the way it is approached:
+
+\begin{itemize}
+\item \textit{ante rem}—in the world of Platonic ideas—an algorithm;
+\item \textit{post-ante rem}—as a~construction of the mind—a program;\footnote{ \textit{Post-ante} is a~strange term which is to indicate that from one point of view a~program appears before the \textit{in re} phase and after the \textit{ante rem} phase, while from another point of view it appears after the \textit{in re} phase.}
+\item \textit{in re}—physically present in the thing—implemented into a~machine (computer) in the form of the processes that control the behavior of the physical device.\footnote{ Implementation is an extremely interesting concept in the philosophy of computer science. It allows us to transform something abstract into something physical, which requires thorough consideration. There is a~certain similarity here with the criticism of Platonism, where one of the objections against Platonism is the impossibility to move from the abstract to the physical.}
+\end{itemize}
+In other words, the three objects under consideration are the same object which manifests itself in three different forms or phases. We are not necessarily going to defend the above distinction at all costs, but we believe that it is easy to understand and will facilitate further reasoning although it will not be essential for the core of our considerations.
+
+Since artificial intelligence (AI) is an artefact that exists in reality, its definition should have the character of a~\textit{real definition}. However, due to the fact that AI was brought into existence not so long ago, and the fact that its properties are still subject to almost constant fluctuations, it is difficult to give it an adequate real definition. As a~result, most often the definitions given by authors of AI are the result of his/her individual decision and/or consist in choosing from a~range of detailed and rigorious definitions available in the literature, which we will also do below. On the other hand, the property of intelligence that we attribute to an artificial system is of natural origin. After all, in the original sense, intelligence, as a~property, is attributed to man or, by analogy, to an animal. Defining this property in humans is also of a~reporting nature. According to researchers of the issue, from a~methodological point of view, the general notion of goal is crucial for the definition of AI\footnote{ More about this see e.g.
+%\label{ref:RNDruJkFc2DYN}(Dodig-Crnkovic, 2022).
+\parencite[][]{}.%
+}, as the following table summarises 
+%\label{ref:RNDZTYtN7PQgd}(Bringsjord and Govindarajulu, 2022; cf. Russell and Norvig, 2021):
+\parencites[][]{bringsjord_artificial_2022}[cf.][]{russell_artificial_2021}:%
+
+
+\begin{flushleft}
+
+
+
+
+\begin{supertabular}{|m{3.4459999cm}|m{5.892cm}|m{5.453cm}|}
+\hline
+&
+Human-Based &
+Ideal Rationality\\\hline
+Reasoning-Based: &
+Systems that think like humans. &
+Systems that think rationally.\\\hline
+Behavior-Based: &
+Systems that act like humans. &
+Systems that act rationally.\\\hline
+\end{supertabular}
+\end{flushleft}
+Four Possible Goals for AI According to
+%\label{ref:RND6KDSMSuNqV}(Russell and Norvig, 2021).
+\parencite[][]{russell_artificial_2021}.%
+
+
+For our purposes, the following definitions of AI are of particular value by pointing to this artificial component of AI as a~\textit{machine} or \textit{computer system} or simply a~\textit{computer}; and presupposing the relevant \textit{programmes} (algorithms) implemented in them.
+
+\begin{quotation}
+The capacity of computers or other machines to exhibit or simulate intelligent behaviour; the field of study concerned with this.\footnote{ Cf. \textit{Oxford English Dictionary}, entry: ,,artificial intelligence''
+%\label{ref:RNDG97ZmKRVm4}(Anon., 2022).
+\parencite[][]{noauthor_artificial_2022}.%
+}
+
+Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. Specific applications of AI include expert systems, natural language processing, speech recognition and~machine vision.\footnote{ Cf.
+%\label{ref:RNDkTlfZTKcF1}(Burns, Laskowski and Tucci, 2022).
+\parencite[][]{burns_what_2022}. %
+ One can also add other goals here like: decision-making, translation between languages,.visual perception; and others.}
+
+\end{quotation}
+The above definitions of AI are schematically based on the following \textit{quasi-equalities}:
+
+\begin{itemize}
+\item E\textsubscript{1}: AI = (System computer + Simulation + Data).
+\end{itemize}
+However, some progress has been made in recent years and has taken the form of so-called \textit{adaptive systems}. For them, the quasi-equality looks slightly different:
+
+\begin{itemize}
+\item E\textsubscript{2}: AI = (System computer + Simulation + Data + Interaction with Data).\footnote{ ,,Adaptive AI can change its own code to incorporate what it has learned from its experiences with new data''
+%\label{ref:RNDc2qw1Fas5o}(Kopera, 2021).
+\parencite[][]{kopera_how_2021}.%
+}
+\end{itemize}
+These two variants of AI are not, it seems, functionally equivalent, but it is clear from their presentations that E\textsubscript{1} is 'part of' E\textsubscript{2}.\footnote{ This matter od adaptive AI was brought to my attention by an anonymous reviewer for which I~thank him.} Given this important distinction, the reader should be forewarned that our considerations will concern E\textsubscript{1}, and consequently AI will be understood abstractly as a~single algorithm. However, to reassure the reader, let us note that:
+
+\begin{enumerate}
+\item Any task that can fulfill system E\textsubscript{1}, can also fulfill system E\textsubscript{2}. (from the above observations);
+\item E\textsubscript{1} will win the game with a~human i.e. will accomplish its task. (based on the results from section five);
+\item Ergo: E\textsubscript{2} will win the game with a~human. (from A. and B.).
+\end{enumerate}
+This reasoning should show that, despite limiting our considerations to E\textsubscript{1}{}-type systems, we do not limit the resulting conclusions to E\textsubscript{1}, but they also apply to E\textsubscript{2}.
+
+\section{Myths as 'premonitions' of mankind}
+The existential situation outlined above may—and sometimes does—cause anxiety in some members of the community of human users, as is amply demonstrated in literature. However, it is difficult to point to any facts to which we have access in the form of empirical verification, on the basis of which a~rigorous narrative could be constructed regarding the justification of existential anxiety. On the argumentative side, it is difficult to find such premises that would make it possible to justify a~conclusion regarding a~future threat from AI. Therefore, literary works devoted to this issue are based on speculations and some even treat it as science fiction, while others treat it as a~purely logical possibility (cf. article motto). We, however, do not downplay this premonition of humanity (expressed in literary terms), and in this section we will try to explain where this anxiety may come from. Our explanation refers to myths that appeared in human history a~long time ago. Mankind, as a~species, through its representatives, has created strange stories called \textit{myths}. I~call these stories strange because, being created at a~very early stage in the development of our species, they speak of problems that have been continuously accompanied it in its history. For example, we have the myth of the Sphinx, a~hybrid winged creature with the body of a~lion and the head of a~woman, who killed travelers heading to Thebes if they failed to solve a~riddle. A~similar pattern can be seen in the case of the dragon of Wawel Castle from the legend of Krakus and of many other creatures from various legends. The motif shared by many of these stories is an attempt to defeat or outwit an evil creature, which poses a~threat to the normal functioning of the community in which it appears. The origin of this creature is in some sense beyond the natural. Most often, in these stories an attempt to outwit it is a~rational act, such as solving the riddle of the Sphinx or giving a~dragon a~fake sheep filled with sulfur. Some believe—and these are not only so-called \textit{ordinary people} but also distinguished scientists—that in certain situations AI is \textit{per analogiam} appears as the embodiment of a~\textit{mythical creature}, which threatens the normal functioning of a~society, violating the freedom or privacy of all or some of its members. And, consequently, there is the question of outwitting the creature. Let us repeat that these myths, being a~kind of common heritage of mankind, are the real cause of humans' fears and anxieties.
+
+\section{Turing's and Searle's tests—AI's first issues}
+In 1936, the groundbreaking year in the creation of AI,\footnote{ Here we are making a~mental shortcut, because strictly speaking it was crucial for AI to create a~computer as a~machine that practically realises the mathematical idea of computability.} two formal models of computability of effectively computable functions were published: one in the work by the American mathematician Alonzo Church (lambda calculus) and the other in the work by the American logician, born in Augustów (Poland) Emil Post (machine). A~year later the most famous work in the area was published: the one written by the English mathematician and logician, Alan Turing (machine). Very soon Turing's theoretical machines found implementation in the form of real machines, which were called \textit{computers}. This started a~discussion about the capabilities of such machines. Turing
+%\label{ref:RNDhKwggb6xjl}(1950)
+\parencite*[][]{turing_computing_1950} %
+ proposed what is known today as \textit{the Turing test}, in which a~human evaluator judges whether his interlocutor in a~conversation held in a~natural language is a~human or a~machine (AI). Turing's intention in this test was to try to answer the question whether a~machine can think like a~human. He considered the theological argument (one of the arguments against machine thinking), according to which God created man as the only thinking being in the universe, and thinking was a~function of the human soul. Without going into the intricacies of the problem here, let us note that according to Catholic theology, thinking belongs to God and to His angels, thus it is not a~function of the body or brain as I~think Turing probably believed.\footnote{ From a~certain point of view, calculation does not intrinsically belong to thinking, because, for example, according to Catholic theology, God, although he thinks, does not calculate, because calculation is the manifestation of a~certain kind of ignorance. Cf. for example Isaiah 55:8-9: ``For my thoughts are not your thoughts, neither are your ways my ways'', declares the Lord. ``As the heavens are higher than the earth, so are my […] thoughts [higher] than your thoughts.'' Some people believe (basing this belief on the Bible) that God's words in which He speaks of cause and effect justify attributing thinking to Him.} Turing wanted to convince his contemporaries that a~machine can think like a~human being in order to contradict underestimation of a~machine's capabilities in this regard, widespread at that time. The second test—called the Chinese Room argument—comes from John Searle 
+%\label{ref:RND4igiqQ1wVO}(1980),
+\parencite*[][]{searle_minds_1980}, %
+ and was intended to demonstrate that no digital computer has a~kind of ``mind'' or ``consciousness'' even if it functionally bears a~far-reaching resemblance to human conversational behaviour. Searle's argument dampened the enthusiasm of optimistic proponents of AI and its unlimited possibilities. It can be said that the texts mentioned in this section share a~common goal: to take a~stand in the argument about machine thinking at a~time when, in popular understanding, a~machine's skills were not appreciated. From the point of view of this paper, both texts (Turing's and Searle's) have lost a~great deal of relevance since their publication, as so much has changed in this area. Summing up what has been said so far briefly and succinctly: today no one asks whether machines can think but rather what machines can do in terms of thinking and intelligence and where the upper limits of their capabilities lie.
+
+\section{Preliminary formulation of the fundamental question}
+Taking into account what has been outlined above, we can say that, from a~particular point of view, AI can appear as an element of reality—as an artefact—which poses a~threat to society on the way to the unrestricted realization of its development. Therefore, we should look for means by which we could ‘outsmart' this \textit{creature}. In different words, we can ask if a~human can stand up to AI that controls him.\footnote{ An extreme case of this is fictionally considered in the plot of the 2009 film ``Echelon Conspiracy''.} This is another way of phrasing the question posed in the title of the paper.
+
+\section{Preparatory analysis to adopt a~model for consideration}
+Due to the generality of the problem under consideration and the lack of precision, we are forced to adopt a~theoretical model that will at least allow us to answer a~part of the question. In the initial paragraph of the paper, we mentioned two senses of interactivity of AI. The second sense, referring to a~need for AI to be managed by a~human, will not be addressed here, since the anxiety linked with AI concerns the case when AI acquires self-awareness and escapes any human power over itself.\footnote{ My attention has been drawn to a~film entitled ``Saturn 3'' (1980), whose plot considers a~similar case.} Second, we will assume that such AI essentially remains a~machine. Subject literature devoted to this area is extensive, especially after the publication in 2015 of the famous open letter ``An Open Letter: Research Priorities For Robust And Beneficial Artificial Intelligence'', which is now signed by about eight thousands of people involved in science, mostly AI professionals.\footnote{ The letter was signed by world-famous scientists and experts, including Elon Musk and Steven Hawking.} The authors write there: ``[w]e recommend expanded research aimed at ensuring that increasingly capable AI systems are robust and beneficial: our AI systems must do what we want them to do […]''. An important work, though long forgotten, is
+%\label{ref:RNDSU9U6vDh5k}(Good, 1965),
+\parencite[][]{good_speculations_1965}, %
+ in which its author introduces the key concept of \textit{singularity}, understood as the point in human history when an ultraintelligent machine will appear. We think there is one term that frequently appears in subject literature used to describe the state of our knowledge on the functioning of AI (or certain algorithms), namely \textit{opacity.}\footnote{ For example, a~recent talk by P. Stacewicz at the \textit{Homo informaticus 8.0} conference explicitly dealt with opacity in the context of AI.} Webster's dictionary gives the following definitions of this term:
+
+\begin{itemize}
+\item \begin{itemize}
+\item 1a: obscurity of sense;
+\item 1b: the quality or state of being mentally obtuse.
+\end{itemize}
+\end{itemize}
+This state of opacity affects a~large area of the phenomena of social life and raises concerns in some members of the global society. This opacity results in a~lack of information and—in a~sense—makes the entire area of reality epistemically inaccessible. However, this situation is not unique because similar situations appear in the case of the area of knowledge about the spiritual realm, in particular about God, and also in the microworld studied by quantum mechanics. Although God and the microworld are radically different from the world in which we live, we can sometimes find certain similarities, which we call analogies, between them. It is when we find ourselves in a~situation which is analogous but epistemically limited with respect to some reality that we often use a~research method called the argument from similarity. Its scheme may look like this:
+
+\begin{itemize}
+\item \begin{itemize}
+\item An object (of type) X~and an object (of type) Y~are similar (which is symbolically denoted as X~${\approx}$ Y);
+\item The similarity follows from P;
+\item Theorem T~holds about object X~(symbolically: T(X));
+\item Therefore: theorem T~holds about Y~(symbolically: T(Y)).
+\end{itemize}
+\end{itemize}
+It is worth noting that, in general, we may be dealing with two areas of reality, one of which, i.e. a~source to which object X~belongs, is well known to us, while the other, i.e. a~target to which object Y~belongs, is not well known to us. The reasons for this may vary, and in our case they are opacity or lack of information. Thanks to the similarity we have previously found, we believe that we can cognitively \textit{invade} area Y. More precisely, this means that we can transfer our previously acquired knowledge about X~into ‘knowledge' about Y\footnote{ These issues of similarity and argument are closely related to the theory of analogy, but we will not address them here.}.
+
+\begin{flushleft}
+
+
+
+
+\begin{supertabular}{|m{7.2330003cm}|m{7.118cm}|}
+\hline
+AREA A
+
+\begin{enumerate}
+\item Object X: game G(A);
+\end{enumerate}
+Similarity P:
+
+\begin{enumerate}
+\item Player \textbf{I};
+\item Player \textbf{II};
+\item The game consists of moves and leads to a~result.
+\item Winning: the play belongs to set A;
+\item Theorem T(X) holds: the game G(A) will be won by player \textbf{I}.
+\end{enumerate}
+&
+AREA B
+
+\begin{enumerate}
+\item Object Y: using of a~program;
+\end{enumerate}
+Similarity P:
+
+\begin{enumerate}
+\item Algorithm (program);
+\item A~human;
+\item It consists of actions (elementary steps) and leads to an effect.
+\item Winning: what the algorithm (machine) ``wants'' is accomplished;
+\item Theorem T(Y) holds: what the algorithm has planned will happen.
+\end{enumerate}
+\\\hline
+\end{supertabular}
+\end{flushleft}
+Table 1. A~summary of the points on which the analogy is based.
+
+Of course, in general, the argument from similarity is not deductive. Its Achilles' heel lies in establishing similarity between objects. In our case, we assume it on the basis of the above sketchy and introductory considerations, while we leave the in-depth investigation of the issue for the future. That is why our assumption and thus our model can be accused of lack of soundness with respect to the phenomenon we model. Our response to this accusation is that our approach nevertheless possesses methodological merit because it is at least an attempt to approach the issue. We will now describe area A~in detail, on the basis of the above mentioned similarity.
+
+\section{Description of the theoretical model, i.e. Area A}
+Banach-Mazur games were first described in 1930 and were accompanied by a~description of a~certain problem by the Polish mathematician from the mathematical school of Lvov, Stanisław Mazur, which is recorded in the ``Scottish Book'' under the number 43. At present, the game is described in the following way.\footnote{ The formulations of the given definitions and statements mainly after an excellent exposition given by
+%\label{ref:RND7ENubZJcWo}(Khomskii, 2010)
+\parencite[][]{khomskii_infinite_2010} %
+ and 
+%\label{ref:RNDDkfgAec1z5}(Soare, 2016).
+\parencite[][]{soare_turing_2016}.%
+}
+
+We will consider an infinite two-person game with complete information, which we denote by the symbol G(A), where A${\subset}$${\omega}$\textsuperscript{${\omega}$}, that is A~is a~subset of the set of all infinite sequences of natural numbers with zero. The symbol ${\omega}$\textsuperscript{{\textless}${\omega}$} denotes the set of all finite sequences of natural numbers. The \textit{empty sequence} is denoted by %
+${\langle}{\rangle}$, and the \textit{length} od the finite sequence s~by {\textbar}s{\textbar}. We also have two players: Player \textbf{I} and Player \textbf{II}, who take turns making \textit{moves}, i.e. choices of natural numbers.}\textbf{
+
+\begin{flushleft}
+
+
+
+
+\begin{supertabular}{|m{2.5479999cm}|m{10.394cm}|}
+\hline
+Player I: &
+x\textsubscript{0} x\textsubscript{1} x\textsubscript{2} … …\\\hline
+Player II: &
+y\textsubscript{0} y\textsubscript{1} y\textsubscript{2} … ...\\\hline
+\end{supertabular}
+\end{flushleft}
+Table 2. A~graphic representation of the game.
+
+We use the moves of both players to create one infinite sequence of the form: z~:= ${\langle}$x\textsubscript{0}, y\textsubscript{0}, x\textsubscript{1}, y\textsubscript{1}, … ${\rangle}$, which we call \textit{a} \textit{play} in \textit{a~game} G(A). Definitions of players' strategies play a~key role:
+
+\textbf{\textcolor{black}{Definition 1.}}\textcolor{black}{ Strategy }${\sigma}$\textcolor{black}{ for Player }\textbf{\textcolor{black}{I}}\textcolor{black}{ is the function:}
+
+\textcolor{black}{${\sigma}$: \{ s${\in}{\omega}$}\textcolor{black}{\textsuperscript{{\textless}${\omega}$}}\textcolor{black}{ : {\textbar}s{\textbar} is even\} ${\rightarrow}$ ${\omega}$.[F08C?]}
+
+\textbf{\textcolor{black}{Definition 2}}\textcolor{black}{. Strategy }${\tau}$\textcolor{black}{ for Player }\textbf{\textcolor{black}{II}} \textcolor{black}{is the function:}
+
+\textcolor{black}{${\tau}$: \{ s${\in}{\omega}$}\textcolor{black}{\textsuperscript{{\textless}${\omega}$}}\textcolor{black}{ : {\textbar}s{\textbar} is odd\} ${\rightarrow}$ ${\omega}$.[F08C?]}
+
+\textbf{Definition 3.} Let\textcolor{black}{ ${\sigma}$ be a~strategy for Player} \textbf{\textcolor{black}{I}}\textcolor{black}{, and the sequence y~= ${\langle}$y}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{2}}\textcolor{black}{, …${\rangle}$ be an infinite sequence of }\textit{\textcolor{black}{moves}}\textcolor{black}{ of Player }\textbf{\textcolor{black}{II}}\textcolor{black}{, then: }
+
+\textcolor{black}{${\sigma}*$y = ${\langle}$x}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, x}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, x}\textcolor{black}{\textsubscript{2}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{2}}\textcolor{black}{, …${\rangle}$;}
+
+
+where:
+
+\textcolor{black}{x}\textcolor{black}{\textsubscript{0}}\textcolor{black}{ = ${\sigma}$(${\langle}{\rangle}$);}
+
+\textcolor{black}{x}\textcolor{black}{\textsubscript{i+1 }}\textcolor{black}{= ${\sigma}$(${\langle}$x}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, x}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, …, x}\textcolor{black}{\textsubscript{i}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{i}}\textcolor{black}{${\rangle}$).[F08C?]}
+
+\textbf{Definition 4.} Let ${\tau}$ be a~strategy for Player \textbf{II}, and the sequence x~= ${\langle}$x\textsubscript{0}, x\textsubscript{1}, x\textsubscript{2}, …${\rangle}$ \textcolor{black}{be an infinite sequence of} \textit{\textcolor{black}{moves}}\textcolor{black}{ of Player }\textbf{\textcolor{black}{I}}\textcolor{black}{, then:}
+
+x$*{\tau}$ = ${\langle}$x\textsubscript{0}, y\textsubscript{0}, x\textsubscript{1}, y\textsubscript{1}, x\textsubscript{2}, y\textsubscript{2}, …${\rangle}$;
+
+
+where:
+
+\textcolor{black}{y}\textcolor{black}{\textsubscript{0 }}\textcolor{black}{= ${\tau}$(${\langle}$x}\textcolor{black}{\textsubscript{0}}\textcolor{black}{${\rangle}$);}
+
+\textcolor{black}{y}\textcolor{black}{\textsubscript{i+1}}\textcolor{black}{= ${\tau}$(${\langle}$x}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{0}}\textcolor{black}{, x}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{1}}\textcolor{black}{, …, x}\textcolor{black}{\textsubscript{i}}\textcolor{black}{, y}\textcolor{black}{\textsubscript{i}}\textcolor{black}{, x}\textcolor{black}{\textsubscript{i+1}}\textcolor{black}{${\rangle}$).[F08C?]}
+
+If A~${\subset}$ ${\omega}$\textsuperscript{${\omega}$ }is a~pay-off set, then:
+
+\begin{itemize}
+\item Strategy ${\sigma}$ is \textbf{a} \textbf{winning} s\textbf{trategy} for Player \textbf{I} in Game G(A) iff for all y${\in}{\omega}$\textsuperscript{${\omega}}$, we have: ${\sigma}*$y ${\in}$ A.
+\item Strategy ${\tau}$ is \textbf{a} \textbf{winning} s\textbf{trategy} for Player \textbf{II} in Game G(A) iff for all x${\in}{\omega}$\textsuperscript{${\omega}}$, we have: x$*$${\tau}$ ${\not\in}$ A.
+\end{itemize}
+With the above definitions, we can formulate the axiom of determinacy (\textbf{AD}}):\textbf{
+
+\begin{itemize}
+\item For each set A${\subset}{\omega}$\textsuperscript{${\omega}$}, Game G(A) is determined i.e. exactly one of the players has a~winning strategy for G(A).[F08C?]
+\end{itemize}
+This axiom contradicts the axiom of choice in the sense that the axiom of choice implies the existence of an undetermined infinite game.
+
+\section{Useful theorems and Theorem T}
+\textbf{Theorem 7.1}. Let A${\subset}{\omega}$\textsuperscript{${\omega}}$ be a~countable set, then Player \textbf{II} has a~winning strategy in the game G(A).
+%\label{ref:RNDZk5uq7cVx4}(Khomskii, 2010, p.14)
+\parencite[][p.14]{khomskii_infinite_2010}%
+\footnote{ In parentheses I~give places from the literature where the proofs of these theorems can be found. When there is no such indication then the claim with the proof comes from me.}
+
+A~slight modification of this concept of the game G(A) is the Banach-Mazur game G**(A), where players alternately choose finite sequences of numbers. In our case, we can treat these two game concepts as equivalent, thanks to the adoption of some coding process of finite sequences.\footnote{ I~owe my attention to this issue and its clarification to Prof. Yurii Khomskii.} For the second concept we have theorems:
+
+\textbf{Theorem 7.2}. Player I~has a~winning strategy in the Banach-Mazur game G**(A) iff A~is comeager
+%\label{ref:RND2pCm13cCKk}(Soare, 2016, p.213).
+\parencite[][p.213]{soare_turing_2016}.%
+
+
+\textbf{Corollary 7.3.} Player \textbf{II} has a~winning strategy in the Banach-Mazur game G**(A) iff A~is meager
+%\label{ref:RNDVBTOQHPKfO}(Soare, 2016, p.213).
+\parencite[][p.213]{soare_turing_2016}.%
+
+
+The meager and comeager sets relate to Baire space [F077?]\textsuperscript{[F077?]}. Intuitively ``comeager sets are large. They form a~filter, are dense, uncountable, and are closed under countable intersections. Meager sets are small. They form an ideal, and countable sets are meager.''
+%\label{ref:RNDIAkiz5FrEH}(Soare, 2016, p.212).
+\parencite[][p.212]{soare_turing_2016}. %
+ I~mention this because the matter may be of interest to philosophers.
+
+\textbf{Corollary 7.4}. Let A=GR\textsubscript{1}, then there is a~winning strategy for Player \textbf{II}.
+
+Proof:
+
+Let A=GR\textsubscript{1}, i.e. A~is the set of all unary generally recursive functions. The set GR\textsubscript{1} is countable. Therefore, by virtue of theorem 7.1., there exists a~winning strategy for Player \textbf{II}.[F07F?]
+
+\textbf{Corollary 7.5}. Let A~${\subset}$ ${\omega}$\textsuperscript{${\omega}}$ and A~= \{f: f${\in}$GR\textsubscript{1} and f(n)=s, for even n\}. Then Player \textbf{II} has a~winning strategy.
+
+Proof:
+
+{\textbar}A{\textbar} {\textless} {\textbar}${\omega}$\textsuperscript{${\omega}$}{\textbar}, then by virtue of theorem 7.1., we have the thesis.[F07F?]
+
+\textbf{Corollary 7.6}. Let A~${\subset}$ ${\omega}$\textsuperscript{${\omega}}$ and A~= \{f: f(2n) = s\}. Then Player \textbf{I} has a~winning strategy.
+
+Proof:
+
+Since {\textbar}A{\textbar} = {\textbar}${\omega}$\textsuperscript{${\omega}$}{\textbar}, we cannot use Theorem 7.1. The winning strategy for Player \textbf{I} consists in continuously choosing a~constant s, i.e, ${\sigma}$(${\langle}$x\textsubscript{0}, y\textsubscript{0},x\textsubscript{1}, y\textsubscript{1}, …, y\textsubscript{i}${\rangle}$) := s, for any i.\textcolor{black}{ Let any} y${\in}{\omega}$\textsuperscript{${\omega}$} be a~sequence of the moves of Player \textbf{II}. Then for each y, ${\sigma}*$y = z, where z~:= ${\langle}$x\textsubscript{0}(=s), y\textsubscript{0}, x\textsubscript{1}(=s), y\textsubscript{1}, …,${\rangle}$. Sequence z~has such a~form that for each i, z(2i) = s~= x\textsubscript{i} = f(2i) for any function f${\in}$A.[F08C?]
+
+\textbf{Theorem T}. Let A~${\subset}$ ${\omega}$\textsuperscript{${\omega}}$ and A~= \{f: f${\mid}$\textsubscript{P} ${\in}$GR\textsubscript{1}, where f${\mid}$\textsubscript{P~}is the restriction of function f~to set P~of all even numbers\}, then Player \textbf{I} has a~winning strategy.
+
+Proof (sketch):
+
+The proof runs along the line of the proof of the previous corollary, except for the fact that for each y, ${\sigma}*$y = z, where z~:= ${\langle}$x\textsubscript{0}, y\textsubscript{0}, x\textsubscript{1}, y\textsubscript{1}, …,${\rangle}$. Sequence z~has such a~form that for each i, z(2i) = g(i) for some fixed function g${\in}$GR\textsubscript{1}.[F08D?]
+
+\section{Transfer of Theorem T~to Area B—T(Y)}
+In this section we will perform the final step announced in section five, which is the argumentation step we are entitled to by virtue of the argument from similarity presented above. Undoubtedly, this step is quite problematic. We assume that we have established similarity between certain infinite cases of Banach-Mazur games and the use of an algorithm. Again, we omit here the somewhat complicated matter of implementing an algorithm on a~machine, and (making a~shortcut) we will also talk that a~human uses a~machine (computer). A~machine and a~human are understood here as players, where an algorithm (machine) is Player I~and a~human is Player II. The moves of a~machine consist in giving orders, while a~human responds to them by performing some operation on the machine. From a~certain point of view, we can look at a~machine as a~place where a~game is played and where an algorithm ‘meets' the human mind. We model both types of moves as alternating choices of natural numbers by both players in the form of one infinite sequence of natural numbers. Theorem T~formulated above precisely expresses an intuition that for Player I~it is sufficient to always generate a~recursively enumerable recursive sequence in the game. Let us now turn to objects similar in terms of the relation of similarity, i.e. to the counterparts of Player I~and Player II, namely an algorithm and a~human. As a~result of its action, an algorithm should always generate a~sequence which is recursively enumerable. We assume this on the basis of Church's thesis and believe that an algorithm cannot actually generate a~sequence other than a~recursively enumerable sequence.\footnote{ This passage requires a~longer explanation, but due to lack of space, it is not provided here.} Hence, the sequence resulting from the game will always have such a~recursively enumerable set on even positions. This state of affairs will make it possible to accomplish what was coded in the program (algorithm).
+
+Let us now formulate Theorem T(Y), which—for obvious reasons—will not be precise in the case considered in the paper:
+
+\begin{enumerate}
+\item \begin{itemize}
+\item \textbf{Theorem T(Y}) Any program (algorithm) implemented on a~machine will accomplish the goal written into the program, and a~\textit{ordinary user} cannot change it, which means that the user will always lose.
+\end{itemize}
+\end{enumerate}
+\section{Crackers}
+Unlike Theorem T(X), which is a~mathematical theorem that is always true, Theorem T(Y) is empirical, and thus a~counter-example can be found for it. A~counter-example in such situations can be generated because of an unforeseen gap in the understanding of basic terms. A~group of unusual computer users, called \textit{crackers}, generate counter-examples to Theorem T(Y). The unusual nature of these users of a~machine, somewhat akin to hackers, is expressed in their setting a~goal for themselves to overcome the limitation implied by Theorem T(Y).\footnote{ Note that a~Banach-Mazur game does not allow players to break the rules of the game.} There are essentially two ways in which crackers operate: breaking into a~program and breaking into a~server. Crackers are not ordinary computer users, they are often very knowledgeable and competent in certain areas of computer science, and their inexperienced followers are called \textit{script kiddies}. Crackers break firewalls, i.e. these features of a~program which are to ensure victory in the game to the algorithm, thus, essentially they break the rules of the game. Banach-Mazur games do not provide for such cases, although from the mathematical side this does not change anything because only the assumptions of a~theorem become unfulfilled, and the theorem becomes empty satisfied. Thus, in the context of the main question of the paper, we can make this optimistic prediction:
+
+\begin{enumerate}
+\item \begin{itemize}
+\item For any algorithm, if an algorithm follows a~program written by a~human, then its \textit{cracker} exists.
+\end{itemize}
+\end{enumerate}
+A~pessimistic prediction referring to the notion of \textit{singularity} would sound like this:
+
+\begin{itemize}
+\item \begin{itemize}
+\item There exists such an algorithm, not necessarily written by a~human, that its \textit{cracker} does not exist.
+\end{itemize}
+\end{itemize}
+\section{10. Conclusions}
+Let us finally take a~brief look at the entirety of the argument presented in this paper to help the reader grasp its structure. We will list it in points:
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item \begin{enumerate}
+\item We began with some people's existential anxiety about AI;
+\item We outlined the definitions of the key terms:
+\item We pointed out the role of myths and legends in the analyzed issue;
+\item We posed the problem;
+\item We analyzed the stages of building a~model based on similarity;
+\item We described a~mathematical model in the form of Banach-Mazur games;
+\item We formulated a~fundamental theorem on mathematical games;
+\item We transferred this theorem to the area of computer (algorithm)-human relations in the form of:
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+a. If an algorithm is correctly defined, a~human, as an ordinary user, is unable to prevent it from completing the task written in the program;
+
+\begin{enumerate}
+\item \begin{enumerate}
+\item \begin{enumerate}
+\item We provided a~counter-example to the theorem—the cracker problem.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+What are the conclusions of the paper? First, the main conclusion is that the computer, understood as an algorithm, will always win in a~``confrontation'' with an average representative of the human race. Second, based on experience, we know that there are users, specially educated, who are able to outsmart the computer. The third conclusion is that the adequacy of the theoretical model in the form of Banach-Mazur games for the considered problem should be further discussed and this model—as it seems theoretically promising—deserves further investigation.
+
+\section{References}
+Anon. 2022. \textit{Artificial intelligence}. [online] Oxford English Dictionary. Available at: {\textless}https://www.oed.com/viewdictionaryentry/Entry/271625{\textgreater} [Accessed 4 January 2023].
+
+Bringsjord, S. and Govindarajulu, N.S., 2022. Artificial Intelligence. In: E.N. Zalta, ed. \textit{The Stanford Encyclopedia of Philosophy}, Fall 2022. [online] Stanford, Calif.: Metaphysics Research Lab, Stanford University. Available at: {\textless}https://plato.stanford.edu/archives/fall2022/entries/artificial-intelligence/{\textgreater} [Accessed 4 January 2023].
+
+Burns, E., Laskowski, N. and Tucci, L., 2022. \textit{What is Artificial Intelligence (AI)? Definition, Benefits and Use Cases}. [online] Enterprise AI. Available at: {\textless}https://www.techtarget.com/searchenterpriseai/definition/AI-Artificial-Intelligence{\textgreater} [Accessed 4 January 2023].
+
+Dodig-Crnkovic, G., 2022. In search of common, information-processing, agency-based framework for anthropogenic, biogenic, and abiotic cognition and intelligence. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), (73), p.??-??
+
+Dubhashi, D. and Lappin, S., 2017. AI dangers: imagined and real. \textit{Communications of the ACM}, [online] 60(2), pp.43–45. https://doi.org/10.1145/2953876.
+
+Good, I.J., 1965. Speculations Concerning the First Ultraintelligent Machine. In: F.L. Alt and M. Rubinoff, eds. \textit{Advances in Computers}. [online] New York: Academic Press. pp.31–88. https://doi.org/10.1016/S0065-2458(08)60418-0.
+
+Khomskii, Y., 2010. \textit{Infinite Games. Summer Course at the University of So[FB01?]a, Bulgaria}. Available at: {\textless}https://www.math.uni-hamburg.de/home/khomskii/infinitegames2010/Infinite\%20Games\%20Sofia.pdf{\textgreater} [Accessed 4 January 2023].
+
+Kopera, G., 2021. \textit{How Adaptive AI Outpaces Traditional AI Capabilities}. [online] Thought AI. Available at: {\textless}https://www.thoughtai.org/post/how-adaptive-ai-outpaces-traditional-ai-capabilities{\textgreater} [Accessed 4 January 2023].
+
+Krzanowski, R. and Polak, P., 2022. The Meta-Ontology of AI systems with Human-Level Intelligence. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), (73), p.??-??
+
+Russell, S.J. and Norvig, P., 2021. \textit{Artificial Intelligence: A~Modern Approach}. Fourth ed. Pearson series in artificial intelligence. Hoboken: Pearson.
+
+Searle, J.R., 1980. Minds, brains, and programs. \textit{Behavioral and Brain Sciences}, [online] 3(3), pp.417–424. https://doi.org/10.1017/S0140525X00005756.
+
+Soare, R.I., 2016. \textit{Turing Computability}. Theory and Applications of Computability. [online] Berlin, Heidelberg: Springer Berlin Heidelberg. https://doi.org/10.1007/978-3-642-31933-4.
+
+Turing, A.M., 1950. Computing Machinery and Intelligence. \textit{Mind}, [online] 59(236), pp.433–460. https://doi.org/10.1093/mind/LIX.236.433.
+
+\end{document}

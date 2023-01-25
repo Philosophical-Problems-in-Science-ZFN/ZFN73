@@ -1,0 +1,109 @@
+
+\begin{document}
+\title{Why Is Neuron Modeling of Particular Philosophical Interest?}
+\maketitle
+
+Andrzej Bielecki, \textit{Models of Neurons and Perceptrons: Selected Problems and Challenges}, Springer International Publishing, Cham 2019, pp. 156; Studies in Computational Intelligence Volume vol. 770, DOI: \href{https://doi.org/10.1007/978-3-319-90140-4}{10.1007/978-3-319-90140-4}.
+
+A~peculiarity of ``philosophy in science''
+%\label{ref:RNDSoIfWpdNhG}(see Heller, 2019; Polak, 2019)
+\parencites[see][]{heller_how_2019}[][]{polak_philosophy_2019} %
+ is that the best sources tend to be atypical from the viewpoint of most philosophers: For example, on the one hand, there are works that popularize science, while on the other hand, there are research articles and even specialized monographs. The book discussed here falls into the last category, and it is devoted to modeling neurons and perceptrons. It was written by a~mathematician from Kraków, Andrzej Bielecki, who is currently working at the AGH University of Science and Technology.\footnote{Andrzej Bielecki received an M.Sc. degree in Physics and Mathematics and a~Ph.D. in Mathematics, D.Sc. (habilitation) in Mathematics from the Jagiellonian University in Kraków. He obtained a~professorship in Computer Science in 2020. His fields of interest includes dynamical systems theory, artificial intelligence, cybernetics, and philosophy of science, and he has written over 120 scientific papers and one textbook.} Readers of \textit{ZFN}, as well as the related \textit{Semina Scientiarum} journal, will probably associate him with the philosophical activities that he has practiced within the context of his scientific activities 
+%\label{ref:RNDkz8F1S0BJI}(Bielecki, 2016; 2018).
+\parencites*[][]{bielecki_cybernetyczna_2016}[][]{}. %
+ Bielecki is an example of a~scientist–philosopher from the Krakow milieu,\footnote{It is worth mentioning that in the book, Bielecki mostly uses examples from research conducted in the Kraków milieu. The use of the cybernetic theory framework could also be interpreted as another sign of the local milieu's influence.} and it is worth noting that he develops his philosophical activities, among other things, through his work on the Committee on Philosophy of Science at the Polish Academy of Arts and Sciences in Kraków.
+
+Bielecki's book is published as a~volume in the ``Studies in Computational Intelligence'' series, which is intended for research that contributes to computational intelligence. The book is an in-depth monograph about computationally modeling basic cognitive structures, such as neurons. It comprises five parts that logically present different areas of the subject. The first part, titled ``Preliminaries,'' provides fundamental biological knowledge about neurons and essential information about the basics of artificial neural networks and their applications. The second part is then devoted to the mathematical foundations of modeling, particularly dynamical systems theory. Next, the third part goes into mathematical models of neurons, such as models of entire neurons and models of portions of neurons. The fourth part then focuses on modeling perceptrons, starting with linear perceptrons and ending with nonlinear ones. The final part consists of the appendices.
+
+The author deliberately combines biological and simulation perspectives in his book, aspects that are usually separated into distinct studies within neuron research. This interdisciplinary approach aims to identify new sources of biological inspiration for mathematics and computational modeling. Bielecki also says he chose this approach ``because it seems that there are numerous models of biological neural structures that can be the basis for artificial systems and that have not been utilized yet''
+%\label{ref:RNDlwxLeQzfjB}(Bielecki, 2019, p.3).
+\parencite[][p.3]{bielecki_models_2019}. %
+ It is worth adding here that although it is not explicitly stated in the book, Bielecki's attitude toward interdisciplinarity has resulted from his work in various interdisciplinary research teams that have included biologists and mathematicians.
+
+Bielecki's work provides an essential overview of the contemporary view of neuron modeling, and the included bibliography is a~helpful further guide in this area. Here, the reader can find extensive and detailed, yet concisely presented, knowledge about modeling neurons and their networks. By zooming in on this monograph's detailed explanation of the problems of modeling a~single neuron, we can quickly realize how simplistic assumptions are often made in projects related to Whole Brain Emulation (WBE). For my part, I~regard this as a~warning to approach the results of WBE-like projects with extreme caution
+%\label{ref:RNDwiONQrxZJw}(e.g. Kycia, 2021).
+\parencite[e.g.][]{kycia_information_2021}. %
+ After all, a~single neuron itself is still not sufficiently understood 
+%\label{ref:RNDMYIiGwqsPY}(e.g. Bielecki, 2019, p.133),
+\parencite[e.g.][p.133]{bielecki_models_2019}, %
+ and the complexity of its structure leads one to realize the incredible complexity of the brain, as well as the level of complexity we are trying to master in brain-related research. Even the problem of practical computational complexity in whole-neuron modeling comes up: ``It should be stressed that, currently, the computational power of computers is too weak to compose the model of the whole neuron by using models of its parts'' 
+%\label{ref:RNDrW0jvVn6a6}(Bielecki, 2019, p.59).
+\parencite[][p.59]{bielecki_models_2019}. %
+ The author also notes the need for inter-level studies (i.e., between subneural, neural, and network levels). We should add that if we talk about the emergence of properties at higher levels in philosophy, such topics are consistently overlooked in scientific research.
+
+Bielecki's monograph makes one realize how much effort we should be devoting to discussing the role of simplifying assumptions and idealizations in simulations. Of course, artificial neural networks (ANNs) can be based on greatly simplified models of neurons for technical applications and often succeed at achieving the desired goals. The situation is different in scientific research, however, because it attempts to describe the functioning of neuronal structures, such as the brain, through simulations. Bielecki states this clearly: ``In the light of neurophysiological knowledge, the models of the whole neuron are simplified to such an extent that they do not reflect, even approximately, the character of signal processing in the biological neuron.''
+%\label{ref:RNDQRXeCEOrqX}(Bielecki, 2019, p.57)
+\parencite[][p.57]{bielecki_models_2019}%
+
+
+It is worth noting that a~particular strength in Bielecki's book is how he does not limit modeling to just standard computer modeling. Indeed, he is also interested in physical (electronic) models that operate on continuous values due to the problems with digital simulations of nonlinear differential equations: ``If the model is based on ordinary differential equations, then it can be implemented by using an electronic circuit whose dynamics is described by the same differential equation''
+%\label{ref:RNDmjksjKQs81}(Bielecki, 2019, p.17).
+\parencite[][p.17]{bielecki_models_2019}. %
+ Bielecki proposes using a~kind of classical analog computation. From a~philosophical perspective, this means he does not share the common tacit philosophical assumption among many works that Turing's computational model can sufficiently describe the real world. For this reason alone, I~think that any philosopher who wishes to make a~responsible statement about neurons, the brain, and the research about them should read this book. Reflecting on the implications of the knowledge presented here should help the reader to understand how many problematic assumptions we currently make in discussions related to this topic. I~would like to share some of my thoughts that were inspired by this book below.
+
+The reviewed monograph brings some exciting contributions to the discussion about simulation methodology in biology. Indeed, the specific issues of biological simulation are worthy of a~separate study, which, by the way, Bielecki is currently working on. Nevertheless, the methodological specifics of such simulations are rarely addressed. In Bielecki's book, however, we can find an attractive methodological scheme that has the advantage of being created based on scientific practice. It is therefore an excellent example of ``philosophy in science,'' which in this case is located at the intersection of applied mathematics and biology.
+
+In Bielecki's view, computational modeling begins with biological research (A), which allows us to distinguish relevant structures and processes. The next step then requires biological experiments or observations (B). The crucial properties can only then be determined (C) based on these, enabling a~semi-formal description (D) to be formulated. This description can then serve as the basis for creating a~formal model (E), which can then act as the basis for constructing a~software or hardware implementation (F). According to Bielecki, these final two stages can influence each other, with each acting as the starting point for formulating the other. Finally, it is essential that the results of formal modeling should eventually become the subject of an analysis through a~traditional approach (G). Consequently, it may become necessary to modify the experimentation/observation phase (B) or the determination of the crucial properties (C). Such feedback is essential to the computational modeling methodology, but it also indicates how much creative input the scientist has. Models are not mere generalizations of facts, as methodologists once wanted them to be, but rather the result of a~complex, looped adaptive process.
+
+Interestingly, the precondition for creating such models—and therefore the need for learning more about complex, or perhaps \textit{more} complex, biological structures—is the ability to perform sufficiently complex calculations, either in digital or analog form. The methodological scheme indicated by Bielecki therefore points to a~strongly ``non-linear'' looped process that occurs during the creation of advanced biological knowledge. It is a~case of epistemic bootstrapping, or more precisely, it could be described as epistemic feedback
+%\label{ref:RND3B8z5uxGHN}(Weisberg, 2010).
+\parencite[][]{weisberg_bootstrapping_2010}. %
+ Interestingly, an essential argument for considering such a~``non-linear logic of scientific development'' (to use Heller's words) flows directly from scientific practice. Bielecki, however, is not interested in isolated arguments for and against epistemic bootstrapping. He instead posits the validity of this method based on an analysis of actual scientific practice in biology. It should be emphasized that the reviewed book does not contain detailed philosophical analysis or present a~pro and contra discussion of the presented theses but rather seeks to uncover an essential philosophical issue that is entangled with modeling in biology. Nevertheless, meticulous analyses and deliberations about the pros and cons should be the next step in reflecting upon the philosophical issues of biological simulations. Nevertheless, let us highlight that such an endeavor would not be possible without first identifying these issues, and this book plays an important intellectual role by posing important and non-trivial philosophical questions, even if it does so indirectly.
+
+Bielecki's monograph also shows the level of depth in the mathematization of biology that is taking place in research at the cellular and subcellular levels. The author does not apply the slightest hint of persuasion here but rather simply demonstrates the impressiveness of the precise mathematical basis for neuronal modeling. It easily convinces the reader of the deep and practical mathematization of biology that has taken place through computational modeling and the adoption of a~cybernetic framework.
+
+Bielecki's remarks about the need to synthesize various modeling approaches are worth special attention: ``In this monograph, the cybernetic modeling, the mathematical modeling, and the modeling by using electronic circuits intertwine. […] This is also a~specificity of the approach presented in this monograph because these three ways of modeling are usually exploited separately.'' He also points out this approach's more general, philosophical context: ``Since the Enlightenment analytic approach to scientific problems has dominated, and the synthetic approach is, in general, in the state of atrophy. The synthetic mathematical–electronic approach to modeling sub-neural processes, presented in this monograph, tests whether such an approach can be efficient. \textit{The results show that the answer is affirmative} [emphasis added]''
+%\label{ref:RNDc6cIfZgS4g}(Bielecki, 2019, p.124).
+\parencite[][p.124]{bielecki_models_2019}. %
+ Note that I~emphasized the final sentence to highlight how the author sees this book as a~kind of methodological experiment with a~positive result. Indeed, I~think this result should be presented to philosophers in more detail to help us understand its methodological soundness, and maybe a~separate study on this issue could be appropriate for clarifying Bielecki's ideas.
+
+Now, let me illustrate the conceptual scheme used by Bielecki: It is based on concepts from cybernetics theory, one of the vital mathematical theories that provides the foundation for developing interdisciplinary research and computational modeling. In Poland, cybernetics is still successfully pursued, especially in Kraków at the AGH University of Science and Technology,\footnote{In private correspondence, the author stated that the most important sources of inspiration on the issue of cybernetics are the works of Tadeusiewicz
+%\label{ref:RNDr2UOU7mz1W}(1994; 2009),
+\parencites**[][]{tadeusiewicz_problemy_1994}[][]{tadeusiewicz_neurocybernetyka_2009}, %
+ who is a~distinguished researcher and the founder of a~vivid center of biocybernetics at AGH in Krakow. A~further source of inspiration were the works of another Krakow scientist, Mariusz Flasiński 
+%\label{ref:RNDOF7n6kKWVG}(1997; 2016),
+\parencites**[][]{flasinski_every_1997}[][]{flasinski_introduction_2016}, %
+ who is affiliated with Jagiellonian University in Kraków. } but contemporary international discussions use somewhat different conceptual systems. A~good example is Gordana Dodig-Crnkovic's article in an issue of ZFN 
+%\label{ref:RND95aA53ESTH}(Dodig-Crnkovic, 2022).
+\parencite[][]{dodig-crnkovic_search_2022}. %
+ The deep analogies between the two approaches are surprising. For example, take Bielecki's phrase: ``Each type of biological cells, including the simplest bacteria, receives stimuli from its environment and processes the obtained signals'' 
+%\label{ref:RNDfjWEt2XKUt}(Bielecki, 2019, p.5).
+\parencite[][p.5]{bielecki_models_2019}. %
+ It is close to the info-computational in Dodig-Crnkovic's view, although she uses a~specific reference to information theory. It would be worthwhile to analyze the relationship between cybernetics and contemporary information concepts in more depth, because it may be possible to find new, inspiring analogies or more convenient conceptual frameworks.
+
+Finally, let us conclude with the specifics of ``philosophy in science,'' with which I~began this review. One of its unique features is that interesting contributions can be rich in philosophical content, even though the word ``philosophy'' may rarely appear in them, if at all. Andrzej Bielecki's book is an excellent example of this, because he mentions philosophy only twice, and one of those refers to the Enlightenment. Nevertheless, it makes an exciting contribution to understanding the philosophical issues in modern biology.
+
+\section{Bibliography}
+Bielecki, A., 2016. Cybernetyczna analiza zjawiska życia. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), [online] (61), pp.133–164. Available at: {\textless}https://zfn.edu.pl/index.php/zfn/article/view/361{\textgreater} [Accessed 27 January 2020].
+
+Bielecki, A., 2018. Epistemologiczne problemy w~biologii subkomórkowej: obserwacje, modele matematyczne i~symulacje komputerowe. \textit{Semina Scientiarum}, [online] 16, pp.10–23. https://doi.org/10.15633/ss.2482.
+
+Bielecki, A., 2019. \textit{Models of Neurons and Perceptrons: Selected Problems and Challenges}. Studies in Computational Intelligence. [online] Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-90140-4.
+
+Dodig-Crnkovic, G., 2022. In search of common, information-processing, agency-based framework for anthropogenic, biogenic, and abiotic cognition and intelligence. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), (73), p.??-??
+
+Flasiński, M., 1997. ‘Every Man in His Notions' or Alchemists' Discussion on Artificial Intelligence. \textit{Foundations of Science}, [online] 2(1), pp.107–121. https://doi.org/10.1023/A:1009687513096.
+
+Flasiński, M., 2016. \textit{Introduction to Artificial Intelligence}. [online] Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-40022-8.
+
+Heller, M., 2019. How is philosophy in science possible? \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), [online] (66), pp.231–249. Available at: {\textless}https://zfn.edu.pl/index.php/zfn/article/view/482{\textgreater} [Accessed 6 October 2021].
+
+Kycia, R., 2021. Information and brain. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), [online] (70), pp.45–72. Available at: {\textless}https://zfn.edu.pl/index.php/zfn/article/view/514{\textgreater} [Accessed 6 December 2022].
+
+Polak, P., 2019. Philosophy in science: A~name with a~long intellectual tradition. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), [online] (66), pp.251–270. Available at: {\textless}https://zfn.edu.pl/index.php/zfn/article/view/472{\textgreater} [Accessed 6 October 2021].
+
+Tadeusiewicz, R., 1994. \textit{Problemy biocybernetyki}. Wyd. 2 ed. Warszawa: Wydawnictwo Naukowe PWN.
+
+Tadeusiewicz, R. ed., 2009. \textit{Neurocybernetyka teoretyczna}. Warszawa: Wydawnictwa Uniwersytetu Warszawskiego.
+
+Weisberg, J., 2010. Bootstrapping in General. \textit{Philosophy and Phenomenological Research}, [online] 81(3), pp.525–548. Available at: {\textless}https://www.jstor.org/stable/41057492{\textgreater} [Accessed 6 December 2022].
+
+\section{Abstract}
+This review article discusses Andrzej Bielecki's book \textit{Models of Neurons and Perceptrons: Selected Problems and Challenges}, as published by Springer International Publishing. This work exemplifies ``philosophy in science'' by adopting a~broad, multidisciplinary perspective for the issues related to the simulation of neurons and neural networks, and the author has addressed many of the important philosophical assumptions that are entangled in this area of modeling. Bielecki also raises several important methodological issues about modeling. This book is recommended for any philosophers who wish to learn more about the current state of neural modeling and find inspiration for a~deeper philosophical reflection on the subject.
+
+\section{Keywords}
+neuron modeling, sub-neuron modeling, computational modeling, analog computation, philosophy in science, philosophy of biology, philosophy of computing
+
+
+
+\end{document}

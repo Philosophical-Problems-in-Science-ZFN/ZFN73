@@ -1,0 +1,423 @@
+
+\begin{document}
+\title{Shannon-Inspired Information in the Clinical Use of Neural Signals Concerning Post-Comatose Patients}
+\maketitle
+
+\section*{Abstract}
+\begin{quotation}
+Post-comatose patients are classified as being in a~minimally conscious state when they have executive functions. Because traditional behavioral assessments may not capture signs of executive functions in post-comatose patients, clinicians look to localized brain activities in response to task instructions, such as imagining wiggling toes, to diagnose minimal consciousness. This paper critically assesses the assumption underlying such alternative methods: that brain activities are neural signals conveying information about minimal consciousness. Based on a~Shannon-inspired idea of information, I~distinguish between informational and engineering aspects of clinical tasks. The informational aspect concerns the conditional probability that, for example, given activity in the motor areas of the brain in response to task instructions, a~patient is imagining wiggling toes. The engineering aspect concerns efficient activation of the relevant brain areas in a~patient under the task conditions. This distinction shows that the current alternative methods are not informationally problematic, but are structurally ``ill-formed.'' For instance, the toe-imagery task requires the capacity to comprehend syntactically complex sentences, which can be dissociated from minimal consciousness. I~propose a~misrepresentation task, which tests the capacity to misconceptualize lukewarm water as melting wax, as a~supplement to the current alternative methods. This task is as informationally reliable as these methods, but is structurally ``well-formed,'' as it does not rely methodologically on prerequisites such as language comprehension.
+
+\end{quotation}
+\section*{Keyword}
+\begin{quotation}
+Post-comatose disorders of consciousness, Shannon's theory of information, Minimal consciousness, Mental action
+
+\end{quotation}
+\section{Introduction}
+Minimally conscious post-comatose patients (henceforth, MCP patients) can have limited executive functions that allow for the patients to follow simple instructions or respond to certain stimulations. Signs of residual executive functions provide clinicians with strong evidence of eventual recovery of consciousness
+%\label{ref:RNDc52VR2C0H1}(Naccache, 2018; Rohaut, Eliseyev and Claassen, 2019).
+\parencites[][]{naccache_minimally_2018}[][]{rohaut_uncovering_2019}. %
+ Thus, delayed recognition of such signs may lead to suboptimal clinical care 
+%\label{ref:RND36iYhUl47e}(van Erp et al., 2019),
+\parencite[van][]{van_erp_unexpected_2019}, %
+ distorted prognostic figures for rehabilitation 
+%\label{ref:RNDDiumYQqtvx}(Ansell, 1993),
+\parencite[][]{ansell_slow--recover_1993}, %
+ or ethical problems 
+%\label{ref:RNDY4B7wdnTLX}(Peterson and Bayne, 2018; Noh, 2022).
+\parencites[][]{peterson_post-comatose_2018}[][]{noh_behavioral_2022}. %
+ Such signs, however, might not be captured by traditional behavioral assessments (e.g., eye tracking, speaking, etc.) because limited executive functions can be dissociated from the capacity to perform overt behaviors 
+%\label{ref:RND1VSfdAw16s}(Teasdale and Jennett, 1974; Andrews et al., 1996).
+\parencites[][]{teasdale_assessment_1974}[][]{andrews_misdiagnosis_1996}. %
+ Although some traditional behavioral assessment methods can improve diagnostic accuracy 
+%\label{ref:RNDkWoQFW7Rb7}(Schnakers et al., 2009),
+\parencite[][]{schnakers_diagnostic_2009}, %
+ differentiating MCP patients from patients in a~vegetative state remains challenging 
+%\label{ref:RNDXmlWJMWjeY}(van Erp et al., 2015).
+\parencite[van][]{van_erp_vegetative_2015}.%
+
+
+As an alternative to behavioral assessments, clinicians can use measures such as functional magnetic resonance imaging (fMRI) or electroencephalograms (EEG) to capture localized brain activities as a~mark of residual executive functions. Such neural-signal-based assessments (henceforth NSAs) allow clinicians to diagnose minimal consciousness without appealing to overt behavior. For instance, minimal consciousness can be ascribed to a~patient if activities in the motor areas of the brain are observed when the patient is instructed to imagine performing a~particular motor action
+%\label{ref:RNDXdRozBxuJr}(Owen et al., 2006; Cruse et al., 2011; Wang et al., 2019),
+\parencites[][]{owen_detecting_2006}[][]{cruse_bedside_2011}[][]{wang_detecting_2019}, %
+ or if the P300b response is observed when a~series of auditory stimulations is given to the patient 
+%\label{ref:RNDPIJcL8E8Ce}(Boly et al., 2011; King et al., 2013).
+\parencites[][]{boly_preserved_2011}[][]{king_single-trial_2013}. %
+ An overarching assumption of NSAs is that purported brain activities can be taken as neural signals conveying information about minimal consciousness.
+
+The aim of this paper is to critically assess whether NSAs satisfy this overarching assumption. Drawing on a~Shannon-inspired idea of information, I~distinguish between informational and engineering aspects of neural signal processing in the relevant studies. Shannon's
+%\label{ref:RNDzWoTt1DLZu}(1948)
+\parencite*[][]{} %
+ theory of information ``defines the quantity of information in a~signal over the space of possibilities in a~given situation where a~sender and a~receiver are communicating'' 
+%\label{ref:RNDESdIFerObH}(Noh, 2018, p.179).
+\parencite[][p.179]{noh_no-report_2018}. %
+ The primary concern of this paper is the communication channel between an MCP patient and a~clinician (or a~test-subject and an experimenter), where signal-vehicles are localized brain activities measured using fMRI or EEG. I~apply Shannon's theory to this communication channel in order to estimate the quantity of information about minimal consciousness possibly conveyed by the neural signal. Following Weaver 
+%\label{ref:RND12k0aw3PZt}(1953, p.270),
+\parencite*[][p.270]{weaver_recent_1953}, %
+ I~further discuss whether the communication channel is designed to efficiently handle the assigned jobs. Notice that I~use the term ``Shannon-inspired idea of information'' rather than ``Shannon's theory of information'' because Shannon did not intend the theory to be applied to this sort of communication channel, and I~make certain assumptions in order to apply it here (see footnotes 2 and 3 for details of these assumptions).
+
+I~discuss the informational and engineering aspects of clinical tasks in the paper's second and third sections, respectively. Briefly, the informational aspect concerns the conditional probability that, for example, given activity in the motor areas in response to task instructions, the patient is mentally acting. On the other hand, the engineering aspect concerns efficient activation of the relevant brain areas, specifically in relation to task conditions. For example, any patient response to a~task with the verbal instruction ``Imagine wiggling all of your toes'' requires the patient to have the capacity to properly comprehend the instruction as a~command to perform a~kinesthetic mental-motor action. As I~discuss in the following sections, making this distinction between the two aspects shows that NSAs in their current form are structurally ``ill-formed.'' For instance, brain activities in the mental-motor action task would indicate that the patient is minimally conscious, but the task's applicability is limited because the capacity to comprehend syntactically complex sentences (i.e., the verbal instructions of the task) can be dissociated from minimal consciousness. In the fourth section, I~propose a~misrepresentation task as a~supplement to NSAs in their current form. This task tests whether a~subject has the capacity to misconceptualize lukewarm water as melting wax. I~claim that this task is as informationally reliable as NSAs in their current form and is structurally ``well-formed'' in that it is not methodologically reliant on prerequisites (e.g., language comprehension), as are NSAs in their current form.
+
+\section{The Informational Aspect of Clinical Tasks}
+NSAs can be categorized as either active or passive
+%\label{ref:RNDmQknbrx5EB}(Kondziella et al., 2016).
+\parencite[][]{kondziella_preserved_2016}. %
+ Patients tested under active paradigms are instructed to mentally act, such as imagining playing tennis or walking from room to room in their home 
+%\label{ref:RND3f1Fyn3NnG}(Owen et al., 2006; Monti et al., 2010),
+\parencites[][]{owen_detecting_2006}[][]{monti_willful_2010}, %
+ imagining squeezing their hands or wiggling their toes 
+%\label{ref:RND4ZO8n8cBE2}(Cruse et al., 2011),
+\parencite[][]{cruse_bedside_2011}, %
+ mentally counting occurrences of a~target (e.g., words like ``yes'' or ``no'') in a~sequence of sounds 
+%\label{ref:RNDnuOxV1g2R5}(Lulé et al., 2013; Naci and Owen, 2013),
+\parencites[][]{lule_probing_2013}[][]{naci_making_2013}, %
+ or imagining raising their hands 
+%\label{ref:RNDCS9Ee1xF7J}(Wang et al., 2019).
+\parencite[][]{wang_detecting_2019}. %
+ On the other hand, patients tested under passive paradigms are instructed to pay attention to a~series of auditory sequences 
+%\label{ref:RNDGgrBuTU7ZZ}(Boly et al., 2011; King et al., 2013)
+\parencites[][]{boly_preserved_2011}[][]{king_single-trial_2013} %
+ or to watch a~movie 
+%\label{ref:RNDOcHdAH2znh}(Naci et al., 2014; Laforge et al., 2020).
+\parencites[][]{naci_common_2014}[][]{laforge_individualized_2020}.%
+
+
+An essential difference between active and passive paradigms is that while the former requires a~subject to either perform a~mental-motor action or count occurrences of a~target, the latter concerns whether a~subject is able to experience stimulation without performing a~mental action. Nonetheless, NSAs in general appeal to localized brain activities, which can be captured either by fMRI or by EEG, as a~means of diagnosis of minimal consciousness.\footnote{ For the sake of simplicity, I~am going to ignore methodological differences in the use of fMRI and EEG, which are irrelevant to my argument.} Specifically, NSAs assume that the observed brain activities are neural signals conveying the message that the subjects under consideration are following instructions or paying attention to stimulations. To analyze the informational aspect is to assess whether the signals do convey the purported message.
+
+Consider Cruse et al.'s
+%\label{ref:RNDAh4jo6f2zc}(2011)
+\parencite*[][]{cruse_bedside_2011} %
+ toe-imagery task in order to analyze the informational aspect of active paradigm tasks. They instructed 16 behaviorally nonresponsive post-comatose patients (who were initially diagnosed with the vegetative state by traditional behavioral methods) and 12 healthy controls to imagine wiggling all of their toes on both feet and relaxing them without making any actual motor movement. Cruse et al. write that a~significant degree of activity was observed in a~relatively localized area of the medial premotor cortex of 3 patients and 9 controls. We can distinguish between the minimally conscious mental event, \textit{M}\textsubscript{1}, and a~set of nonconscious mental events, \textit{M}\textsubscript{2}, in relation to a~brain event, namely the activity in the medial premotor cortex, \textit{S}.\footnote{ Shannon's theory conceptualizes mutual information as the relation between events and a~subset of these events. In the body of the text, I~assume that mental events (\textit{M}\textsubscript{1} and \textit{M}\textsubscript{2}) are a~subset of a~brain event (\textit{S}). More specifically, I~assume that functional correlations between cognitive capacities and activities in the corresponding brain areas (e.g., relationships between particular types of motor actions and activities in the corresponding brain areas) lead to mutual information between the mental events and the brain event. Obviously, this assumption is controversial. Nonetheless, in the current paper, I~have made an attempt to demonstrate that such an information-theoretic assumption inevitably leads to a~clinically important conclusion. See 
+%\label{ref:RNDi14ONyoLX3}(Li et al., 2022)
+\parencite[][]{li_brain_2022} %
+ for a~detailed discussion of the quantitative relationships between localized brain activities and information processing capacities. Kycia 
+%\label{ref:RNDIqZJ434484}(2021)
+\parencite*[][]{kycia_information_2021} %
+ provides good clarification of fundamental issues concerning classical and quantum nature of information storing and processing in the brain.} To analyze the informational aspect for active paradigms is to compare \textit{M}\textsubscript{1} and \textit{M}\textsubscript{2}.\footnote{ Strictly speaking, \textit{M}\textsubscript{1} should be a~disjunction of the minimally conscious state and the fully conscious state (in Cruse et al., the healthy controls were fully conscious). Because the primary concern of NSAs is the minimally conscious state, however, we can safely ignore the information about the fully conscious state possibly conveyed by the neural signals.}
+
+Mutual information between the brain event, \textit{S}, and a~set of mental events, \textit{M}, is:
+
+$I(S:M)=H(M)H(MS)$.\footnote{ The idea of analyzing the informational aspect of active paradigm tasks originates from Noh
+%\label{ref:RNDjBvUliVaOb}(2018, pp.181–185).
+\parencite*[][pp.181–185]{noh_no-report_2018}.%
+}
+
+
+\textit{H} refers to Shannon entropy. To compare \textit{M}\textsubscript{1} and \textit{M}\textsubscript{2}, however, individual events need to be considered rather than the average. Because the toe-imagery task depends on the assumption that the detection of \textit{S} particularly reduces the uncertainty of the mental event that subjects are imagining wiggling toes, let's take \textit{M}\textsubscript{1} as referring to this mental event. The amount of uncertainty of \textit{M}\textsubscript{1} that \textit{S} reduces is:
+
+$I(S:M_1)=I(M_1)I(M_1S)\log _2P(M_1)\log _2P(M_1S)\log _2\frac{P(M_1S)}{P(M_1)}$.
+
+
+As $\log _2\frac{P(M_1S)}{P(M_1)}$ gets more and more positive, \textit{S} will represent greater accuracy about \textit{M}\textsubscript{1}. If $\log _2\frac{P(M_1S}){P(M_1})$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$, then the observation of \textit{S} provides clinicians with evidence that patients in the toe-imagery task who show activities in the medial premotor cortex are minimally conscious. If the latter is greater than, or equivalent to, the former, then \textit{S} alone cannot provide that evidence.
+
+To estimate the value of $\log _2\frac{P(M_1S)}{P(M_1)}$, we need to understand the background conditions of the toe-imagery task. Notice that the patients in Cruse et al.'s
+%\label{ref:RND2y1XLkJnMb}(2011)
+\parencite*[][]{cruse_bedside_2011} %
+ experiment were initially diagnosed with the vegetative state by traditional behavioral assessments. Given that the misdiagnosis rate of traditional behavioral assessments is 41\% 
+%\label{ref:RNDQvnJPYKu8r}(Schnakers et al., 2009),
+\parencite[][]{schnakers_diagnostic_2009}, %
+ the unconditional probability that Cruse et al.'s patients were conscious, i.e., \textit{P}(\textit{M}\textsubscript{1}), is lower than the unconditional probability that they were in the vegetative state, i.e., \textit{P}(\textit{M}\textsubscript{2}). So, $\log _2\frac{P(M_1S}){P(M_1})$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$ if \textit{P}(\textit{M}\textsubscript{1}{\textbar}\textit{S}) is greater than, or equivalent to, \textit{P}(\textit{M}\textsubscript{2}{\textbar}\textit{S}).
+
+\textit{P}(\textit{M}\textsubscript{1}{\textbar}\textit{S}) can be accounted for by the reversed strong correlation that holds between activities in motor areas and the corresponding mental-motor action. According to relevant experiments
+%\label{ref:RND3XvevSKtpr}(e.g. Pfurtscheller and Neuper, 1997; Ehrsson, Geyer and Naito, 2003)
+\parencites[e.g.,][]{pfurtscheller_motor_1997}[][]{ehrsson_imagery_2003} %
+ in which healthy subjects were instructed to mentally act (e.g., they were instructed to imagine raising their left arms without making any actual motor movement), activities in the relevant motor areas were observed in the majority of the subjects. Provided that \textit{P}(activities in the relevant motor areas{\textbar}mental-motor action) is high, it seems that \textit{P}(\textit{M}\textsubscript{1}{\textbar}\textit{S}) is relatively high as well.
+
+On the other hand, \textit{P}(\textit{M}\textsubscript{2}{\textbar}\textit{S}) concerns a~situation in which the medial premotor cortex activity in a~mental-motor action task, such as the toe-imagery task, is somehow automated (i.e., a~nonconscious response). Provided the strong functional relationship between the body surface and a~localized motor area (i.e., the well-established somatotopic map in motor areas), it seems possible to take the medial premotor cortex activity observed in the toe-imagery task as a~toe-related nonconscious mental event. In turn, to account for \textit{P}(\textit{M}\textsubscript{2}{\textbar}\textit{S}) would require finding a~toe-related nonconscious explanation (that does not involve volition, linguistic understanding of the verbal instruction, etc.) of why the activity occurred.
+
+Nonetheless, no such explanation is available. Consider a~semantic priming effect, which refers to cases where automated activities in the somatotopy of the motor and premotor cortex are observed for a~few milliseconds when a~subject hears an action-word such as ``kick''
+%\label{ref:RNDtVfb2YZ1ak}(Pulvermüller, 2005).
+\parencite[][]{pulvermuller_brain_2005}. %
+ Now, consider \textit{M}\textsubscript{2} as a~toe-related nonconscious mental event grounded by a~semantic priming effect. \textit{P}(\textit{M}\textsubscript{2}{\textbar}\textit{S}) in this sense, however, is very low for two reasons. First, the semantic priming effect has been observed when a~single word is given, but not when a~whole sentence, such as ``Imagine wiggling all of your toes,'' is given 
+%\label{ref:RND5xoKfn4zNx}(Raposo et al., 2009).
+\parencite[][]{raposo_modulation_2009}. %
+ Second, the effect lasts for a~very short time, but the activity in Cruse et al.'s experiment persisted for more than a~few seconds. Because there is no alternative explanation, $\log _2\frac{P(M_1S}){P(M_1})$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$.
+
+Following the same line of reasoning to analyze the informational aspect of passive paradigm tasks, let us consider King et al.'s
+%\label{ref:RND2LXLkT9KBe}(2013)
+\parencite*[][]{lule_probing_2013} %
+ and Bekinschtein et al.'s 
+%\label{ref:RNDmqV1uruVqo}(2009)
+\parencite*[][]{schnakers_diagnostic_2009} %
+ oddball tasks. The oddball task is designed to evaluate cerebral responses to violations of temporal regularities that are global across several seconds. Suppose that a~stream of repeated auditory events is given to a~healthy subject, with two types of novel events (i.e., oddballs) embedded in the stream. The two types are local oddballs, which consist of a~change in pitch within a~five-sound sequence (e.g., AAAAB), and global oddballs, which consist of a~change in an auditory sequence in a~fixed global context (e.g., AAAAB AAAAB AAAAB AAAAB AAAAA). Local oddballs typically lead to so-called frontal mismatch negativity, which is an automated (i.e., nonconscious) brain activity. In other words, frontal mismatch negativity is observed independently of whether a~subject pays attention to the given auditory stream or not. On the other hand, global oddballs generate the so-called P300b response, which can be detected only when a~subject is consciously paying attention to the given auditory stream. In King et al.'s 
+%\label{ref:RNDslg878rAtY}(2013)
+\parencite*[][]{lule_probing_2013} %
+ experiment, a~global effect was found in 14\% of 70 vegetative state patients and 31\% of 65 minimally conscious state patients (and 52\% of 23 conscious controls with brain injuries). In Bekinschtein et al.'s 
+%\label{ref:RNDBL3kglmU8Y}(2009)
+\parencite*[][]{schnakers_diagnostic_2009} %
+ experiment, a~global effect was found in none of 3 vegetative state patients and 3 of 4 minimally conscious state patients (and all of 11 healthy controls). But there was no significant difference between the patient group and the control group regarding the local effect in both experiments.
+
+The oddball task takes the P300b response as a~neural signal conveying the message that the subject is in a~mental state of counting the number of global deviant trials by using working memory. To take the neural signal as conveying the purported message is to assume a~strong correlation between the P300b response and the relevant executive functions, like working memory.
+
+Recall that in Cruse et al.'s
+%\label{ref:RND5hclfQLLkX}(2011)
+\parencite*[][]{cruse_bedside_2011} %
+ toe-imagery task, a~strong correlation between activities in motor areas and the corresponding mental-motor action holds because \textit{P}(\textit{M}\textsubscript{1}{\textbar}\textit{S}) is relatively greater than \textit{P}(\textit{M}\textsubscript{2}{\textbar}\textit{S}).\footnote{ Notice that \textit{P}(\textit{M}\textsubscript{2}) is always greater than \textit{P}(\textit{M}\textsubscript{1}) in both active and passive paradigms because every MCP patient in the experiments was initially diagnosed with the vegetative state by traditional behavioral assessments. Specifically, because the misdiagnosis rate of traditional behavior assessments is 41\%, \textit{P}(\textit{M}\textsubscript{2}) is roughly 60\%.} So, we should compare \textit{P}(the subject is minimally conscious{\textbar}the P300b response) and \textit{P}(the subject is nonconscious{\textbar}the P300b response). According to the relevant studies, the P300b response requires working memory. Specifically, the P300b response is accounted for by the following hypotheses: Noticing global oddballs requires working memory and predictive coding 
+%\label{ref:RNDXe3oyEzvUf}(Garrido et al., 2008; 2009);
+\parencites*[][]{garrido_functional_2008}[][]{schnakers_diagnostic_2009}; %
+ the P300b response is a~neural signature of postperceptual processing, such as working memory 
+%\label{ref:RNDD9OoRT2KMc}(Cohen et al., 2020);
+\parencite[][]{cohen_distinguishing_2020}; %
+ and the P300b response is a~neural signature of working memory–guided categorization processes 
+%\label{ref:RND1OFfKua7Q6}(Rac-Lubashevsky and Kessler, 2019).
+\parencite[][]{rac-lubashevsky_revisiting_2019}. %
+ If there is no alternative explanation of the P300b response, and if working memory is a~sign of minimal consciousness 
+%\label{ref:RNDkNGafGH8qa}(Ansell, 1993; Bekinschtein et al., 2009; King et al., 2013),
+\parencites[][]{ansell_slow--recover_1993}[][]{bekinschtein_neural_2009}[][]{king_single-trial_2013}, %
+ then \textit{P}(the subject is minimally conscious{\textbar}the P300b response) is greater than \textit{P}(the subject is nonconscious{\textbar}the P300b response).
+
+A~false positive occurs when evidence of an effect is measured, yet the target phenomenon is absent from the test conditions
+%\label{ref:RNDZp6f0RAzSS}(Peterson et al., 2015, p.591),
+\parencite[][p.591]{peterson_risk_2015}, %
+ such as a~case in which the observed brain activity does not carry the information about minimal consciousness. The probability that NSAs generate false positives is low because NSAs in general involve a~relatively strong correlation between brain activities and minimal consciousness. Specifically, given that there is no plausible alternative explanation of why activities in motor areas or P300b responses occurred in the relevant experiments, the best explanation is the one that appeals to minimal consciousness.
+
+Di et al.'s
+%\label{ref:RNDhajToNfv9P}(2008)
+\parencite*[][]{di_neuroimaging_2008} %
+ cohort study provides an additional reason to take the patients who passed the relevant tests as being in a~state of minimal consciousness. They found that post-comatose patients who were re-diagnosed with the minimally conscious state by NSAs had recovered sophisticated cognitive functions or consciousness. This finding indicates that activities in motor areas or P300b responses are indeed prognostic signs of recovery. So, the low possibility of false positives can be ignored for the sake of possible recovery. Consequently, activities in motor areas or P300b responses in the relevant experiments can be taken as neural signals conveying the message that the post-comatose patients under consideration are minimally conscious, and therefore, they were initially misdiagnosed with the vegetative state by traditional behavioral assessments.
+
+\section{The Engineering Aspect of Clinical Tasks}
+The informational and engineering aspects of a~communication system are connected to the extent that the system is able to handle any message from a~set of possible messages produced by a~sender
+%\label{ref:RND0CJb78bMLU}(Weaver, 1953, p.270).
+\parencite[][p.270]{weaver_recent_1953}. %
+ Consider a~Morse-code-based telegraph system. The informational aspect of the system concerns conventions pertaining to the use of the Morse codes in accordance with English letters. The engineering aspect concerns whether such a~design can efficiently handle the assigned jobs. For instance, the signal-vehicle ``a single dot'' is assigned to the letter E~in order to efficiently encode the most frequently used letter in English into the simplest Morse code. To that extent, the system is designed to minimize human errors that a~sender-telegrapher might generate in sending messages like ``Elephants eat cheese.''
+
+NSAs should be designed to handle any message that behaviorally nonresponsive MCP patients can produce. Consider Cruse et al.'s
+%\label{ref:RND37m8PJ6Vhr}(2011)
+\parencite*[][]{cruse_bedside_2011} %
+ toe-imagery task. The task conditions should have been designed in favor of MCP patients, such that their responses would be efficiently manifested by the purported brain activities. Such task conditions include, but are not limited to, the verbal instruction ``Imagine wiggling all of your toes and relaxing them.'' The engineering aspect relates to false negatives, which occur when evidence of an effect is not measured even though the target phenomenon is, in fact, present in the test conditions 
+%\label{ref:RNDIyVCyIXQZ5}(Peterson et al., 2015, p.591).
+\parencite[][p.591]{peterson_risk_2015}. %
+ False negatives, of course, are natural consequences of empirical experiments due to the impossibility of eliminating contingent factors like human error. Nevertheless, I~am concerned with the kind of false negatives that are not generated by contingent factors that can be eliminated by conducting tasks repeatedly and more precisely. Let's say that a~task is structurally ``ill-formed'' if it generates this kind of false negative. By analyzing the engineering aspect of the toe-imagery task, I~will show that the task structurally permits the possibility of false negatives.
+
+In order to analyze the engineering aspect of the toe-imagery task, we must first distinguish between types of mental action. An essential component of mental-motor action is that a~subject mentally executes an instructed mental-motor action from the first-person perspective
+%\label{ref:RND1pm2quQW6r}(i.e. kinesthetic mental-motor action Ehrsson, Geyer and Naito, 2003).
+\parencite[i.e., kinesthetic mental-motor action][]{ehrsson_imagery_2003}. %
+ Alternatively, subjects can imagine seeing themselves or another person performing an action from an external view (i.e., visual motor imagery), which may be primarily visual in character rather than involving kinesthetic characteristics 
+%\label{ref:RNDNPkyueF1mq}(Sekiyama, 1983).
+\parencite[][]{sekiyama_mental_1983}. %
+ According to Annett 
+%\label{ref:RND1637syDSd3}(1995),
+\parencite*[][]{annett_motor_1995}, %
+ without specific instructions to perform a~kinesthetic mental-motor action, such that when the instruction ``Imagine wiggling toes'' is given, subjects may either perform a~kinesthetic mental-motor action or conceive visual motor imagery. Kinesthetic mental-motor action correlates significantly more strongly with activities in the relevant motor areas than does visual motor imagery, implying that visual motor imagery might not activate the relevant motor areas 
+%\label{ref:RNDUsbP29uqd5}(Neuper et al., 2005).
+\parencite[][]{neuper_imagery_2005}. %
+ Hence, Cruse et al.'s toe-imagery task should have been designed in such a~way that behaviorally nonresponsive MCP patients are clearly instructed to perform a~kinesthetic mental-motor action and that they can clearly comprehend the instruction.
+
+Notice that 3 healthy controls (out of 12) in Cruse et al.'s
+%\label{ref:RNDxunQH7bjxX}(2011)
+\parencite*[][]{cruse_bedside_2011} %
+ toe-imagery task did not show the expected brain activities despite the verbal instructions (``Imagine wiggling all your toes on both feet and relaxing them without making any actual motor movement'' and ``Concentrate on the way your muscles would feel if you were really performing this movement'' 
+%\label{ref:RND1PfguzIRdj}(Cruse et al., 2011, p.2098)
+\parencite[][p.2098]{cruse_bedside_2011}%
+). I~suspect that the false negatives (i.e., 3 healthy controls) were generated because the controls failed to comprehend the instructions properly and conceived the visual motor imagery of wiggling toes instead. Regardless of my speculation's accuracy, a~more serious problem follows from the task's verbal instructions.
+
+The toe-imagery task is structurally ``ill-formed'' because it depends on verbal linguistic instructions. In Cruse et al.'s experiment, it might be that some MCP patients did not show the purported brain activities in the toe-imagery task, not because they were not minimally conscious, but because they could not clearly comprehend the instructions and conceived the visual motor imagery instead. According to Kwiatkowska et al.
+%\label{ref:RNDZNjyq1zhPj}(2019),
+\parencite*[][]{vassilieva_automated_2019}, %
+ 34\% of 50 minimally conscious post-comatose patients could not build and had difficulties in reading syntactically complex sentences. Most importantly, the instructions of the toe-imagery task consist of sentences that are syntactically far more complex than those in Kwiatkowska et al.'s experiment. Moreover, in general, MCP patients' brain responses to heard words are weaker in terms of power than those of healthy controls 
+%\label{ref:RNDEz2DkUdcqj}(Nigri et al., 2017).
+\parencite[][]{nigri_neural_2017}. %
+ In a~nutshell, the capacity to comprehend syntactically complex spoken sentences can be dissociated from minimal consciousness. Thus, the toe-imagery task structurally permits the possibility of false negatives.
+
+The same problem generalizes to active paradigms. Tasks that involve mental-motor actions (e.g., the toe-imagery task, the tennis-imagery task, the home-walking task, etc.) essentially depend on subjects' capacity to perform kinesthetic mental-motor actions in response to verbal instructions. Naci and Owen
+%\label{ref:RNDPaOV9stDoN}(2013)
+\parencite*[][]{naci_making_2013} %
+ and Lule et al.'s 
+%\label{ref:RNDt3QPVnEk9k}(2013)
+\parencite*[][]{lule_probing_2013} %
+ target-counting tasks also depend on verbal instructions similar to those in the toe-imagery task.\footnote{ Among passive paradigm tasks, Naci et al.'s 
+%\label{ref:RND8lGscP6svE}(2014)
+\parencite*[][]{naci_common_2014} %
+ and Laforge et al.'s 
+%\label{ref:RNDMjuNNKCNba}(2020)
+\parencite*[][]{cohen_distinguishing_2020} %
+ movie-watching tasks entail a~similar problem because they depend on the subjects understanding the linguistic narratives of the movies.} Given that these tasks exhaust those I~have ever come across in the literature, I~claim that active paradigm tasks in general are structurally ``ill-formed.''
+
+Tasks in the passive paradigm are in general structurally ``ill-formed'' as well, because they require a~relatively high degree of attention to the given (particularly auditory) stimulations. To explain the problem, we must first understand that traditional behavioral assessments are designed in accordance with the subcategorization of the minimally conscious state (MCS) into MCS- (i.e., patients only show nonreflex behavior such as visual pursuit, localization of noxious stimulation, and/or contingent behavior) and MCS+
+%\label{ref:RNDSCH9Jzx2hH}(i.e. patients show command following Bruno et al., 2012, p.1087).
+\parencite[i.e., patients show command following][p.1087]{bruno_functional_2012}. %
+ MCS- can be further distinguished in terms of various degrees of capacity to pay attention. For example, the capacity to track an object with the eyes is a~mark of degrees of attention in that eye tracking requires an executive function, namely a~combination of voluntary saccadic and smooth pursuit eye movement 
+%\label{ref:RNDdW2oeUepZC}(Ansell, 1995).
+\parencite[][]{ansell_visual_1995}. %
+ It is worth noting that a~post-comatose patient's having a~low degree of attention (e.g., being able to perform eye tracking relatively unstably and for a~short time) can still serve as a~meaningful sign of minimal consciousness and a~prognostic figure for rehabilitation 
+%\label{ref:RNDHmzS8KuJpI}(Ansell, 1993).
+\parencite[][]{ansell_slow--recover_1993}. %
+ In short, traditional behavioral assessments can capture the very minimal degree of MCS-.
+
+The odd-ball task is structurally ``ill-formed'' because the P300b response can be dissociated from the very minimal degree of MCS-. In King et al.'s
+%\label{ref:RNDKsEhoesRyh}(2013)
+\parencite*[][]{lule_probing_2013} %
+ experiment, only 52\% of 23 conscious controls with brain injuries showed the P300b response. The number of false negatives (i.e., the remaining 48\% of controls) is not negligible because it seems that the number cannot be reduced simply by conducting the task repeatedly and precisely. That is, it seems that these false negatives were generated because the conscious controls with brain injuries could not pay strong attention to global oddballs. Moreover, there are relevant experiments suggesting that stimulations like global oddballs require a~relatively high degree of attention. In experiments with autistic and schizophrenic patients, such patients demonstrated reduced responses to stimulations similar to global oddballs 
+%\label{ref:RNDD7ZOMh5tvC}(Novick et al., 1980; Kärgel et al., 2016).
+\parencites[][]{novick_electrophysiologic_1980}[][]{kargel_effect_2016}. %
+ If the capacity to respond to stimulations like global oddballs can be dissociated from the relevant executive functions like working memory (thus, the very minimal degree of MCS-), then the odd-ball task structurally permits the possibility of false negatives.
+
+This problem with global oddballs applies to passive paradigm tasks in general. They all depend on similar stimulations; Naci et al.'s
+%\label{ref:RNDetB74Tdpen}(2014)
+\parencite*[][]{naci_common_2014} %
+ and Laforge et al.'s 
+%\label{ref:RND6UunWScAqd}(2020)
+\parencite*[][]{cohen_distinguishing_2020} %
+ movie-watching tasks require that subjects are paying attention to (and understanding) the narratives of the movies. Consequently, passive paradigms in general are structurally ``ill-formed.''
+
+It is worth noting that, structurally, no task can completely avoid the possibility of false negatives, because the absence of information about minimal consciousness is not evidence of the absence of minimal consciousness. Nonetheless, my analysis of the engineering aspect of the relevant tasks shows that such tasks are specifically designed to test MCP patients with the ``right'' kind of capacities. In other words, my analysis indicates that we need a~new NSA task that does not depend on language comprehension or the capacity to recognize violations of temporal regularities.
+
+\section{A~Proposal: The Misrepresentation Task}
+I~argued that NSAs in their current form are structurally ``ill-formed'' because they depend on capacities that can be dissociated from minimal consciousness, such as the capacity to comprehend syntactically complex sentences and the capacity to pay attention to stimulations like global oddballs. Recall that a~fundamental problem of traditional behavioral assessments is that they depend on the capacity to perform overt behaviors, which can be dissociated from minimal consciousness. It turns out that NSAs raise a~similar fundamental problem. Below, I~propose a~task for an NSA that is structurally ``well-formed'' in the sense that it depends on neither language comprehension nor a~degree of attention to global oddballs.
+
+An NSA task is diagnostically reliable if it is informationally and structurally reliable. As I~explained, the relevant tasks satisfy the former, but are problematic with respect to the latter. I~therefore propose an informationally reliable and structurally ``well-formed'' task, namely, a~misrepresentation task, which consists of two parts: a~control task and a~melting-wax task:
+
+Control task
+
+
+\begin{quotation}
+Show a~subject lukewarm water droplets being sprayed on an instructor's hands, and then spray lukewarm water droplets on the subject's hands (in such a~way that the subject sees it).
+
+\end{quotation}
+Melting-wax task
+
+
+\begin{quotation}
+Show the subject fake melting wax being dropped on the instructor's hands (with the instructor making a~facial expression of pain), and then spray lukewarm water on the subject's hands (in such a~way that the subject sees the water drops as melting wax drops).
+
+\end{quotation}
+Noxious hot (46°C) stimulation produces localized activities in prefrontal areas
+%\label{ref:RNDUYe6JPSgSX}(Tracey et al., 2000).
+\parencite[][]{tracey_noxious_2000}. %
+ I~claim that activities in these areas, if observed in the melting-wax task but not in the control task, can be taken as diagnostically reliable neural signals. It is easy to see why the misrepresentation task is structurally ``well-formed.'' It relies neither on language comprehension nor on the capacity to pay attention to an auditory sequence. The task tests whether a~subject can misrepresent a~non-noxious tactile-stimulus as a~noxious tactile-stimulus. As far as a~subject has the capacity to misconceptualize lukewarm water as melting wax, the subject can pass the misrepresentation task.
+
+In order to analyze the informational aspect of the misrepresentation task, a~distinction between two types of placebo/nocebo responses needs to be discussed. Benedetti et al.
+%\label{ref:RNDdlH5q4SDXG}(2003)
+\parencite*[][]{benedetti_conscious_2003} %
+ distinguish between placebo/nocebo responses by conditioning and expectation, where the former concerns unconscious processes such as hormone secretion and the latter concerns conscious processes such as pain or motor performance. The misrepresentation task does not involve conditioning: it does not expose a~subject to repeated stimulus-behavioral patterns, nor does it reward/punish the subject for behaving in a~particular way in response to certain stimulations. Rather, the misrepresentation task tests whether a~subject can form an expectation of the forthcoming ``noxious'' stimulus. According to Colloca and Benedetti 
+%\label{ref:RND0I6Gy29YP0}(2009),
+\parencite*[][]{colloca_placebo_2009}, %
+ observational social learning produces placebo/nocebo responses by expectation. The purported brain activity in the misrepresentation task is a~mark of a~nocebo response due to expectation produced by social learning (i.e., the instructor displays a~painful facial expression when the tactile stimulus is paired with melting wax). Most importantly, placebo/nocebo responses by expectation generally require executive functions 
+%\label{ref:RND0aFSOWMyRk}(Benedetti, Carlino and Pollo, 2011, p.239).
+\parencite[][p.239]{benedetti_how_2011}. %
+ Thus, if localized activities in prefrontal areas are observed in the melting-wax task but not in the control task, then the best explanation for the activities is the one that appeals to minimal consciousness. In a~nutshell, the misrepresentation task is informationally reliable because \textit{P}(nocebo effect by expectation{\textbar}activities in prefrontal areas) is greater than \textit{P}(nocebo effect by conditioning{\textbar}activities in prefrontal areas).
+
+Notice that although the misrepresentation task is structurally ``well-formed'' in the sense that it does not depend on either language comprehension or sufficient attention to notice global oddballs, it might still structurally generate false positives. Placebo responses of patients with dementia of the Alzheimer's type are reduced or totally lacking
+%\label{ref:RNDd8LSyO9bdB}(Benedetti, Carlino and Pollo, 2011, p.349).
+\parencite[][p.349]{benedetti_how_2011}. %
+ So, it is possible that an MCP patient would have the same problem in forming a~nocebo response by expectation. I~am not proposing the misrepresentation task as a~non-false-positive-generating task, but as a~supplement to NSAs in their current form, which relies on a~different cognitive capacity. Consider traditional behavioral assessments, where the relevant tasks appeal to various types of cognitive capacities, including eye tracking, automated pupillometry 
+%\label{ref:RND30AYcJlQ5F}(Vassilieva et al., 2019),
+\parencite[][]{vassilieva_automated_2019}, %
+ and functional object-use 
+%\label{ref:RNDRuTqtjQ03z}(Sun et al., 2018).
+\parencite[][]{sun_personalized_2018}. %
+ Likewise, the misrepresentation task is one way of diversifying the types of cognitive capacities to which NSAs appeal in testing minimal consciousness in behaviorally nonresponsive MCP patients.
+
+\section{Conclusion}
+The current paper demonstrated that NSAs in their current form are informationally reliable but structurally ``ill-formed.'' They are informationally reliable because the relevant tasks depend on strong correlations between cognitive capacities and the corresponding brain areas. However, they are structurally ``ill-formed'' because they essentially depend on language comprehension or stimulations like global oddballs as diagnostic means. The primary aim of NSAs is to test for minimal consciousness in behaviorally nonresponsive post-comatose patients because the minimally conscious state can be dissociated from the capacity to perform overt behavior. Given that language comprehension and global oddball recognition can be dissociated from minimal consciousness, I~proposed a~task that does not involve such capacities and is informationally reliable, namely the misrepresentation task. Consequently, this paper not only reveals the structural limitations of NSAs, but also attempts to diversify the diagnostic means of NSAs.
+
+Acknowledgments
+
+I~thank an anonymous reviewer for this journal for comments that prompted important clarifications in the penultimate draft. I~am also deeply grateful to Carrie Figdor for constructive feedback on a~previous draft.
+
+\section*{References}
+Andrews, K., Murphy, L., Munday, R. and Littlewood, C., 1996. Misdiagnosis of the vegetative state: retrospective study in a~rehabilitation unit. \textit{The British Medical Journal}, [online] 313(7048), pp.13–16. https://doi.org/10.1136/bmj.313.7048.13.
+
+Annett, J., 1995. Motor imagery: Perception or action? \textit{Neuropsychologia}, [online] 33(11), pp.1395–1417. https://doi.org/10.1016/0028-3932(95)00072-B.
+
+Ansell, B.J., 1993. Slow-to-recover patients: Improvement to rehabilitation readiness: \textit{Journal of Head Trauma Rehabilitation}, [online] 8(3), pp.88–98. https://doi.org/10.1097/00001199-199309000-00011.
+
+Ansell, B.J., 1995. Visual tracking behavior in low functioning head-injured adults. \textit{Archives of Physical Medicine and Rehabilitation}, [online] 76(8), pp.726–731. https://doi.org/10.1016/S0003-9993(95)80526-5.
+
+Bekinschtein, T.A., Dehaene, S., Rohaut, B., Tadel, F., Cohen, L. and Naccache, L., 2009. Neural signature of the conscious processing of auditory regularities. \textit{Proceedings of the National Academy of Sciences}, [online] 106(5), pp.1672–1677. https://doi.org/10.1073/pnas.0809667106.
+
+Benedetti, F., Carlino, E. and Pollo, A., 2011. How Placebos Change the Patient's Brain. \textit{Neuropsychopharmacology}, [online] 36(1), pp.339–354. https://doi.org/10.1038/npp.2010.81.
+
+Benedetti, F., Pollo, A., Lopiano, L., Lanotte, M., Vighetti, S. and Rainero, I., 2003. Conscious Expectation and Unconscious Conditioning in Analgesic, Motor, and Hormonal Placebo/Nocebo Responses. \textit{The Journal of Neuroscience}, [online] 23(10), pp.4315–4323. https://doi.org/10.1523/JNEUROSCI.23-10-04315.2003.
+
+Boly, M., Garrido, M.I., Gosseries, O., Bruno, M.-A., Boveroux, P., Schnakers, C., Massimini, M., Litvak, V., Laureys, S. and Friston, K., 2011. Preserved Feedforward But Impaired Top-Down Processes in the Vegetative State. \textit{Science}, [online] 332(6031), pp.858–862. https://doi.org/10.1126/science.1202043.
+
+Bruno, M.-A., Majerus, S., Boly, M., Vanhaudenhuyse, A., Schnakers, C., Gosseries, O., Boveroux, P., Kirsch, M., Demertzi, A., Bernard, C., Hustinx, R., Moonen, G. and Laureys, S., 2012. Functional neuroanatomy underlying the clinical subcategorization of minimally conscious state patients. \textit{Journal of Neurology}, [online] 259(6), pp.1087–1098. https://doi.org/10.1007/s00415-011-6303-7.
+
+Cohen, M.A., Ortego, K., Kyroudis, A. and Pitts, M., 2020. Distinguishing the Neural Correlates of Perceptual Awareness and Postperceptual Processing. \textit{The Journal of Neuroscience}, [online] 40(25), pp.4925–4935. https://doi.org/10.1523/JNEUROSCI.0120-20.2020.
+
+Colloca, L. and Benedetti, F., 2009. Placebo analgesia induced by social observational learning. \textit{Pain}, [online] 144(1), pp.28–34. https://doi.org/10.1016/j.pain.2009.01.033.
+
+Cruse, D., Chennu, S., Chatelle, C., Bekinschtein, T.A., Fernández-Espejo, D., Pickard, J.D., Laureys, S. and Owen, A.M., 2011. Bedside detection of awareness in the vegetative state: a~cohort study. \textit{The Lancet}, [online] 378(9809), pp.2088–2094. https://doi.org/10.1016/S0140-6736(11)61224-5.
+
+Di, H., Boly, M., Weng, X., Ledoux, D. and Laureys, S., 2008. Neuroimaging activation studies in the vegetative state: predictors of recovery? \textit{Clinical Medicine}, [online] 8(5), pp.502–507. https://doi.org/10.7861/clinmedicine.8-5-502.
+
+Ehrsson, H.H., Geyer, S. and Naito, E., 2003. Imagery of Voluntary Movement of Fingers, Toes, and Tongue Activates Corresponding Body-Part-Specific Motor Representations. \textit{Journal of Neurophysiology}, [online] 90(5), pp.3304–3316. https://doi.org/10.1152/jn.01113.2002.
+
+van Erp, W.S., Aben, A.M.L., Lavrijsen, J.C.M., Vos, P.E., Laureys, S. and Koopmans, R.T.C.M., 2019. Unexpected emergence from the vegetative state: delayed discovery rather than late recovery of consciousness. \textit{Journal of Neurology}, [online] 266(12), pp.3144–3149. https://doi.org/10.1007/s00415-019-09542-3.
+
+van Erp, W.S., Lavrijsen, J.C.M., Vos, P.E., Bor, H., Laureys, S. and Koopmans, R.T.C.M., 2015. The Vegetative State: Prevalence, Misdiagnosis, and Treatment Limitations. \textit{Journal of the American Medical Directors Association}, [online] 16(1), p.85.e9-85.e14. https://doi.org/10.1016/j.jamda.2014.10.014.
+
+Garrido, M.I., Friston, K.J., Kiebel, S.J., Stephan, K.E., Baldeweg, T. and Kilner, J.M., 2008. The functional anatomy of the MMN: A~DCM study of the roving paradigm. \textit{NeuroImage}, [online] 42(2), pp.936–944. https://doi.org/10.1016/j.neuroimage.2008.05.018.
+
+Garrido, M.I., Kilner, J.M., Kiebel, S.J., Stephan, K.E., Baldeweg, T. and Friston, K.J., 2009. Repetition suppression and plasticity in the human brain. \textit{NeuroImage}, [online] 48(1), pp.269–279. https://doi.org/10.1016/j.neuroimage.2009.06.034.
+
+Kärgel, C., Sartory, G., Kariofillis, D., Wiltfang, J. and Müller, B.W., 2016. The effect of auditory and visual training on the mismatch negativity in schizophrenia. \textit{International Journal of Psychophysiology}, [online] 102, pp.47–54. https://doi.org/10.1016/j.ijpsycho.2016.03.003.
+
+King, J.R., Faugeras, F., Gramfort, A., Schurger, A., El Karoui, I., Sitt, J.D., Rohaut, B., Wacongne, C., Labyt, E., Bekinschtein, T., Cohen, L., Naccache, L. and Dehaene, S., 2013. Single-trial decoding of auditory novelty responses facilitates the detection of residual consciousness. \textit{NeuroImage}, [online] 83, pp.726–738. https://doi.org/10.1016/j.neuroimage.2013.07.013.
+
+Kondziella, D., Friberg, C.K., Frokjaer, V.G., Fabricius, M. and Møller, K., 2016. Preserved consciousness in vegetative and minimal conscious states: systematic review and meta-analysis. \textit{Journal of Neurology, Neurosurgery \& Psychiatry}, [online] 87(5), pp.485–492. https://doi.org/10.1136/jnnp-2015-310958.
+
+Kwiatkowska, A., Lech, M., Odya, P. and Czyżewski, A., 2019. Post-comatose patients with minimal consciousness tend to preserve reading comprehension skills but neglect syntax and spelling. \textit{Nature Scientific Reports}, [online] 9(1), p.19929. https://doi.org/10.1038/s41598-019-56443-6.
+
+Kycia, R., 2021. Information and brain. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), [online] (70), pp.45–72. Available at: {\textless}https://zfn.edu.pl/index.php/zfn/article/view/514{\textgreater} [Accessed 6 December 2022].
+
+Laforge, G., Gonzalez-Lara, L.E., Owen, A.M. and Stojanoski, B., 2020. Individualized assessment of residual cognition in patients with disorders of consciousness. \textit{NeuroImage: Clinical}, [online] 28, p.102472. https://doi.org/10.1016/j.nicl.2020.102472.
+
+Li, T., Zheng, Y., Wang, Z., Zhu, D.C., Ren, J., Liu, T. and Friston, K., 2022. Brain information processing capacity modeling. \textit{Scientific Reports}, [online] 12(1), p.2174. https://doi.org/10.1038/s41598-022-05870-z.
+
+Lulé, D., Noirhomme, Q., Kleih, S.C., Chatelle, C., Halder, S., Demertzi, A., Bruno, M.-A., Gosseries, O., Vanhaudenhuyse, A., Schnakers, C., Thonnard, M., Soddu, A., Kübler, A. and Laureys, S., 2013. Probing command following in patients with disorders of consciousness using a~brain–computer interface. \textit{Clinical Neurophysiology}, [online] 124(1), pp.101–106. https://doi.org/10.1016/j.clinph.2012.04.030.
+
+Monti, M.M., Vanhaudenhuyse, A., Coleman, M.R., Boly, M., Pickard, J.D., Tshibanda, L., Owen, A.M. and Laureys, S., 2010. Willful Modulation of Brain Activity in Disorders of Consciousness. \textit{New England Journal of Medicine}, [online] 362(7), pp.579–589. https://doi.org/10.1056/NEJMoa0905370.
+
+Naccache, L., 2018. Minimally conscious state or cortically mediated state? \textit{Brain}, [online] 141(4), pp.949–960. https://doi.org/10.1093/brain/awx324.
+
+Naci, L., Cusack, R., Anello, M. and Owen, A.M., 2014. A~common neural code for similar conscious experiences in different individuals. \textit{Proceedings of the National Academy of Sciences}, [online] 111(39), pp.14277–14282. https://doi.org/10.1073/pnas.1407007111.
+
+Naci, L. and Owen, A.M., 2013. Making Every Word Count for Nonresponsive Patients. \textit{JAMA Neurology}, [online] 70(10), pp.1235–1241. https://doi.org/10.1001/jamaneurol.2013.3686.
+
+Neuper, C., Scherer, R., Reiner, M. and Pfurtscheller, G., 2005. Imagery of motor actions: Differential effects of kinesthetic and visual–motor mode of imagery in single-trial EEG. \textit{Cognitive Brain Research}, [online] 25(3), pp.668–677. https://doi.org/10.1016/j.cogbrainres.2005.08.014.
+
+Nigri, A., Catricalà, E., Ferraro, S., Bruzzone, M.G., D'Incerti, L., Sattin, D., Sebastiano, D.R., Franceschetti, S., Marotta, G., Benti, R., Leonardi, M. and Cappa, S.F., 2017. The neural correlates of lexical processing in disorders of consciousness. \textit{Brain Imaging and Behavior}, [online] 11(5), pp.1526–1537. https://doi.org/10.1007/s11682-016-9613-7.
+
+Noh, H., 2018. No-report Paradigmatic Ascription of the Minimally Conscious State: Neural Signals as a~Communicative Means for Operational Diagnostic Criteria. \textit{Minds and Machines}, [online] 28(1), pp.173–189. https://doi.org/10.1007/s11023-017-9433-6.
+
+Noh, H., 2022. Behavioral vs. Neural Methods in the Treatment of Acutely Comatose Patients. \textit{Ramon Llull Journal of Applied Ethics}, [online] 1(13), pp.245–258. https://doi.org/10.34810/rljaev1n13Id398703.
+
+Novick, B., Vaughan, H.G., Kurtzberg, D. and Simson, R., 1980. An electrophysiologic indication of auditory processing defects in autism. \textit{Psychiatry Research}, [online] 3(1), pp.107–114. https://doi.org/10.1016/0165-1781(80)90052-9.
+
+Owen, A.M., Coleman, M.R., Boly, M., Davis, M.H., Laureys, S. and Pickard, J.D., 2006. Detecting Awareness in the Vegetative State. \textit{Science}, [online] 313(5792), p.1402. https://doi.org/10.1126/science.1130197.
+
+Peterson, A. and Bayne, T., 2018. Post-comatose disorders of consciousness. In: R.J. Gennaro, ed. \textit{The Routledge Handbook of Consciousness}, The Routledge Handbooks in Philosophy. [online] New York: Taylor \& Francis. pp.351–365. https://doi.org/10.4324/9781315676982.
+
+Peterson, A., Cruse, D., Naci, L., Weijer, C. and Owen, A.M., 2015. Risk, diagnostic error, and the clinical science of consciousness. \textit{NeuroImage: Clinical}, [online] 7, pp.588–597. https://doi.org/10.1016/j.nicl.2015.02.008.
+
+Pfurtscheller, G. and Neuper, C., 1997. Motor imagery activates primary sensorimotor area in humans. \textit{Neuroscience Letters}, [online] 239(2–3), pp.65–68. https://doi.org/10.1016/S0304-3940(97)00889-6.
+
+Pulvermüller, F., 2005. Brain mechanisms linking language and action. \textit{Nature Reviews Neuroscience}, [online] 6(7), pp.576–582. https://doi.org/10.1038/nrn1706.
+
+Rac-Lubashevsky, R. and Kessler, Y., 2019. Revisiting the relationship between the P3b and working memory updating. \textit{Biological Psychology}, [online] 148, p.107769. https://doi.org/10.1016/j.biopsycho.2019.107769.
+
+Raposo, A., Moss, H.E., Stamatakis, E.A. and Tyler, L.K., 2009. Modulation of motor and premotor cortices by actions, action words and action sentences. \textit{Neuropsychologia}, [online] 47(2), pp.388–396. https://doi.org/10.1016/j.neuropsychologia.2008.09.017.
+
+Rohaut, B., Eliseyev, A. and Claassen, J., 2019. Uncovering Consciousness in Unresponsive ICU Patients: Technical, Medical and Ethical Considerations. \textit{Critical Care}, [online] 23(1), p.78. https://doi.org/10.1186/s13054-019-2370-4.
+
+Schnakers, C., Vanhaudenhuyse, A., Giacino, J., Ventura, M., Boly, M., Majerus, S., Moonen, G. and Laureys, S., 2009. Diagnostic accuracy of the vegetative and minimally conscious state: Clinical consensus versus standardized neurobehavioral assessment. \textit{BMC Neurology}, [online] 9(1), p.35. https://doi.org/10.1186/1471-2377-9-35.
+
+Sekiyama, K., 1983. Mental and physical movements of hands: Kinesthetic information preserved in representational systems. \textit{Japanese Psychological Research}, [online] 25(2), pp.95–102. https://doi.org/10.4992/psycholres1954.25.95.
+
+Shannon, C.E., 1948. A~mathematical theory of communication. \textit{Bell System Technical Journal}, 27(3), pp.379–423, 623–656. https://doi.org/10.1002/j.1538-7305.1948.tb01338.x.
+
+Sun, Y., Wang, J., Heine, L., Huang, W., Wang, J., Hu, N., Hu, X., Fang, X., Huang, S., Laureys, S. and Di, H., 2018. Personalized objects can optimize the diagnosis of EMCS in the assessment of functional object use in the CRS-R: a~double blind, randomized clinical trial. \textit{BMC Neurology}, [online] 18(1), p.38. https://doi.org/10.1186/s12883-018-1040-5.
+
+Teasdale, G. and Jennett, B., 1974. Assessment of coma and impaired consciousness. \textit{The Lancet}, [online] 304(7872), pp.81–84. https://doi.org/10.1016/S0140-6736(74)91639-0.
+
+Tracey, I., Becerra, L., Chang, I., Breiter, H., Jenkins, L., Borsook, D. and González, R.G., 2000. Noxious hot and cold stimulation produce common patterns of brain activation in humans: a~functional magnetic resonance imaging study. \textit{Neuroscience Letters}, [online] 288(2), pp.159–162. https://doi.org/10.1016/S0304-3940(00)01224-6.
+
+Vassilieva, A., Olsen, M.H., Peinkhofer, C., Knudsen, G.M. and Kondziella, D., 2019. Automated pupillometry to detect command following in neurological patients: a~proof-of-concept study. \textit{PeerJ}, [online] 7, p.e6929. https://doi.org/10.7717/peerj.6929.
+
+Wang, F., Hu, N., Hu, X., Jing, S., Heine, L., Thibaut, A., Huang, W., Yan, Y., Wang, J., Schnakers, C., Laureys, S. and Di, H., 2019. Detecting Brain Activity Following a~Verbal Command in Patients With Disorders of Consciousness. \textit{Frontiers in Neuroscience}, [online] 13, p.976. https://doi.org/10.3389/fnins.2019.00976.
+
+Weaver, W., 1953. Recent Contributions to the Mathematical Theory of Communication. \textit{ETC: A~Review of General Semantics}, [online] 10(4), pp.261–281. Available at: {\textless}https://www.jstor.org/stable/42581364{\textgreater} [Accessed 20 January 2023].
+\end{document}

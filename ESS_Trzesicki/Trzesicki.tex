@@ -1,0 +1,3336 @@
+\documentclass[pdftex,12pt]{article}
+% PP \usepackage{apacite}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,greek,polish,english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amstext}
+%\usepackage{multind} %trzeba przywrócić, kiedy rob się index %PP
+
+
+%PP \usepackage{url}
+\usepackage{graphics,epsf}
+\usepackage{aurical}
+\usepackage{mathpazo}
+\usepackage{wrapfig} %\begin{wrapfigure}[lineheight]{alignment}{width}
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{pstricks}
+\usepackage{tabularx}
+\usepackage{endnotes}
+
+
+
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{pst-plot}
+\usepackage{pstricks-add}
+\usepackage{pst-func,pstricks-add}
+\usepackage{xcolor}
+\usepackage{pgfplots}
+
+
+
+
+\usepackage[utopia]{mathdesign}
+\usetikzlibrary {plothandlers}
+\usetikzlibrary{plotmarks}
+
+\usetikzlibrary{decorations}
+
+
+\frenchspacing
+
+
+\usepackage{icomma}
+
+%begin of PP addition ---------------
+%\usepackage{natbib}
+\usepackage{hyperref}
+
+\usepackage[style=bath,
+citestyle=authoryear-comp,
+backend=biber]{biblatex}
+\addbibresource{Trzesicki.bib}
+%end ----------------
+
+
+% PP \bibliographystyle{apacite}
+
+
+\usepackage{mathpazo}
+\usepackage{lmodern} %dopisane
+
+
+
+
+
+%\newcommand{\kontr}{\begin{sideways}{\begin{sideways}$\models$\end{sideways}}\end{sideways}}
+
+
+\usepackage{rotating}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{authblk}
+
+%\renewcommand{\notesname}{Przypisy}
+
+\font\grmn = grmn1000 at 12pt
+
+\usepackage{chngcntr}
+
+
+%\let\footnote=\endnote %PP
+
+
+
+\widowpenalty=300
+\clubpenalty=300
+
+
+\pgfplotsset{compat=1.16}
+
+
+\setcounter{tocdepth}{6}
+
+%%%%%%%%%%%%%%%
+
+
+
+
+%\usepackage{csquotes}% Recommended
+
+%\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+
+%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\tolerance=1000
+
+
+%PP {\titlepage
+\begin{center}
+Kazimierz Trzęsicki
+
+\medskip
+\medskip
+\textbf{Perspective on Turing Paradigm}
+\end{center}
+\bigskip
+%PP }
+
+%PP \maketitle
+
+%PP \setcounter{tocdepth}{6}
+%PP \tableofcontents 
+%PP \medskip
+
+%PP \newpage
+\hfill \begin{minipage} {10cm} \small
+
+\textit{Tolle numerum omnibus rebus, et omnia pereunt.} \\ (Take from all things their number and all shall perish.)
+
+
+\smallskip
+
+  St. Isidore of Seville, Patron saint for the Internet
+
+  \emph{Etymologiarum sive originum} \parencite*[Liber III, \textit{De mathematica}, IV. \textit{Quid praestent numeri}]{Izydor1911}
+
+ \end{minipage} \\
+
+
+\bigskip
+
+\begin{abstract}
+
+
+Scientific knowledge is acquired according to some paradigm. Galileo wrote that the Book of Nature was written in mathematical language and could not be understood unless one first understood the language and recognized the characters with which it was written. It is argued that Turing planted the seeds of a new paradigm. According to the Turing Paradigm, the Book of Nature is written in algorithmic language, and science aims to learn how the algorithms change the physical, social, and human universe. Some sources of the Turing Paradigm are pointed out, and a few examples of the application of the Turing Paradigm are discussed.
+
+
+\textbf{Keywords}: Galileo Galilei, Alan Turing, Konrad Zuse, zero, Arabic numeral, paradigm, mathematics, algorithmics
+\end{abstract}
+
+
+\section{Introduction}
+
+Science is developed and created  according to a pattern, a paradigm. Paradigm is historically mutable. The place of one paradigm is taken by the one which enables a fuller understanding and a better description of the information obtained. The Aristotle paradigm of natural knowledge has been replaced by the paradigm  we used to tie with Galileo. According to this paradigm modern science was created. Appointed by Aristotele paradigm of logic lasted until Gottlob Frege. The Greek paradigm of mathematics has been replaced by a paradigm that we can associate with Descartes.
+
+Are the paradigms of modern science not of a historical nature, will further research not lead to new patterns in the practice of science? Information philosophy\footnote{There is no one definition of information philosophy. It may be characterized, e.g.  \parencite[p.154]{Floridi2009}: ``as  the philosophical field concerned with (a) the critical investigation of the conceptual nature and basic principles of information, including its dynamics, utilization, and sciences, and (b) the elaboration and application of information-theoretic and computational methodologies to philosophical problems.'' See also \parencite{Floridi2002}.} poses a new paradigm, which I call the Turing paradigm. The Turing paradigm seems to better and more fully capture knowledge in areas where the Galilean paradigm dominates, but also about areas where the Galileo paradigm encounters various limitations.
+
+The key concepts of information philosophy are the concepts of information, algorithm, and artificial intelligence. If we were to briefly characterize the digital age in which we live, three terms would suffice: information, algorithm, artificial intelligence.
+
+
+\section{Binary notation} 
+
+The idea of binary code has a long history \parencite{Ligonniere1992, Trzesicki2006b}. Leibniz, creating his binary system, indicated as predecessor  the thirteenth-century Arab mathematician Abdallah Beidhawa.
+
+It is usually stated that binary notation was invented and first formally proposed by Leibniz as an illustration of his dualistic philosophy, but already around 1600 the notation was used by  an English astronomer Thomas Harriot. John Shirley \parencite*{Shirley1951} writes about his achievements:  \begin{quote} \small the mathematical papers of Thomas Harriot (1560--1621) show clearly that Harriot not only experimented with number systems, but also understood clearly the theory and practice of binary numeration nearly a century before Leibniz's time.  \end{quote} 
+Several manuscripts of the legacy of Thomas Harriot are evidence that he is probably the first inventor of binary system. He uses $0$ and $1$ and shows examples how to convert expressions  written in the decimal system to expressions written in the binary system and \emph{vice versa}. He demonstrates the basic arithmetic operations, too \parencite{Ineichen2008}. As the first text on the binary system Ineichen  points the two-volume work \emph{Mathesis biceps vetus et nova} \parencite*{Lobkowitz1670} by Juan Caramuel y Lobkowitz (Ioannis Caramuelis). In connection with these works by Harriot and Caramuel, the question is raised as to whether Leibniz plagiarized. This question is answered in the affirmative \parencite{Ares2018}.
+
+
+The first binary encoding of alphanumeric characters was done by Giuseppe Peano. In the years 1887--1901 he designed an abstract shorthand machine based on the binary coding of all syllables of the Italian language. Together with the phonemes with 16 bits (so it had 65,536 combinations), 25 letters of the (Italian) alphabet and 10 numbers were encoded. Peano's code went unnoticed and was forgotten.
+
+The use of binary code was not obvious. Completed in the summer of 1946 American $ENIAC$, unlike binary coded $Z3$, $ABC$ and $Colossus$, was based on decimal arithmetic.
+
+The use of the binary system in computers was finally determined by \emph{Burks-Goldstine-Von Neuman Report} to U.S. Army Ordnance Department (finished June 28, 1946) reprinted in \parencite*[p.105]{BurksGoldstineNeumann1947}, in which we read: \begin{quote} \small An additional point that deserves emphasis is this: An important part of the machine is not arithmetical, but logical in nature. Now logics, being a yes-no system, is fundamentally binary. Therefore, a binary arrangement of the arithmetical organs contributes very significantly towards a more homogeneous machine, which can be better integrated and is more efficient.\footnote{NB. This explanatory passage was not present in first edition of the report \parencite[cf.][p.13]{burks_preliminary_1946}, but was added in later editions (editor's footnote).}
+\end{quote}
+
+
+\section{The world build of numbers} 
+The second fundamental idea for Turing's paradigm is idea of the number as the principle of the world. It has its protagonist in the person of Pythagoras, who proclaimed, as reported in \parencite[p.21]{Guthrie1987} that number is the principle, the source and the root of all things. He argued that every existing thing has a numerical value, and in the Middle Ages it was expressed by: \emph{dictum omne ens est scibile} [all beings are knowable]%\footnote{
+%Two interesting Arguments for God: Intelligibility and Desire, 2012; \url{http://shamelesspopery.com/two-interesting-arguments-for-god-intelligibility-desire/} [10/20/2020]
+\parencites[pp.135--136]{Cherry2017}[see also][]{heschmeyer_two_2012}.
+This concept of the number as the principle of the world finds new associations when the idea of zero arises.
+
+In January 1697, Leibniz sent a letter to his protector, Prince Rudolf August of Braunschweig (Herzog von Braunschweig-Wolfenbüttel Rudolph August) with birthday wishes \parencite{list1697}, in which he discusses the binary system and the idea of creating with $0$ as nothingness and $1$ as God \parencite{Swetz2003}.
+
+For Leibniz \parencite*{list1697} nothingness and darkness correspond to zero, and the radiant spirit of God corresponds to one. For he believed that all combinations arise out of oneness and nothingness, which is similar to saying that God made everything out of nothing and that there were only two principles: God and nothingness. He designed a medal whose leitmotif was \emph{imago creationis} and \emph{ex nihil ducendis Sufficit Unum}. One is the sun that radiates onto the shapeless earth, zero.
+
+The idea that everything is made of $0$ and $1$ is the reason why one of the creators of algorithmic information theory, Gregory Chaitin---as he writes not quite seriously---proposes to name the basic unit of information not ``bit'' but ``leibniz'' \parencites{Chaitin2004}[cf.][]{Trzesicki2006a}: \begin{quote} \small all of information theory derives from Leibniz, for he was the first to emphasize the creative combinatorial potential of the $0$ and $1$ bit, and how everything can be built up from this one elemental choice, from these two elemental possibilities. So, perhaps not entirely seriously, I should propose changing the name of the unit of information from the bit to the leibniz! \end{quote} The unit ``leibniz'' could be the unit (parcel) that Hobbes \parencite*[Chapter V. Of Reason, and Science]{Hobbes1651} wrote about: \begin{quote} \small When a man reasoneth, hee does nothing els but conceive a summe totall, from Addition of parcels. \end{quote}
+
+
+Leibniz was convinced that the world was organized according to the rules of mathematics. This thought is summarized in the sentence \parencite*[p.191] {Leibniz1677}\footnote{More on this entry in the margin of the essay \emph{Dialogus} \parencite{Leibniz1677} see \parencite{Kopania2018}.}: \begin{quote} \small \emph{Cum Deus calculat et cogitationem exercet, fit mundus}. \end{quote} Mathematics is a tool of the World Constructor, and numbers are the material the world is made of.
+
+
+Today, the idea of the world as made of mathematical objects, Mathematical Universe Hypothesis, is proclaimed by cosmologist Max Tegmark \parencite*{Tegmark2008,Tegmark2014}. Mathematical objects exist in 'Platonic heaven'. According to Tegmark they are more basic to the universe than atoms and electrons.
+
+
+\section{Modern Science} 
+
+The idea of the mathematical nature of the world lays at the basis of modern natural science, and its beginning is usually associated with Galileo Galilei, who proclaimed that the book of nature is written in the language of mathematics.
+
+The shaping of the modern paradigm of science in what was then called ``natural philosophy'' was in fact a revival of the concept of Archimedes \parencite[pp.71, 77] {Heller2013}. This idea continued in the Middle Ages. For Roger Bacon (1214--1292) there are four great sciences without which others cannot be known and the meaning of things cannot be understood. And when they are known, then wisdom will be attained without difficulty and labor, not only in the teachings of man, but also in the divine ones. And the possibilities of each of these sciences  are revealed not only because of the wisdom itself, but also in relation to the above-mentioned one. In  \emph{Opus Majus} \parencite*[Pars Quarta, Distinctio Prima, Capitulum I]{Bacon2010a} Roger Bacon emphasizes that: \begin{quote} \small Of these sciences the gate and key is mathematics, which the saints discovered at the beginning of the world, as I shall show, and which has always been used by all the saints and sages more than all other sciences. Neglect of mathematics works injury to all knowledge, since he who is ignorant of it cannot know the other sciences or the things of this world. And what is worse, men who are thus ignorant are unable to perceive their own ignorance and so do not seek a remedy. \end{quote} About the place and role of experiments in \emph{De scientia experimentorum: que dicitur dignior Omnibus Partibus Philosophie Naturalis de Perspective: Et ideo notanda est maxime}, a part of \emph{Opus Tertium} \parencite*{Bacon1912}, he wrote that the strongest argument proves nothing so long as the conclusions are not verified by experience. Experimental science is the queen of sciences, and the goal of all speculation.
+
+
+Galileo justifies heliocentrism by referring to the exegesis of \emph {Bible} based on the doctrine of St. Augustine, in particular his \emph{De Genesi ad litteram}
+%PP \footnote{\url{http://www.inters.org/galilei-madame-christina-Lorraine} [02.04.2019]} 
+\parencites{galileo_galilei_letter_1615}[cf.][p.73]{Sibley2013}. In this tradition, which Galileo finds explicitly, the book of nature should be read with mathematical tools rather than those of scholastic philosophy. The Book of Nature was written in the language of mathematics, and therefore must be interpreted by mathematicians, not theologians. The book of nature as a mathematics contains truths that cannot be discussed.
+
+Galileo \parencite*[p.4]{Galileo1960} writes: \begin{quote} \small Philosophy is written in this grand book, the universe, which stands continually open to our gaze. But the book cannot be understood unless one first learns to comprehend the language and read the letters in which it is composed. It is written in the language of mathematics, and its characters are triangles, circles, and other geometric figures without which it is humanly impossible to understand a single word of it; without these, one wanders
+about in a dark labyrinth. \end{quote} Galileo recommends learning the language of mathematics because it is the language spoken by God \parencite{Wouk2010,Strogatz2019}. 
+
+Hall \parencite*[p.97]{Hall1956}  maintains that: \begin{quote} \small  Galileo's greatest fame is as an astronomer, yet in intellectual quality and weight his one treatise on mechanics almost outweighs all the rest of his writings. Although his book on cosmology became notorious, and had a more general public influence, it had no comparable effect upon the future development of scientific astronomy, for its polemics were suited only to its own age. The contradiction here is more apparent than genuine. Though formally divided between two branches, Galileo's creative activity in science was a unity, not twofold: it was a unity in laying down revised principles of procedure in science, and again in its specific exemplification of these principles, since Galileo saw that the science of motion and the just appraisal of the results of observational astronomy were the twin keys to an understanding of the universe. \end{quote}
+
+Let us add that Galileo also perceives the mathematical nature of world as its geometricality---such was the Pythagorean tradition. Only Descartes will change this by algebraizing geometry.  Descartes' most valuable contribution to the scientific revolution was the co-ordinate geometry \parencite[
+p.200]{Hall1956}.  It was only after Descartes that the thesis proclaimed in \emph{Posterior Analytics} by Aristotle was rejected that arithmetically it was impossible to prove geometric truths. After Descartes, mathematics---which was important for the development of science---became knowledge about functions and operations, not just about numbers.
+
+As a sickly child, Descartes had the privilege of getting up late. He retained this practice as an adult. The German philosopher Daniel Lipstropius took advantage of this and came up with a story of how Descartes got the idea of what we call the Cartesian coordinate system \parencite[pp.111--112] {Mazur2014}. Descartes, according to this fairy tale, had this wonderful revolutionary idea for mathematics to come across flies crawling on the ceiling in his bedroom in La Flèche in 1636. He noticed that the position of a fly could be clearly defined by its distance from the walls.
+
+Newton creates calculus because it is the language with which the book of nature is written. Also Leibniz creates calculus. As an aside, let us add that Newton accused him of plagiarism \parencite{Sonar2018}. It just so happens that Leibniz, the genius of creating symbols \parencite['The Symbol Master', cf.][pp.165--168]{Mazur2014}---having a greater understanding of the choice of language---gave his version a linguistic representation that resulted in the development of which failed with the approach proposed by Newton. Charles Babbage, the creator of the first (mechanical) programmable computer, noticing the delay of English mathematics in relation to French mathematics, undertook to translate French texts from mathematics \parencite{Trzesicki2006c}. He wrote \parencite*{Babbage1864,Babbage2008}: \begin{quote} \small Under these circumstances it was not surprising that I should perceive and be penetrated with the superior power of the notation of Leibniz.  \end{quote}
+
+For Isaac Newton and other philosophers of this period, the mathematical expression of philosophical concepts also encompassed natural human relationships: the same laws moved physical and spiritual reality. Mathematical models were indicated for human behavior. In the case of Pascal, for example, this is a famous wager: a rational person should live as if God existed. If God does not exist, that person has finite losses (some pleasure, luxury, etc.), and if he exists, he can gain infinitely much (infinite happy life in heaven) and avoid infinite losses (eternity in hell). The wager is the first example of a formal use of decision theory.
+
+Gottfried Leibniz \parencite*{list1697,Leibniz1679} mathematically models the creation and composition of the world  \parencite{Trzesicki2006c,Trzesicki2006b,Trzesicki2020a}. Following Hobbes, he preaches the concept of thinking as calculus: \emph{cogitatio est calculatio} \parencite{Leibniz1666}. All of this is consistent with the concept of God as the one who creates the world by calculating. Mathematics is a tool of the constructor of the world and numbers are the material from which the world is made. It is a God whose logic is the same as that of man.
+
+According to Johannes Kepler, angels also move planets according to a mathematical model \parencite{Donahue1993,Wolfson1962}.
+
+Later the idea of God (God of Spinoza) as a ``mathematician'' is proclaimed by Einstein \parencite[p.279]{Infeld1980}: \begin{quote} \small God does not care about our mathematical difficulties. He integrates empirically. \end{quote} This is according to Heller \parencite*[p.41]{Heller2014}: \begin{quote} \small A fundamental hypothesis, tacitly taken in the very method of modern mathematized empirical science [which] states that there is nothing in the material world that cannot be mathematically described. \end{quote}
+
+The broadening of the idea of the mathematical nature of world to other fields was proclaimed by many, e.g., Nicolas de Condorcet   wrote in \emph{Essai sur l’application de l’analyse à la probabilité des décisions rendues à la pluralité des voix} \parencite*{Condorcet1785} (Essay on the Application of Analysis to the Probability of Majority Decisions),  about the application of calculus to social and political sciences. Politics would then become rational.
+
+
+In the period before the scientific revolution, it was assumed that nature is rational, because God, its creator, is rational. After the revolution, the rationality of nature was discovered within itself. Studying the natural world is no longer getting to know God. Nature is a mechanism. Kepler wrote that \emph{caelestic machina} was not \emph{instar divini animalis, sed instar horologii} and that Galileo often spoke similarly, especially in his famous adagio \emph{universum horologium est}, the universe is a clock. Descartes thought that animals were merely ‘mechanisms’ or ‘automata’ and that as a result, they were the same type of thing as less complex machines like cuckoo clocks or watches.
+
+God is conceived as an engineer. He would be a bad engineer, and he is not if he constantly engages in the operation of this mechanism. Ultimately, it becomes redundant. Pierre Simon de Laplace introduced Napoleon to \emph{Systeme du Monde}. He asked him, ``Have you written a huge book on the world system without any mention of the Creator of the universe?'' Laplace replied: Sir, I didn't need any such hypothesis. (``\textit{Je n'avais pas besoin de cette hypoth{\'e}se-l{\'a}}.'') Napoleon told Joseph-Louis Lagrange about it, who exclaimed, ``Ah! c'est une belle hypoth{\^e}se; \c{c}a explique beaucoup de choses'' \parencite[pp.249--250]{Morgan1872}.
+
+
+
+\section{Idea of algorithm} 
+
+The idea of algorithm permeates all sciences, and the beauty of the algorithmic approach correlates with ease of understanding.
+
+Various algorithms were used even before our era. Babylonian mathematicians as early as around 2500 B.C.E., and Egyptian mathematicians around 1500 B.C.E. they calculated the quotient algorithmically. Greek mathematicians used Eratosthenes' sieve to find prime numbers and the Euclid's algorithm to find the greatest common divisor. In 9\textsuperscript{th} century Arabia, cryptographic algorithms were used for decryption.
+
+
+The name ``algorithm'' derives from the name of born in present-day Uzbekistan the Persian mathematician  Abu Abdullah Muhammad ibn Musa al-Khwarizmi,  or rather his Latinized version of ``al-Khwarizmi'' \parencite[p.1]{Knuth1997}. The Latin ``algorithmus'' is a combination of ``algorism'' and the Greek ``arithm{\'o}s'' (number) \parencite[p.14]{Marciszewski1981}. ``Algorithmus'' (algorismus) meant performing arithmetic operations on numbers written in Arabic numerals, as opposed to performing these operations on numbers written in Roman numerals.
+
+
+Robert of Chester, who was the first translator into Latin of the now-lost book al-Khwarizmi \parencite[p.411]{Menninger1969}, his translation---found in the 19\textsuperscript{th} century---begins with the words: \begin{quote} \small \emph {Dixit Algoritmi: laudes deo rectori nostro atque defensori dicmus dignas.} \end{quote} Around 1143 \parencite[p.411]{Menninger1958} an abstract was made of this work today known as \emph{Salem Codex}  \parencite{Cantor1865}. At the beginning we read: \begin{quote} \small \emph {Incipit liber algorizmi: omnis sapientia sive scientia a domine Deo; sicut scriptum est: Hoc quod continent omnia scientiam habet, et iterum: Omnia in mensura et pondere et numero constituisti.} \end{quote} The grammatical form used proves that the author was not aware that it was a surname \parencite[p.14, footnote 1]{Cantor1865}. In this text, the name ``algorizmi'' was for the first time---in the preserved literature---used to mark a procedure: \begin{quote} \small Der Gebrauch des Nominativus \emph{algorizmus} beweist, dass das Bewusstsein, dass \emph{Algorizmus} der Name eines Mannes sei, bei dem Verfasser der Abhandlung schon verloren gegangen war. Er hielt offenbar dieses Wort f{\"u}r den Namen der Rechenkunst selbst. \smallskip \end{quote}
+
+I wonder if the author of \emph{The Code of Salem} refers to the all-embracing knowledge of God to make it sublime, because that was the custom, or if he has any sense of the role and place of algorithms in the work of creation. If the latter, then it can be indicated as the one who anticipated the basic idea of information philosophy, that is, that algorithms guide the events of the world.
+
+
+In a Latin poem written for didactic purposes and attributed to Alexander de Villa Dei (Alexander de Villedieu) \emph{Carmen de Algorismo} or \emph{Algorismus metricus} \parencite*[printed edition][p.73]{alexander-villedieu_carmen_1839}
+%PP \footnote{\url{https://upload.wikimedia.org/wikipedia/commons/3/35/Carmen_de_Algorismo.pdf} [10/13/2020]} 
+we read: {\small \begin{verse}
+Hinc incipit algorismus. \\
+Haec algorismus ars praesens dicitur in qua \\
+Talibus Indorum fruimur bis quinque figuris \\
+$ 0 \ 9 \ 8 \ 7 \ 6 \ 5 \ 4 \ 3 \ 2 \ 1 $, \\
+
+\smallskip
+\end{verse}}
+
+Algorithms are related to the way information is encoded. In other words, a change in the coding method may involve a change in the algorithm. It may be that this change is radical---as one might suppose---as it is in the case of physical algorithms that process biological code. Let us add after Marciszewski \parencite*[p.199--200]{MarciszewskiStacewicz2011} that by physical algorithms we understand algorithms that control information processing that takes place in physical reality---those that process information that makes up the world---unlike symbolic algorithms that we write and use whose computers process information encoded by us. Natural algorithms perform natural computing. Cognitive calculations, the ones we do, are carried out with the help of symbolic algorithms.
+
+
+Algorithms should not only---which is obvious---be correct, that is, give a true output, but also, as Donald Knuth writes \parencite*[p.7]{Knuth1997}: \begin{quote} \small we want good algorithms in some loosely defined aesthetic sense. One criterion [\dots] is the length of time taken to perform the algorithm [\dots] Other criteria are adaptability of the algorithm to computers, its simplicity and elegance, etc. \end{quote}
+
+
+Gregory Chaitin \parencite*[p.27] {Chaitin2005} specifies the concept of elegance in the program: \begin{quote} \small a program is `elegant', by which I mean that it's the smallest possible program for producing the output that it does. \end{quote} At the same time, he adds that: \begin{quote} \small I'll show you can't prove that a program is `elegant'---such a proof would solve the Halting problem. \end{quote}
+
+The beauty of natural algorithms and their accessibility to the human mind is inherited by symbolic algorithms.
+
+
+The definition of  algorithm is the work of 20\textsuperscript{th} century mathematicians and logicians. The need for such a definition emerged in connection with Hilbert's program, who postulated the creation of mathematics by formal transformations of the symbolic representation of mathematical knowledge. These transformations were to be such that there was no dispute as to their correct implementation. Moreover, as is clear, they were to lead from true mathematical sentences to true mathematical propositions, that is, in this way, a possible contradiction was to be ruled out if the original data were not contradictory. Belonging a sentence to a set of statements was to be formally resolved. Such an approach required the definition of the notion of a formal method that would be a tool for the implementation of such an undertaking. Among the proposals---which turned out to be equivalent---the concept developed by Alan Turing, known today as the Turing machine, was particularly appreciated. An algorithm is a procedure that is executable with a Turing machine.
+
+Although the concept of an algorithm defined in this way has been successful, it does not mean that---including Turing \parencite*{Turing1950}---have ceased to consider modifying the concept of an algorithm.
+
+Let us add that the word ``computer'' was still in the 19\textsuperscript{th} century, and even in 1936---when Turing published \emph{On Computable Numbers, with an Application to the {E}ntscheidungsproblem} \parencite*{Turing1936}---used to indicate an official who was doing cumbersome numerical calculations \parencite[p.446]{CopelandSprevakShagrir2017}. Thus understood, ``computer'' would denote a reckoner, in Polish: rachmistrz. Polish texts in which ``computer'' is translated into ``komputer'' are devoid of any associations present in English texts. In particular, the association of ``komputer'' with ``rachmistrz'' is important for the correct understanding of the  Turing texts.
+
+
+
+\section{Reality and information} 
+Information is the content of our knowledge.\footnote{Stacewicz \parencite*[\S 1. Różne wymiary informacji (Different dimensions of information)]{MarciszewskiStacewicz2011} excellently discusses the concept of information and its relationship with knowledge.}
+According to Luciano Floridi \parencite*{Floridi2008}, the pioneer of the philosophy of information, reality in itself is not a source but a resource for knowledge.  Stehphen Wolfram \parencite*[p.389]{Wolfram2002} states: \begin{quote} \small [M]atter is merely our way of representing to ourselves things that are in fact some pattern of information, but we can also say that matter is the primary thing and that information is our representation of that. It makes little difference, I don’t think there’s a big distinction---if one is right that there’s an ultimate model for the representation of universe in terms of computation. \end{quote} The retrieved information must be represented somehow. Representation enables it to be stored, communicated and processed. Each piece of information may be zero-one encoded. The way of representation is subordinated to the purpose and what it is supposed to serve. As John Wheeler \parencite*{Wheeler1989} puts it: \begin{quote} \small every physical quantity, every it, derives its ultimate significance from bits, binary yes-or-no indications. \end{quote} This idea can be summed up in short: it from bit, where ``it'' is what exists and ``bit'' refers to information.
+
+Konrad Zuse \parencite*[p.5]{Zuse2012a} developing the concept of digitized spatial relations, the idea of understanding the universe as a computer, assigns an important role to the concept of information: \begin{quote} \small In current expanded usage, the term ``compute'' is identical with ``information processing.'' By analogy, the terms ``computer'' and ``information-processing machine'' may be taken as identical. \end{quote} Zuse was the first to suggest that the physical states of the universe are computed by the universe itself. He pointed to cellular automata. The concept of cellular automata was developed by John von Neumann in connection with his search for similarities between computers and the central nervous system \parencite{vonNeumann1951,vonNeumann1958,vonNeumann2012, Neumann1966,Shannon1958}.
+
+The information can be processed algorithmically. Aristotle, creating a syllogistic, constructs what  today is recognized as a formal information processing system. This idea is developed in formal logic.
+
+
+
+Usually, Gottfried Leibniz is mentioned as the one who emphasized and associated the development of knowledge with the applications of computational information processing.
+
+If thinking is a calculation, and the world is made of numbers, we will arrive at all the truth that we can arrive at by calculating. Thus \parencite[p.200]{Leibniz1890}\footnote{Similar statements can be found in other texts of the cited volume, for example on pages: 26, 64-65, 125.}: \begin{quote} \small \emph{Quo facto, quando orientur controversiae, non magis disputatione opus erit inter duos philosophos, quam inter duos Computistas. Sufficiet enim calamos in manus sumere sedereque ad abacos, et sibi mutuo (accito si placet amico) dicere: \ c a l c u l e m u s.}
+
+\smallskip \end{quote}
+
+The ontological thesis about the world as created by $1$ with $0$ has opened up new perspectives for combining the concept of information with metaphysics. In praising his binary arithmetic, Leibniz \parencite*{Leibniz1990} said: \begin{quote} \small \emph{tamen ubi Arithmeticam meam Binariam excogitavi, antequam Fohianorum characterum in mentem venirent, pulcherrimam in ea latereis judicavi ex nuhinem origin reisavi potentiam summae Unitatis, seu Dei.}
+
+\end{quote} This idea fascinated Leibniz so much that he passed it on to Father Grimaldi, a mathematician at the court of the Emperor of China, in the hope that with it he would convert the Emperor and with him to christianize of all China \parencite{list1697}.
+
+Calculating is an activity in which a machine can replace a human being. In 1685, when discussing the value for astronomers of a calculating machine he invented in 1673, more efficient than Pascal and performing all basic arithmetic operations, Leibniz \parencite*[p.181]{Leibniz1685} wrote that \parencite[Ch. I: Leibniz's Dream]{Davis2001}: \begin{quote} \small For it is unworthy of excellent men to lose hours like slaves in the labor of calculation which could safely be relegated to anyone else if the machine were used. \end{quote}
+
+Charles Babbage, when he and his friend were preparing math tables, noticing a lot of errors, was frustrated and shouted \parencite{Swade2002}: \begin{quote} \small I wish to God these calculations had been executed by steam! \end{quote} Konrad Zuse in an interview with Uta Merzbach in 1978 said that when he had to do tedious engineering calculations, the think\footnote{Konrad Zuse interviewed by Uta Merzbach in 1968 (Computer Oral History Collection, Archives Center, National Museum of American History, Washington DC).}: \begin{quote} \small It's beneath a man. That should be accomplished with machines. \end{quote} motivated him to understand the work of building a computer \parencite[p.449]{CopelandSprevakShagrir2017}.
+
+This pragmatic argument with the above-mentioned metaphysical arguments inspired computer scientists and motivate their aims   towards creating of artificial intelligence.
+If all truth has a numerical representation, and thinking is represented by numerical operations, all of which can be done by a calculating machine.
+
+The idea of mechanical acquisition of knowledge, \emph{ars combinatoria}, having ancient roots, and in Europe propagated and developed by Lullists, i.e. those who referred to the concept of Raymondus Lullus \parencite{Trzesicki2020,Trzesicki2020a}, had to be popular in the 17th century, if we also find literary references to it. Jonathan Swift, an Irishman, twenty-one years younger than Leibniz, in 1726 in \emph{Gulliver's Travels} \parencite*{Swift1892} literally illustrates this idea: \begin{quote} \small The first professor I saw, was in a very large room, with forty pupils about him. After salutation, observing me to look earnestly upon a frame, which took up the greatest part of both the length and breadth of the room, he said, ``Perhaps I might wonder to see him employed in a project for improving speculative knowledge, by practical and mechanical operations. But the world would soon be sensible of its usefulness; and he flattered himself, that a more noble, exalted thought never sprang in any other man's head. Every one knew how laborious the usual method is of attaining to arts and sciences; whereas, by his contrivance, the most ignorant person, at a reasonable charge, and with a little bodily labor, might write books in philosophy, poetry, politics, laws, mathematics, and theology, without the least assistance from genius or study.'' \end{quote}
+
+
+\section{The concept of a paradigm and its implementations} 
+The term ``paradigm'' is derived from Greek: \foreignlanguage{greek}{παράδειγμα} (parádeigma) which translates to ``example'', ``pattern'', ``template'' or ``explanation model'', ``seeing the world'', ``worldview''. The term ``paradigm'' was popularized by Thomas Kuhn in the book \emph{The Structure of Scientific Revolutions} \parencite*{Kuhn1962,Kuhn1974}.\footnote{Kuhn's idea of paradigm has been the subject of discussion, criticism and modifications.}
+ However, the term was already used by Plato in \emph{Timaeus} to designate a model, the pattern that Demiurge used to create the cosmos.
+
+
+The paradigm includes philosophical and methodological assumptions commonly and permanently adopted by those who practice science at some stage of its development. Knowledge is divided into paradigmatic, that is, scientific, and pre-paradigmatic, that is, pre-scientific.
+
+A paradigm is a pattern for doing science at some stage of its development. The new pattern, the new paradigm, dismisses as (already) unscientific some of the problems of the old science, and gives new meaning to those that remain in the new science. Moreover, importantly, it solves problems that science could not cope with in the previous version of the paradigm and sets new questions.
+
+Galileo proclaimed---which led to the designation of a paradigm of science different from the Aristotelian one---that the book of nature is written in the language of mathematics, and therefore this language is appropriate for knowing and understanding it. Mathematical natural science is practiced according to the Galileo paradigm.
+
+Note that in Galileo's time the state of mathematical knowledge was far from what it is today. The mathematics of Galileo's day are different from that of science today. The development of mathematics was coupled with the progress of natural science. For example, Newton creates calculus for the sake of his ``natural philosophy''.
+
+Creating science according to the Galileo paradigm not only resulted in a deeper understanding of the natural world, but also brought fruit in the form of technology, which led to the development of industry, as well as changes in social relations \parencite[p.141--148]{MarciszewskiStacewicz2011}.
+
+
+The Turing paradigm will be understand as a paradigm that assumes that the book of natural reality is written in some universal programming language  and that this language is the proper language of knowledge about both natural phenomena and about any other cognitively available to man in the natural order. The paradigm is build on the legacy of Turing's computationalism, the view that nature physically computes its own time development. The idea of such a new paradigm was stated by Konrad Zuse. In his autobiography we read \parencite[p.63--64]{Zuse2012a}: \begin{quote} \small In the final analysis, the concept of the computing universe requires a rethinking of ideas, for which physicists are not yet prepared. Yet it is clear that earlier concepts have reached the limits of their possibilities; but no one dares to switch to a fundamentally new track. Yet, with quantization, the preliminary steps towards a digitalization of physics have already been taken; but only a few physicists have attempted to think along the lines of these new categories of computer science. [\dots] This was illustrated quite clearly during the conference on the Physics of Computation, held May 6--8, 1981 [at MIT]. What was typical at this conference was that, although the relationship between physics and computer science, and/or computer hardware, was examined in detail, the questions of the physical possibilities and limits of computer hardware still dominated the discussions. The
+deeper question, to what extent processes in physics can be explained as computer processes, was dealt with only marginally at this otherwise very advanced conference. \end{quote}
+
+
+The Turing paradigm is not in opposition to the Galileo paradigm, but rather clarifies and modifies it. However, it has paradigm-specific consequences, overruling certain problems primarily in the areas of biology, psychology, and sociology, and opens up perspectives for research that---speaking freely--- was not visible or not so visible from the perspective of the Galileo paradigm, such as the issue of mind, social and economic life \parencite[chapter 20]{MarciszewskiStacewicz2011}.
+
+
+Gaston Bachelard \parencite*{Bachelard2002}  introduced the concepts of epistemological obstacle and epistemological break (\textit{obstacle épistémologique} and \textit{rupture épistémologique}). Science does not progress uniformly linearly. An epistemological break---the term popularized by Louis Althusser---occurs when the integration of the old theory into the new paradigm takes place.
+
+Darwin's evolutionary paradigm appears to be incompatible with the Galilean paradigm, while composing and complementing each other with the Turing paradigm. Computing is more than a language of nature as computation produces real time physical behaviors. The Turing paradigm covers not only natural science, but everything that has traditionally been called natural philosophy.  It enables comprehensive research of self-organizing adaptive systems, regardless of their type (physical, biological, social) \parencite{Dodig2013,Dodig2022}.
+
+
+
+\section{The world created by algorithms} 
+
+The concept of algorithm is fundamental to the Turing paradigm.\footnote{For this reason the Turing paradigm may be referred as ``algorithmic paradigm'' or as ``computer science paradigm''.} This does not mean that the concept is ultimately defined and closed to changes and modifications. Like the mathematics of the Galileo paradigm, it is alive and coupled with the development of research. Marciszewski writes \parencite[p.164]{MarciszewskiStacewicz2011} that the intellectual intuition and ingenuity of the scientist are what enable the emergence of new algorithms that will strengthen the computer science system so much that problems in the previous the undecidable phase will become possible to be resolved in an algorithmic manner. In the new system, new undecidable problems will arise, but there is again a chance to overcome difficulties thanks to creative intuition. It turns out that the process of learning about the mathematical world with the use of machines is never closed in the sense of having final results, but is never closed in the sense of the impossibility of further development. It is possible to develop endlessly.
+
+Turing not only gave a definition of an algorithm, a Turing machine, but also indicated new areas of adapting the concept of an algorithm to research needs.
+
+Turing---at least among those with a background  in algorithmic science---was the first to embrace the idea of what we call Turing paradigm.
+
+\emph{Computing Machinery and Intelligence} \parencite*{Turing1950} can still be a source of inspiration in creating and developing the algorithmic  paradigm. Alan Turing, ending his considerations in \emph{Computing Machinery and Intelligence} \parencite*[p.64]{Turing1950} notices the inconvenience of a systematic solution method and writes: \begin{quote} \small We may hope that machines will eventually compete with men in all purely intellectual fields. But which are the best ones to start with? Even this is a difficult decision. Many people think that a very abstract activity, like the playing of chess, would be best. It can also be maintained that it is best to provide the machine with the best sense organs that money can buy, and then teach it to understand and speak English. This process could follow the normal teaching of a child. Things would be pointed out and named, etc. Again I do not know what the right answer is, but I think both approaches should be tried. \end{quote}
+
+In this heroic phase of the history of computer science, as Marciszewski \parencite*[p.165]{MarciszewskiStacewicz2011} claims---in addition to Turing, an important contribution is made by John von Neumann, who laid the foundations for the algorithmic  paradigm. Von Neumann went further---albeit in the same way as Turing---in postulating an understanding of the algorithm. In his unfinished book, \emph{The Computer and the Brain} \parencite*{vonNeumann1958}, written before his death, he examines algorithms whose carrier would be a living protein.
+
+Considering the possibilities of artificial intelligence, which could be displayed by a machine built according to the rules and principles of the mechanistic paradigm, lead to the conclusion that as such it will not be equal to the intelligence displayed by living organisms \parencite{Trzesicki2006slgr}.
+
+
+ Konrad Zuse\footnote{\url{http://www.konrad-zuse.de}}  also belongs to this heroic phase of history. He was a pioneer of computer science, although his name is less widely known. Zuse built the first fully programmable $Z3$ computer in the 1940s. The \textit{Plankalk{\"u}l} programming language was ahead of what others came later. Let us add that the scale and value of Zuse's technical achievement is under discussion \parencite[p.448]{CopelandSprevakShagrir2017}.
+
+There are many parallels between Zuse's and Turing's interests \parencite[p.58]{Zuse2012a}. Though Zuse and Turing never met but they became acquainted with each other’s
+work \parencite[p.60]{German2012}.
+
+
+ Zuse in \emph{Rechnender Raum} \parencite*{Zuse1967} is the first to talk about the universe as a computer network. He does not announce that he has a complete theory of everything in the form of some algorithm for counting the universe, but in this text he is the first to clearly formulate such an idea. He published the results of his further reflections in \emph{Rechnender Raum} \parencite*{Zuse1969} translated as \emph{Nature as Computation} \parencite* {Zuse2012}. In \emph {Der Computer} \parencite* {Zuse2010} he mentions: 
+ \begin{quote} \small 
+%%PP Es geschah bei dem Gedanken der Kausalit{\"a}t, dass mir pl{\"o}tzlich der Gedanke auftauchte, den Kosmos als eine gigantische Rechenmaschine aufzufassen. Ich dachte dabei an die Relaisrechner: Relaisrechner enthalten Relaisketten. St{\"o}{\ss}t man ein Relais an, so pflanzt sich dieser Impuls durch die ganze Kette fort. So m{\"u}{\ss}te sich auch ein Lichtquant fortpflanzen, ging es mir durch den Kopf. Der Gedanke setzte sich fest; ich habe ihn im Laufe der Jahre zur Idee des ``Rechnenden Raumes'' ausgebaut. Es sollte freilich drei{\ss}ig Jahre dauern, ehe mir eine erste konkrete Formulierung der Idee gelang.    
+Es geschah bei den Betrachtungen {\"u}ber die Kausalit{\"a}t, da{\ss} mir pl{\"o}tzlich der Gedanke auftauchte, den Kosmos als eine gigantische Rechenmaschine aufzufassen. Ich dachte dabei an die Relaisrechner: Relaisrechner enthalten Relaisketten. St{\"o}{\ss}t man ein Relais an, so pflanzt sich dieser Impuls durch die ganze Kette fort. So m{\"u}{\ss}te sich auch ein Lichtquant fortpflanzen, ging es mir durch den Kopf. Der Gedanke setzte sich fest; ich habe ihn im Laufe der Jahre zur Idee des ``Rechnenden Raumes'' ausgebaut. Es sollte freilich drei{\ss}ig Jahre dauern, ehe mir eine erste konkrete Formulierung der Idee gelang.
+ \end{quote} 
+ It was only in the third millennium that the idea of the world as a computer began to attract more attention. Among others, in \emph{Scientific American} and \emph{Spectrum der Wissenschaft} texts such as ``Is the universe a Big Computer?'', ``Is the Universe a Computer?'' are published. In the Autumn of 2006 the Technische Universit{\"a}t Berlin, where Horst Zuse, the son of Konrad Zuse then was a professor, organized a conference \emph{Ist das Universum ein Computer?} (Is the Universe a Computer?) \parencite[p.61]{German2012}.
+
+Zuse, ending with \emph{Rechnender Raum} \parencite*[p.344]{Zuse1967}, \parencite*[p.56]{Zuse2012a} lists the paradigmatic differences between classical mechanics, quantum mechanics and his concept of Rechnender Raum:
+
+
+
+
+\begin{center}\footnotesize \begin{tabular}{|l|l|l|l|}
+  \hline \
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+   \bf{lp.}& \bf{Classical physics } &  \bf{Quantum mechanics} &  \bf{Calculating space} \\
+  \hline\hline
+    1.& Point mechanics  & Wave mechanics  & Automaton theory  \\
+     &   & & Counter algebra  \\ \hline\
+ 2.& Particles  & Wave-particle  & Counter state,  \\
+ & & & digital particle \\ \hline\
+  3.& Analog & Hybrid & Digital \\ \hline\
+  4.& Analysis & Differential equations  & Difference equations  \\
+  &&& and logical operations \\ \hline\
+  5.& All values & A number of values & All values have \\
+  &  continuous &  quantized & only discrete values \\  \hline\
+  6.& No limiting  values & With the exception   & Minimum and maximum \\
+  && of the speed of light  & values for every  \\
+  && no limiting values & possible magnitude \\ \hline\
+7.&  Infinitely accurate  & Probability relation   & Limits on   \\
+&&& calculation accuracy \\ \hline\
+8.&  Causality in both & Only static causality,  & Causality only in the \\
+ & time directions &   division into probabilities  &  positive time direction  \\
+ &&  & introduction of probability \\
+  & &  & terms possible, \\
+  & & &  but not necessary \\ \hline\
+ 9.& & Classical mechanics & Are the limits of  probability \\
+  & &  is statistically  &  of quantum physics  \\
+  &  & approximated &  explainable with determinate\\
+  & & &  space structures?\\
+   \hline\
+ 10.& & Based on formulas & Based on counters \\
+  \hline
+\end{tabular}\end{center}
+
+
+While Konrad Zuse's concept of the world as a great computer is debatable \parencite[paragraphs: ``Zuse thesis'', and ``Examining Zuse's thesis'']{CopelandSprevakShagrir2017}, the paradigm differences are interesting from the point of view of information philosophy.
+
+Alan Turing did not limit his thinking to computer science issues. He wasn't only looking for knowledge about the mind. His research also covered the natural world. Not without reason he can be qualified as the philosopher of nature \parencite{Hodges1997}. An example of research according to the paradigm, which we refer to here as the Turing paradigm, is the research, the results of which are included in \emph{The Chemical Basis of Morphogenesis} \parencite*{Turing1952a}.
+
+According to mechanicism, everything that is and is happening in nature can be explained by the concepts and laws of mechanics, possibly quantum mechanics. According to information technology, everything that is the subject of scientific knowledge can be explained as algorithmic information processing, analogous to the operation of a Turing machine and its modifications and generalizations, i.e. with the help of the concepts and laws of algorithmics. Computing in the universe, natural computing, would be performed on many different levels of the organization: quantum, biological, spatial, etc. Some computations would be discrete, some continuous \parencite{Lesne2007}.
+
+The difference between the Galilean paradigm and the Turing paradigm, can be shown figuratively: in the concept of science in the Galileo paradigm, the world is the work of a Mechanical Engineer, and in the concept of science in the Turing paradigm, the world is the work of a Programmer. If \emph{Deus ex machina} can be associated with the Galileo paradigm, then with the Turing paradigm we would associate the phrase: \emph{Deus ex AI}.
+
+Accurately, taking into account the historical context, the Turing paradigm can be characterized in the words of Marciszewski \parencite[p.153]{MarciszewskiStacewicz2011}, who in place of Leibniz's statement: \emph{cum Deus calculat et cogitationem exercet, fit mundus} puts: \emph{cum mundus calculat, fit mundus}, when the world counts, the world becomes. Or perhaps, keeping the analogy---bearing in mind the translation ``\emph{cum Deus calculat et cogitationem exercet, fit mundus}'' as ``when God counts and incorporates his thoughts into deeds, the world arises''---say: \emph{cum mundus calculat et algorithmum exercet, fit mundus}? ``\emph{Cum mundus calculat et algorithmum exercet, fit mundus}'', translating as ``when the world calculates and executes algorithms, the world becomes''. The world of Galileo has been calculated, and the world of Turing on the basis of its current state calculates its future state \parencite[p.13]{Chaitin2007a}.
+
+In the discussion, Marciszewski asks whether the phrases ``\emph{calculat}'' and ``\emph{algorithmum exercet}'' are synonymous in the Turing paradigm, or at least equal in scope. If so, the ratio between them would have to be expressed not with ``\emph{et}'' but (e.g.) ``\emph{id est}''. And he ponders what Leibniz means when he adds ``\emph{et cogitationes exercet}'' after ``\emph{calculat}''. Did he not think that God's thinking is equated with counting? Then what would this add-on be for? Let us add that the last problem posed by Marciszewski is the subject of many considerations, and Louis Couturat \parencite*{Couturat1901} as the motto \emph{La logique de {L}eibniz}, his fundamental text on Leibniz's logic, has just chosen a shortened form: \emph{cum Deus calculat \dots fit mundus}. If we were to stick to the abbreviated version of Leibniz's thought, then ``cum mundus algorithmum exercet, fit mundus'' would directly express the idea of information philosophy.
+
+In the world of Galileo, there is an eternal movement defined by the laws of mechanics. The world itself remains eternal and unchanging (steady-state model). The world, however, is not eternal: it has a beginning and will have an end. It begun with the Big Bang and will terminate as Nothing, as the sum of positive and negative energies that are equal one another. The world is not immutable: it evolves. Darwin showed the evolution of the living world. Modern physics states historicity, the evolution of the material world. History teaches about the evolution of the social world.
+
+The laws of mechanics say that the wheels, cogs, and other parts of the machine move, not that the machine itself changes. It's just immersed in the space-time world. The laws of algorithmics speak of processing not only parts, components of the world, but also (the whole) world.
+
+
+\section{The Turing paradigm in science} Let us discuss some scientific questions that are considered differently in the Turing paradigm and in the Galileo paradigm.
+
+
+
+\subsection{Is the Turing paradigm fruitful?} Does changing the language of mathematics to the language of algorithmics lead to new questions and make it possible to find answers to questions that are not answered in the Galileo paradigm?
+
+In the case of the Galileo paradigm, the natural question is who is calculating. In the case of the Turing paradigm, the answer to the question of what processes information that makes up the world is simple: the world. An algorithm is part of the world just as data and programs are part of a computer, and just as data and programs are both encoded. Let us repeat the sentence which expresses this: \begin{quote} \small \emph{cum mundus calculat et algorithmum exercet, fit mundus.} \end{quote}
+
+The cognitive fruitfulness of the Turing paradigm may also---which sounds paradoxical---manifest itself in the statement that some natural and mental processes are not computable. Turing himself, bearing in mind the existence of incalculable real numbers, pointed to the possibility that the physics of the brain may not be computable and allowed for the possibility of incalculable physical systems \parencite[paragraph: ``The physical computability thesis'']{CopelandSprevakShagrir2017}.
+
+The practical fruitfulness of the Turing paradigm manifests itself in replacing mechanical technologies with information technologies.  There is progress in civilization, as mentioned by Alfred Whitehead \parencite*[p.61]{Whitehead1911}: \begin{quote} \small Civilization advances by extending the number of important operations which can be perform without thinking about them. Operations of thought are like cavalry charges in a battle---they are strictly limited in number, they require fresh horses, and must only be made at decisive moments. \end{quote} Civilization understood in this way will be realized through the development of artificial intelligence, which becomes a ``cavalry charge'' of the modern world.
+
+In the \emph{Conclusions} of \emph{Rechnender Raum (Calculating Space)} Zuse writes: \begin{quote} \small Even if these observations do not result in new, easily understood solutions, it may still be demonstrated that the methods suggested have opened several new perspectives which are worthy of being pursued. Incorporation of the
+concepts of information and the automaton theory in physical observations will become even more critical, as even more use is made of whole numbers, discrete states and the like. \end{quote}
+
+Stanisław Krajewski \parencite*{Krajewski2012} has multiple cognitive hopes with what we call the Turing paradigm. He maintains that  due to the advent of computers philosophy has entered a new condition: \begin{quote} \small  I wish to point out something more fundamental---a new kind of experience with which we have familiarized ourselves because of computers. Much more has happened than the obvious, though still remarkable, 'shrinking' of the globe due to the ease of communication with nearly every spot on earth; even more amazing is the fact that so much can be recreated or simulated by programming. The philosophy of mind has been deeply affected by this: indeed, a cognitive science has arisen that conceives the mind as a biological computer. To understand it, the knowledge of logic should be useful. After all, logic, which emerged as the result of an analysis of thinking and thought patterns, was used to build computers, and computers, in turn, according to their enthusiasts, are about to acquire the ability to think. If so, then, however ``artificial'' this thinking could be, it would amount to not only information processing but to understanding as well. \end{quote}
+
+
+
+\subsection{Knowing the mind} The Turing paradigm is appropriate and fruitful in the study of the mind. In this area of knowledge, the Turing paradigm is most successful, so that it even seems to be its core field of application at least in the technology and in accomplishment of artificial intelligence.
+
+The problem of the mind in the perspective of the computer science paradigm was taken up by Turing in connection with the death in 1930 of his school friend Christopher Morcom. In 1932, while visiting Morcom's family home, he expressed the conviction, inspired by Arthur S. Eddington's book \emph{The Nature of The Physical World} \parencite*{Eddington2014}, that the brain is not deterministic and that free will is based on laws of quantum physics. The result of his reflections is also a test, known today as the Turing test, which prompted the algorithmic understanding of the mind and consciousness. This test became a model for others who set themselves the goal of fully identifying the mind \parencite{Krajewski2012}. Zuse his universal language \textit{Plankalk{\"u}l} compared to an ``artificial brain'' \parencite[p.62]{German2012}. A new multidisciplinary science, cognitive science, has become a field of extensive collaboration between researchers of various aspects of the mind and brain.
+
+
+There are significant achievements in knowledge of the mind. They provide arguments for a negative answer to the title question posed by Wodzisław Duch \parencite*{duch_why_2017}
+%PP \footnote{\href{https://repozytorium.umk.pl/bitstream/handle/item/5064/SetF.2017.014\%2CDuch.pdf}{https://repozytorium.umk.pl/bitstream/handle/item/5064/SetF.2017.014\%2CDuch.pdf} [09/05/2019].}
+: ``Why Minds cannot be Received, but are Created by Brains''. Life after death is supposed to be a  myth \parencite{MartinAugustine2015}. Professor Duch asks: ``Will the son of man find faith [\dots] in information civilization?'' Takes up the topic \emph{Catholicism after cognitive science: For a new theology of mind} \parencites{duch_katolicyzm_2015}[see also][]{slomka_neuronauki_2012}.
+%PP \footnote{\url{http://teologia.deon.pl/katolicki-obraz-natury-ludzkiej-i-nauki-kognitywne/} [09/05/2019].}.
+
+Consider the theological foundations of this discussion of the spirit-body relationship. Does theology really say what is assumed in this discussion? Let us note that the assumption about the separation of soul and body is not an indispensable thesis of Catholic theology. Bocheński \parencite*{Bochenski1994} writes   that the idea that a man is composed of two pieces, a body and a soul, is a very miserable superstition.   All our science and all serious thinkers reject it vehemently. To give just one example, St. Thomas Aquinas, one of the greatest thinkers of Christianity, emphatically denies that the human soul is a ``complete substance'', that is, a piece, and defends the view that it is ``the content (form) of the body.''
+
+Does the Thomistic approach to the relationship of soul and body fit into the computer science paradigm? We do not intend to answer these and other questions here, but note that Christians preach a resurrection with body and soul, that the end of this world is not the end of the world at all. As we read in Revelation (21: 1--2): \begin{quote} \small I saw a new heaven and a new earth. The first heaven and the first earth had disappeared, and so had the sea.  Then I saw New Jerusalem, that holy city, coming down from God in heaven. It was like a bride dressed in her wedding gown and ready to meet her husband. \end{quote} The end of the world would be if all (physical) algorithms were to stop working, towards improvement because the world would be perfect.
+
+
+ Materialistic philosophy accepts the concept of the mind as an exclusively material object. Lenin's brain, who died in 1924, was dissected and tested in a dedicated institute. The aim was to obtain biological knowledge about the genius's brain, and by preserving Lenin's body, it was allowed to revive it. This approach took place in the Galileo paradigm. This biological concept of research essentially narrows down the methods in relation to the Turing paradigm.
+
+The Turing paradigm opens science to speculations about the mind that are made on the G{\"o}del theorem and its versions leading to the rejection of the mechanistic concept of mind \parencite{Krajewski2020}.
+
+
+\subsection{Prediction} 
+We practice science in order to be able to make predictions. As the philosopher of positivism August Comte put it: \begin{quote} \small \textit{Savoir pour pr{\'e}voir, pr{\'e}voir pour pouvoir.}  \end{quote} In the mechanistic paradigm, the inadequacy of prediction is explained by the scarcity of relevant data or---possibly---of insufficient knowledge about the laws governing the reality under consideration.
+
+The mechanistic paradigm is successful in the field of macro-natural phenomena: we are able to predict the movements of celestial bodies with an accuracy limited only by the errors of observation instruments. It's a bit worse at the micro level, but it works. When, however, social phenomena, e.g. economic, are predicted according to this paradigm, then even simplifying management---as was done in a centrally planned economy---by administering prices, production volumes, distribution rules and other elements affecting economic performance, you experience a lack of predictability. Why? Perhaps simply because a mechanistic model of the functioning of the economy was assumed. The troubles of the Soviet economy motivate Victor Glushkov idea of  OGAS (\foreignlanguage{russian}{ОГАС}, \foreignlanguage{russian}{Общегосударственная автоматизированная система учёта и обработки информации}, National Automated System for Accounting and Processing Information), a working in real time computer system  of central management of  economy
+\parencite{glushkov_chto_2004}.
+%PP \footnote{ \url{https://web.archive.org/web/20100426165336/http://www.situation.ru/app/j_art_333.htm} [20.07.2022]}.
+
+In order to acquire knowledge about the future state of the economy, we need to create (symbolic) algorithms that count similarly to the (real) algorithms according to which economic processes run, i.e. for the same past states, the predicted states are (almost) the same.
+
+If we manage to create accurate algorithmic models of at least some economic processes, we will not necessarily be able to predict the results of real algorithms. There can be at least three reasons for this: \begin{enumerate}
+\item the symbolic algorithm poorly simulates the algorithm of economic processes,
+\item the execution of the symbolic algorithm is slower than the real algorithm it is modeling,
+\item the data transmission system on which the symbolic algorithm operates fails.
+\end{enumerate}
+
+The world is already entwined with the web, the Internet, and although its development raises concerns about the possibility of privacy and, above all, freedom, especially in the face of manipulation, there is no sign of stopping it. Thanks to the global acquisition of up-to-date meteorological data, it becomes possible to better forecast the weather. This is not the case with the economy. Is economic life more ``capricious'' than the weather, do we still not have access to sufficient data resources or do we not have symbolic algorithms that simulate the algorithms of economic life? However, we should also take into account the fact that the states of economy  and the human behaviour are significantly interdependent and some predictions could be self-destructive. So far, the best people in the economy are those who have an intuition of management and have access to relevant data.
+
+
+
+\subsection{Machine motion and algorithmic evolution} 
+
+Breakdown, ``death'', of a machine is a defect which may be caused by imperfect construction, faulty materials or workmanship. If man, the world of nature in general, were the work of a mechanical engineer, death would indicate a lack of engineering skills.
+
+Naturalistically speaking, nature has created sophisticated structures such as organisms, living matter. The level of refinement is evidenced by the fact that man has still failed to create any form of living matter, and knowledge about life is---despite the tremendous achievements---still shallow. Every living creature is mortal, contrary to the expectations of these creatures. What has limited nature to produce individuals that are eternal? From a mechanistic perspective, we may ask what obstacles were to produce unbreakable machine/organism.
+
+Death, the end of action, in the  world of Galileo  is not possible to describe without assuming some defect, some wear and tear, or exhaustion. The issue looks differently when viewed from the perspective of the algorithmic paradigm: an algorithm that has calculate  the correct result  stops.  If the development of an organism is the implementation of an algorithm, then the dead of the organism indicates that the algorithm completed the task for which it was written. From this perspective, death appears as fulfillment, as completion. In the world driven by algorithms, evolution is an algorithm. This evolutionary algorithm causes the death of imperfect organisms to make place for a more perfect ones. Those organisms that would achieve perfection could last forever.
+
+Conceiving of organic life as an implementation of an algorithm is the leading idea of biocybernetics.
+
+
+The immemorial problem of man is the question of free will. Zuse \parencite[p.62--63]{German2012} writes: \begin{quote} \small I think the majority of researchers involved in the development of the computer have at some point in their lives, in one way or another considered the question of the relationship between human free will and causality. \end{quote} Is there any satisfactory solution to this question, following the Turing paradigm?
+
+
+How the good is the end of all our actions, as stated by Plato \emph{Gorgias}:  everything we do should be for the sake of what is good, and by Aristotle \parencite*[I.2]{Aristotle1999}: \begin{quote} \small If, then, there is some end of the things we do, which we desire for its own sake (everything else being desired for the sake of this), and if we do not choose everything for the sake of something else (for at that rate the process would go on to infinity, so that our desire would be empty and vain), clearly this must be good and the chief good. \end{quote} so also good would be the goal of algorithms.
+
+
+In Newtonian physics, time and space are a boundless immutable ``vessel'' in which physical processes take place. In the case of the Turing paradigm, time and space are properties of algorithms. Relativity of time and space can be explained as determined by the execution of algorithms.
+
+
+Following this line of thinking that evolution leads to improvement, will construction of  a computer that is more perfect than man,  a superintelligence,  {\v C}apek's robots, lead to a situation in which the algorithm of human life will terminate, because man has already fulfilled his task \parencite{Bostrom2014}, or maybe?---as Kurzweil predicts \parencite*{Kurzweil2005}: \begin{quote} \small The Singularity will allow us to transcend these limitations of our biological bodies and brains. We will gain power over our fates. Our mortality will be in our own hands. We will be able to live as long as we want (a subtly different statement from saying we will live forever). We will fully understand human thinking and will vastly extend and expand its reach. By the end of this century, the nonbiological portion of our intelligence will be trillions of trillions of times more powerful than unaided human intelligence. \end{quote}
+
+
+\subsection{The development of science} 
+
+Science is a historical endeavor. Marciszewski  describes it figuratively: Modern science is today an immeasurable ocean of knowledge, and the thought and output of Galileo, in conjunction with the pioneering work of Copernicus, is like the mouth of a river that  waters gathered earlier for two millennia \parencite[p.232]{MarciszewskiStacewicz2011}. If you ask where this current comes from, where and what are its sources, our river metaphor still holds true. It turns out that it is just like in nature. An identifiable spring is the beginning of this river, but it, in turn, has its origins in invisibly oozing streams buried in the grassland, without which our spring marked on the map would not exist.
+
+We owe the achievements of science to our predecessors. Preached by John of Salisbury, echoing Bernard of Chartres, known for his attempts to reconcile the philosophy of Plato with that of Aristotle \parencites{Fairweather1956}[III. CAP IV]{Saresberiensis1159}{Saresberiensis1955}: \begin{quote} \small \emph{nos esse quasi nanos, gigantium humeris incidentes, ut possimus plura eis et remotiora videre, non utique proprii visus acumine, aut eminentia corporis, sed quia in altum subvehimur et extollimur magnitudine gigantea.} \end{quote}
+Newton, whose \emph{Philosophi{\ae} Naturalis Principia Mathematica} \parencite*{Newton1687} opens the age of modern science, wrote to Robert Hooke \parencite*{Newton1675}: \begin{quote} \small If I have seen further, it is by standing on the shoulders of giants. \end{quote}
+
+
+No generation has solved and---as the information philosophy justifies---will solve all problems, leaving them to future generations. This was already sensed by Newton \parencite[p.643] {Westfall1983}: \begin{quote} \small To explain all nature is too difficult a task for any one man or even for any one age. Tis much better to do a little with certainty, \& leave the rest for others that come after you, than to explain all things by conjecture without making sure of any thing. \end{quote}
+
+
+Newton himself said \parencite[p.407]{Brewster1855}: \begin{quote} \small I do not know what I appear to the world; but to myself I seem to have been only like a boy playing on a seashore, and diverting myself in now and then finding a smoother pebble or a prettier shell than ordinary, whilst the great ocean of truth lay undiscovered before me. \end{quote}
+
+Creation of the science is similar to building medieval cathedrals. Everyone who participated in the construction of the cathedral had different private goals and contributed differently to its construction, without being sure whether the cathedral would eventually be completed or what it would look like in the end. Nobody was sure when the construction would end.
+
+Newton, whose bust at Trinity College has the inscription: \emph{Qui genus humanum ingenio superavit} [there is no greater intellect among humans], who formulated (Newtonian) mechanics, which seemed to be the ultimate physical theory, did not believe that science could exhaust knowledge about the world. Today, thanks to information philosophy, we know that his gut feeling was right. The science of the digital age, as Marciszewski  writes about, will be in a state of never-ending development, without exhausting all the consequences of the discovered truths \parencite{MarciszewskiStacewicz2011}.
+
+Successive generations of researchers will expand, correct and explore knowledge resources, but there will still be areas that can be talked about---repeating after Emil du Bois-Reymond, a German physiologist, the belief \emph{``ignoramus et ignorabimus''} [we do not know and know we will not], given in Leipzig at the lecture \emph{{\"U}ber die Grenzen des Naturerkennens} [On the limits of the knowledge of nature]  at the Gesellschaft Deutscher Naturforscher und {\"A}rtze \parencite{DuboisReymond1872,DuboisReymond1882}. He said that in the face of the puzzles of the material world, a nature researcher has long been used to the human reluctance to say his \emph{'Ignoramus'} (we don't know). A look at past successes leads him to an unshakable awareness that, what he does not yet know, he could at least conditionally know, and one day he may. Faced with the mystery of what matter and force are and how they are conceivable, he must decide on a more difficult truth each time: \emph{`Ignorabimus'} (we will not know): \begin{quote} \small Gegen {\"u}ber den R{\"a}tseln der K{\"o}rperwelt ist der Naturforscher l{\"a}ngst gew{\"o}hnt, mit m{\"a}nnlicher Entsagung sein `Ignoramus' auszusprechen. Im R{\"u}ckblick auf die durchlaufene siegreiche Bahn tr{\"a}gt ihn dabei das stille Bewu{\ss}tsein, da{\ss}, wo er jetzt nicht wei{\ss}, er wenigstens unter Umst{\"a}nden wissen könnte, und dereinst vielleicht wissen wird. Gegen{\"u}ber dem R{\"a}tsel aber, was Materie und Kraft seien, und wie sie zu denken verm{\"o}gen, mu{\ss} er ein f{\"u}r allemal zu dem viel schwerer abzugebenden Wahrspruch sich entschlie{\ss}en: `Ignorabimus'. \end{quote}
+
+David Hilbert \parencite*{Hilbert1900} did not agree with du Bois-Reymond's conviction, at least in mathematics. At a congress of mathematicians in Paris in 1900, he proclaimed that the inner voice says: \begin{quote} \small Da ist das Problem, suche die L{\"o}sung.  Du kannst sie durch reines Denken  finden; denn in der Mathematik gibt es kein \emph{Ignorabimus!} \end{quote}
+
+At the end of his farewell speech in Königsberg on September 8, 1930, at a meeting of the Gesellschaft Deutscher Naturforscher und {\"A}rtze, he claimed that \parencites[p.387] {Hilbert1935a}[see also][]{smith_david_2014}: \begin{quote} \small Wir m{\"u}ssen wissen, \\ Wir werden wissen.
+%PP \footnote{\url{http://math.sfsu.edu/smith/Documents/HilbertRadio/HilbertRadio.pdf} [07/12/2020].} 
+\end{quote} This belief was significant for the development of his research activities. The inscription of this content can be found on Hilbert's tombstone in the cemetery in G{\"o}ttingen.
+
+Hilbert's attempt to reject \emph{Ignorabimus!} resulted in the creation of computer science and a justification---paradoxically---rejecting Hilbert's belief in the cognitive possibilities of formal methods.
+
+
+
+
+\section{Conclusions} 
+Several comments and theses, even not completely developed and not satisfactorily justified, show that the Turing paradigm exceeds the boundaries of formal sciences. It opens up new perspectives for research in the positive sciences. It also provides an opportunity for philosophical speculation about the world as made of algorithms. However, can we  repeat after Konrad Zuse \parencite[p.65]{German2012} what he said in the middle of the 20\textsuperscript{th} century? \begin{quote}  The concept of the computing universe is still just a hypothesis; nothing has been proved. However, I am confident that this idea can help unveil the secrets of nature. \end{quote}
+
+\section{Acknowledgments}
+I would like to express my gratitude to the anonymous reviewer for his valuable comments and suggestions.
+
+%{\footnotesize  %PP
+%\theendnotes}   %PP
+
+% begin of PP added ------------
+
+%\bibliographystyle{agsm}
+%\bibliography{Trzesicki}
+\printbibliography
+
+%end of ------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% PP commented
+%\begin{thebibliography}{}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Ares%
+%, Lara%
+%, Lizcano%
+%\BCBL {}\ \BBA {} Martínez%
+%}{%
+%Ares%
+%\ \protect \BOthers {.}}{%
+%{\protect \APACyear {2018}}%
+%}]{%
+%Ares2018}
+%\APACinsertmetastar {%
+%Ares2018}%
+%\begin{APACrefauthors}%
+%Ares, J.%
+%, Lara, J\BPBI A.%
+%, Lizcano, D.%
+%\BCBL {}\ \BBA {} Martínez, M\BPBI A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2018}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Who Discovered the Binary System and Arithmetic? {D}id
+%  {L}eibniz Plagiarize {C}aramuel?} {Who discovered the binary system and
+%  arithmetic? {D}id {L}eibniz plagiarize {C}aramuel?}{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Science and Engineering Ethics}{24}{}{173--188}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.1007/s11948-017-9890-6} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Aristotle%
+%}{%
+%Aristotle%
+%}{%
+%{\protect \APACyear {1999}}%
+%}]{%
+%Aristotle1999}
+%\APACinsertmetastar {%
+%Aristotle1999}%
+%\begin{APACrefauthors}%
+%Aristotle.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1999}.
+%\newblock
+%\APACrefbtitle {Nicomachena Ethics} {Nicomachena ethics}.
+%\newblock
+%\APACaddressPublisher{Kitchener, Ontario}{Batoche Books}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://socialsciences.mcmaster.ca/econ/ugcm/3ll3/aristotle/Ethics.pdf}}.
+%\newblock
+%\APACrefnote{Translated by W. D. Ross}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Babbage%
+%}{%
+%Babbage%
+%}{%
+%{\protect \APACyear {1864}}%
+%}]{%
+%Babbage1864}
+%\APACinsertmetastar {%
+%Babbage1864}%
+%\begin{APACrefauthors}%
+%Babbage, C.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1864}.
+%\newblock
+%\APACrefbtitle {Passages from the Life of a Philosopher} {Passages from the
+%  life of a philosopher}.
+%\newblock
+%\APACaddressPublisher{London}{Longman, Green, Longman, Roberts, \& Green}.
+%\newblock
+%\APAChowpublished
+%  {\url{http://djm.cc/library/Passages_Life_of_a_Philosopher_Babbage_edited.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Babbage%
+%}{%
+%Babbage%
+%}{%
+%{\protect \APACyear {2008}}%
+%}]{%
+%Babbage2008}
+%\APACinsertmetastar {%
+%Babbage1864a}%
+%\begin{APACrefauthors}%
+%Babbage, C.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2008}.
+%\newblock
+%\APACrefbtitle {Passages from the Life of a Philosopher} {Passages from the
+%  life of a philosopher}.
+%\newblock
+%\APACaddressPublisher{}{Rough Draft Printing}.
+%\newblock
+%\APAChowpublished {\url{http://www.fourmilab.ch/babbage/lpae.html}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Bachelard%
+%}{%
+%Bachelard%
+%}{%
+%{\protect \APACyear {2002}}%
+%}]{%
+%Bachelard2002}
+%\APACinsertmetastar {%
+%Bachelard2002}%
+%\begin{APACrefauthors}%
+%Bachelard, G.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2002}.
+%\newblock
+%\APACrefbtitle {Kształtowanie się umysłu naukowego. {P}rzyczynek do
+%  psychoanalizy wiedzy obiektywnej} {Kształtowanie się umysłu naukowego.
+%  {P}rzyczynek do psychoanalizy wiedzy obiektywnej}.
+%\newblock
+%\APACaddressPublisher{Gdańsk}{Wydawnictwo słowo/obraz terytoria}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Bacon%
+%}{%
+%Bacon%
+%}{%
+%{\protect \APACyear {1912}}%
+%}]{%
+%Bacon1912}
+%\APACinsertmetastar {%
+%Bacon1912}%
+%\begin{APACrefauthors}%
+%Bacon, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1912}.
+%\newblock
+%\APACrefbtitle {Part of the {O}pus {T}ertium of {R}oger {B}acon including a
+%  fragment now printed for the first time} {Part of the {O}pus {T}ertium of
+%  {R}oger {B}acon including a fragment now printed for the first time}\
+%  (\BVOL~4; A\BPBI G.~Little, \BED{}).
+%\newblock
+%\APACaddressPublisher{Aberdeen}{The University Press}.
+%\newblock
+%\APAChowpublished
+%  {\url{http://capricorn.bc.edu/siepm/DOCUMENTS/BACON/Bacon_partofopustertium(ed.Little).pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Bacon%
+%}{%
+%Bacon%
+%}{%
+%{\protect \APACyear {2010}}%
+%}]{%
+%Bacon2010a}
+%\APACinsertmetastar {%
+%Bacon2010a}%
+%\begin{APACrefauthors}%
+%Bacon, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2010}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {MATHEMATICAL SCIENCE} {Mathematical science}.{\BBCQ}
+%\newblock
+%\BIn{} J\BPBI H.~Bridges\ (\BED), \APACrefbtitle {The Opus Majus of {R}oger
+%  {B}acon} {The opus majus of {R}oger {B}acon}\ (\BVOL~1, \BPGS\ 97--404).
+%\newblock
+%\APACaddressPublisher{Cambridge}{Cambridge University Press}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/opusmajusofroger01baco/mode/2up}}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.1017/CBO9780511709661.006} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Bocheński%
+%}{%
+%Bocheński%
+%}{%
+%{\protect \APACyear {1994}}%
+%}]{%
+%Bochenski1994}
+%\APACinsertmetastar {%
+%Bochenski1994}%
+%\begin{APACrefauthors}%
+%Bocheński, J\BPBI M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1994}.
+%\newblock
+%\APACrefbtitle {Sto zabobonów. {K}rótki filozoficzny słownik zabobonów}
+%  {Sto zabobonów. {K}rótki filozoficzny słownik zabobonów}\
+%  (\PrintOrdinal{2}\ \BEd).
+%\newblock
+%\APACaddressPublisher{Kraków}{Wydawnictwo PHILED spółka z o.o.}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Bostr{\"o}m%
+%}{%
+%Bostr{\"o}m%
+%}{%
+%{\protect \APACyear {2014}}%
+%}]{%
+%Bostrom2014}
+%\APACinsertmetastar {%
+%Bostrom2014}%
+%\begin{APACrefauthors}%
+%Bostr{\"o}m, N.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2014}.
+%\newblock
+%\APACrefbtitle {Superintelligence: {P}aths, Dangers, Strategies}
+%  {Superintelligence: {P}aths, dangers, strategies}.
+%\newblock
+%\APACaddressPublisher{Oxford}{Oxford University Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Brewster%
+%}{%
+%Brewster%
+%}{%
+%{\protect \APACyear {1855}}%
+%}]{%
+%Brewster1855}
+%\APACinsertmetastar {%
+%Brewster1855}%
+%\begin{APACrefauthors}%
+%Brewster, D\BPBI K\BPBI H.%
+%\end{APACrefauthors}%
+%\ (\BED).
+%\unskip\
+%\newblock
+%\APACrefYear{1855}.
+%\newblock
+%\APACrefbtitle {Memoirs of the Life, Writings, and Discoveries of Sir {I}saac
+%  {N}etwon} {Memoirs of the life, writings, and discoveries of sir {I}saac
+%  {N}etwon}\ (\BVOL~2).
+%\newblock
+%\APACaddressPublisher{Edinburgh, London}{Thomas Constable and Co. Hamilton,
+%  Adams, and Co.}
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/memoirslifewrit02brewgoog/page/n5/mode/2up}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Burks%
+%, Goldstine%
+%\BCBL {}\ \BBA {} von Neuman%
+%}{%
+%Burks%
+%\ \protect \BOthers {.}}{%
+%{\protect \APACyear {1987}}%
+%}]{%
+%BurksGoldstineNeumann1947}
+%\APACinsertmetastar {%
+%BurksGoldstineNeumann1947}%
+%\begin{APACrefauthors}%
+%Burks, A\BPBI W.%
+%, Goldstine, H\BPBI H.%
+%\BCBL {}\ \BBA {} von Neuman, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1987}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Preliminary Discussion on the Logical Design of an
+%  Electronic Computing Instrument} {Preliminary discussion on the logical
+%  design of an electronic computing instrument}.{\BBCQ}
+%\newblock
+%\BIn{} W.~Aspray\ \BBA {} A.~Burks\ (\BEDS), \APACrefbtitle {Papers of {J}ohn
+%  von {N}eumann on Computing and Computer Theory} {Papers of {J}ohn von
+%  {N}eumann on computing and computer theory}\ (\BVOL~12, \BPGS\ 97--142).
+%\newblock
+%\APACaddressPublisher{}{MIT Press}.
+%\newblock
+%\APAChowpublished {\url{https://archive.org/details/papersofjohnvonn00vonn}}.
+%\newblock
+%\APACrefnote{The Institute for Advanced Study, 2 September 1947}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Cantor%
+%}{%
+%Cantor%
+%}{%
+%{\protect \APACyear {1865}}%
+%}]{%
+%Cantor1865}
+%\APACinsertmetastar {%
+%Cantor1865}%
+%\begin{APACrefauthors}%
+%Cantor, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1865}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {{\"U}ber einen {C}odex des {K}losters {S}alem} {{\"U}ber
+%  einen {C}odex des {K}losters {S}alem}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Zeitschrift f{\"u}r Mathematik und
+%  Physik}{10}{}{1--16}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://archiv.ub.uni-heidelberg.de/volltextserver/12869/}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Caramuelis%
+%}{%
+%Caramuelis%
+%}{%
+%{\protect \APACyear {1670}}%
+%}]{%
+%Lobkowitz1670}
+%\APACinsertmetastar {%
+%Lobkowitz1670}%
+%\begin{APACrefauthors}%
+%Caramuelis, I.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1670}.
+%\newblock
+%\APACrefbtitle {Mathesis Biceps Vetus et Nova} {Mathesis biceps vetus et nova}.
+%\newblock
+%\APACaddressPublisher{}{Officin\^a Episcopali}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://books.google.pl/books?id=KRtetV1MJnkC&printsec=frontcover&source=gbs_book_other_versions_r&redir_esc=y#v=onepage&q&f=false}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%G.~Chaitin%
+%}{%
+%G.~Chaitin%
+%}{%
+%{\protect \APACyear {2007}}%
+%}]{%
+%Chaitin2007a}
+%\APACinsertmetastar {%
+%Chaitin2007a}%
+%\begin{APACrefauthors}%
+%Chaitin, G.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2007}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Epistemology as Information Theory: {F}rom {L}eibniz to
+%  {$\Omega$}} {Epistemology as information theory: {F}rom {L}eibniz to
+%  {$\Omega$}}.{\BBCQ}
+%\newblock
+%\BIn{} G\BPBI D.~Crnkovic\ \BBA {} S.~Stuart\ (\BEDS), \APACrefbtitle
+%  {Computation, Information, Cognition---{T}he Nexus and The Liminal}
+%  {Computation, information, cognition---{T}he nexus and the liminal}\
+%  (\BPGS\ 2--17).
+%\newblock
+%\APACaddressPublisher{Newcastle UK}{Cambridge Scholar Publishing}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%G\BPBI J.~Chaitin%
+%}{%
+%G\BPBI J.~Chaitin%
+%}{%
+%{\protect \APACyear {2004}}%
+%}]{%
+%Chaitin2004}
+%\APACinsertmetastar {%
+%Chaitin2004}%
+%\begin{APACrefauthors}%
+%Chaitin, G\BPBI J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2004}{}{}.
+%\newblock
+%\APACrefbtitle {Leibniz, Randomness \& the Halting Probability.} {Leibniz,
+%  randomness \& the halting probability.}
+%\newblock
+%\APAChowpublished
+%  {\url{http://www.cs.auckland.ac.nz/CDMTCS/chaitin/turing.html}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%G\BPBI J.~Chaitin%
+%}{%
+%G\BPBI J.~Chaitin%
+%}{%
+%{\protect \APACyear {2005}}%
+%}]{%
+%Chaitin2005}
+%\APACinsertmetastar {%
+%Chaitin2005}%
+%\begin{APACrefauthors}%
+%Chaitin, G\BPBI J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2005}.
+%\newblock
+%\APACrefbtitle {Meta Math! {T}he Quest for {O}mega} {Meta math! {T}he quest for
+%  {O}mega}.
+%\newblock
+%\APACaddressPublisher{New York}{Pantheon}.
+%\newblock
+%\APAChowpublished {\url{https://arxiv.org/pdf/math/0404335.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Cherry%
+%}{%
+%Cherry%
+%}{%
+%{\protect \APACyear {2017}}%
+%}]{%
+%Cherry2017}
+%\APACinsertmetastar {%
+%Cherry2017}%
+%\begin{APACrefauthors}%
+%Cherry, S\BPBI R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2017}.
+%\newblock
+%\APACrefbtitle {The Reason of Reason: {H}ow Reason Logic and Intelligibility
+%  Together Are Evidence for {G}od} {The reason of reason: {H}ow reason logic
+%  and intelligibility together are evidence for {G}od}\ (\PrintOrdinal{2}\
+%  \BEd).
+%\newblock
+%\APACaddressPublisher{Canterbury}{Telos Publishing}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Copeland%
+%, Bowen%
+%, Sprevak%
+%\BCBL {}\ \BBA {} Wilson%
+%}{%
+%Copeland%
+%\ \protect \BOthers {.}}{%
+%{\protect \APACyear {2016}}%
+%}]{%
+%CopelandSprevakShagrir2017}
+%\APACinsertmetastar {%
+%CopelandSprevakShagrir2017}%
+%\begin{APACrefauthors}%
+%Copeland, J.%
+%, Bowen, J.%
+%, Sprevak, M.%
+%\BCBL {}\ \BBA {} Wilson, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2016}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Is the Whole Universe a Computer?} {Is the whole
+%  universe a computer?}{\BBCQ}
+%\newblock
+%\BIn{} J.~Jack~Copeland, J.~Bowen, M.~Sprevak\BCBL {}\ \BBA {} R.~Wilson\
+%  (\BEDS), \APACrefbtitle {The {T}uring Guide: {L}ife, Work, Legacy} {The
+%  {T}uring guide: {L}ife, work, legacy}\ (\BPGS\ 445--462).
+%\newblock
+%\APACaddressPublisher{Oxford}{Oxford University Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Couturat%
+%}{%
+%Couturat%
+%}{%
+%{\protect \APACyear {1901}}%
+%}]{%
+%Couturat1901}
+%\APACinsertmetastar {%
+%Couturat1901}%
+%\begin{APACrefauthors}%
+%Couturat, L.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1901}.
+%\newblock
+%\APACrefbtitle {La logique de {L}eibniz. {D}'apr{\`e}s des documents
+%  in{\'e}dits} {La logique de {L}eibniz. {D}'apr{\`e}s des documents
+%  in{\'e}dits}.
+%\newblock
+%\APACaddressPublisher{Paris}{Felix Alcan}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/lalogiquedeleib00coutgoog/page/n10/mode/2up}}.
+%\newblock
+%\APACrefnote{Repr. Georg Olms: Hildesheim 1961, 1969}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Davis%
+%}{%
+%Davis%
+%}{%
+%{\protect \APACyear {2001}}%
+%}]{%
+%Davis2001}
+%\APACinsertmetastar {%
+%Davis2001}%
+%\begin{APACrefauthors}%
+%Davis, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2001}.
+%\newblock
+%\APACrefbtitle {Engines of Logic: {M}athematicians and the Origin of the
+%  Computer} {Engines of logic: {M}athematicians and the origin of the
+%  computer}.
+%\newblock
+%\APACaddressPublisher{New York}{W. W. Norton \& Company}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{De Morgan}%
+%}{%
+%{De Morgan}%
+%}{%
+%{\protect \APACyear {1872}}%
+%}]{%
+%Morgan1872}
+%\APACinsertmetastar {%
+%Morgan1872}%
+%\begin{APACrefauthors}%
+%{De Morgan}, A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1872}.
+%\newblock
+%\APACrefbtitle {A budget of paradoxes} {A budget of paradoxes}.
+%\newblock
+%\APACaddressPublisher{London}{Longmans, Green, and Co.}
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/budgetofparadoxe00demorich}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%de Condorcet%
+%}{%
+%de Condorcet%
+%}{%
+%{\protect \APACyear {1785}}%
+%}]{%
+%Condorcet1785}
+%\APACinsertmetastar {%
+%Condorcet1785}%
+%\begin{APACrefauthors}%
+%de Condorcet, N.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1785}.
+%\newblock
+%\APACrefbtitle {Essai sur l’application de l’analyse à la probabilité des
+%  décisions rendues à la pluralité des voix} {Essai sur l’application de
+%  l’analyse à la probabilité des décisions rendues à la pluralité des
+%  voix}.
+%\newblock
+%\APACaddressPublisher{Paris}{Imprimerie Royale}.
+%\newblock
+%\APAChowpublished {\url{https://archive.org/details/essaisurlapplica00cond}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Dodig-{C}rnkovic%
+%}{%
+%Dodig-{C}rnkovic%
+%}{%
+%{\protect \APACyear {2013}}%
+%}]{%
+%Dodig2013}
+%\APACinsertmetastar {%
+%Dodig2013}%
+%\begin{APACrefauthors}%
+%Dodig-{C}rnkovic, G.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2013}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Alan {T}uring's Legacy: {I}nfo-computational Philosophy
+%  of Nature} {Alan {T}uring's legacy: {I}nfo-computational philosophy of
+%  nature}.{\BBCQ}
+%\newblock
+%\BIn{} G.~Dodig-{C}rnkovic\ \BBA {} R.~Giovagnoli\ (\BEDS), \APACrefbtitle
+%  {Computing Nature} {Computing nature}\ (\BPGS\ 115--123).
+%\newblock
+%\APACaddressPublisher{Berlin-Heidelberg}{Springer-Verlag}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Donahue%
+%}{%
+%Donahue%
+%}{%
+%{\protect \APACyear {1993}}%
+%}]{%
+%Donahue1993}
+%\APACinsertmetastar {%
+%Donahue1993}%
+%\begin{APACrefauthors}%
+%Donahue, W\BPBI H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1993}{May-February}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Kepler's First Thoughts on Oval Orbits: {T}ext,
+%  Translation, and Commentary} {Kepler's first thoughts on oval orbits: {T}ext,
+%  translation, and commentary}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Journal for the History of
+%  Astronomy}{24}{1--2}{71--100}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.1177/002182869302400103} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{Du Bois-Reymond}%
+%}{%
+%{Du Bois-Reymond}%
+%}{%
+%{\protect \APACyear {1872}}%
+%}]{%
+%DuboisReymond1872}
+%\APACinsertmetastar {%
+%DuboisReymond1872}%
+%\begin{APACrefauthors}%
+%{Du Bois-Reymond}, E\BPBI H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1872}.
+%\newblock
+%\APACrefbtitle {Über die {G}renzen des {N}aturerkennens: {E}in {V}ortrag in
+%  der zweiten öffentlichen {S}itzung der 45. {V}ersammlung deutscher
+%  {N}aturforscher und {Ä}rzte zu {L}eipzig am 14. {A}ugust 1872} {Über die
+%  {G}renzen des {N}aturerkennens: {E}in {V}ortrag in der zweiten öffentlichen
+%  {S}itzung der 45. {V}ersammlung deutscher {N}aturforscher und {Ä}rzte zu
+%  {L}eipzig am 14. {A}ugust 1872}.
+%\newblock
+%\APACaddressPublisher{Leipzig}{Von Veit \& Co.}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{Du Bois-Reymond}%
+%}{%
+%{Du Bois-Reymond}%
+%}{%
+%{\protect \APACyear {1882}}%
+%}]{%
+%DuboisReymond1882}
+%\APACinsertmetastar {%
+%DuboisReymond1882}%
+%\begin{APACrefauthors}%
+%{Du Bois-Reymond}, E\BPBI H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1882}.
+%\newblock
+%\APACrefbtitle {Über die {G}renzen des {N}aturerkennens. {D}ie {S}ieben
+%  {W}eltr{\"a}thsel} {Über die {G}renzen des {N}aturerkennens. {D}ie {S}ieben
+%  {W}eltr{\"a}thsel}.
+%\newblock
+%\APACaddressPublisher{Leipzig}{Von Veit \& Co.}
+%\newblock
+%\APAChowpublished
+%  {\url{https://wellcomelibrary.org/item/b28103555#?c=0&m=0&s=0&cv=8&z=-1.0775%2C0.2077%2C2.7482%2C1.7807}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Eddington%
+%}{%
+%Eddington%
+%}{%
+%{\protect \APACyear {2014}}%
+%}]{%
+%Eddington2014}
+%\APACinsertmetastar {%
+%Eddington2014}%
+%\begin{APACrefauthors}%
+%Eddington, A\BPBI S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2014}.
+%\newblock
+%\APACrefbtitle {The Nature of the Physical World: {G}ifford Lectures of 1927}
+%  {The nature of the physical world: {G}ifford lectures of 1927}.
+%\newblock
+%\APACaddressPublisher{Cambridge}{Cambridge Scholars Publishing}.
+%\newblock
+%\APACrefnote{Annotated and Introduced by H. G. Callaway}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Fairweather%
+%}{%
+%Fairweather%
+%}{%
+%{\protect \APACyear {1956}}%
+%}]{%
+%Fairweather1956}
+%\APACinsertmetastar {%
+%Fairweather1956}%
+%\begin{APACrefauthors}%
+%Fairweather, E\BPBI R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1956}.
+%\newblock
+%\APACrefbtitle {A Scholastic Miscellany: {A}nselm to {O}ckham} {A scholastic
+%  miscellany: {A}nselm to {O}ckham}.
+%\newblock
+%\APACaddressPublisher{Philadelphia}{Westminster Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Floridi%
+%}{%
+%Floridi%
+%}{%
+%{\protect \APACyear {2002}}%
+%}]{%
+%Floridi2002}
+%\APACinsertmetastar {%
+%Floridi2002}%
+%\begin{APACrefauthors}%
+%Floridi, L.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2002}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {What Is the Philosophy of Information?} {What is the
+%  philosophy of information?}{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Metaphilosophy}{33}{}{1--23}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://www.researchgate.net/publication/225070243_What_Is_the_Philosophy_of_Information}}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.1111/1467-9973.00221} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Floridi%
+%}{%
+%Floridi%
+%}{%
+%{\protect \APACyear {2008}}%
+%}]{%
+%Floridi2008}
+%\APACinsertmetastar {%
+%Floridi2008}%
+%\begin{APACrefauthors}%
+%Floridi, L.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2008}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {A defense of informational structural realism} {A
+%  defense of informational structural realism}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Synthese}{161}{2}{219--253}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Floridi%
+%}{%
+%Floridi%
+%}{%
+%{\protect \APACyear {2009}}%
+%}]{%
+%Floridi2009}
+%\APACinsertmetastar {%
+%Floridi2009}%
+%\begin{APACrefauthors}%
+%Floridi, L.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2009}{May}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The Information Society and Its Philosophy:
+%  {I}ntroduction to the Special Issue on ``{T}he Philosophyof Information, Its
+%  Nature, and Future Developments''} {The information society and its
+%  philosophy: {I}ntroduction to the special issue on ``{T}he philosophyof
+%  information, its nature, and future developments''}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{The Information Society}{25}{3}{153--158}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.1080/01972240902848583} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{Galileo Galilei}%
+%}{%
+%{Galileo Galilei}%
+%}{%
+%{\protect \APACyear {1623}}%
+%}]{%
+%Galileo1960}
+%\APACinsertmetastar {%
+%Galileo1960}%
+%\begin{APACrefauthors}%
+%{Galileo Galilei}.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1623}.
+%\newblock
+%\APACrefbtitle {{The Assayer (Il Saggiatore)}} {{The Assayer (Il Saggiatore)}}.
+%\newblock
+%\APACaddressPublisher{}{Stanford University}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://web.stanford.edu/~jsabol/certainty/readings/Galileo-Assayer.pdf}}.
+%\newblock
+%\APACrefnote{abridged, translation by Stillman Drake}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%German%
+%\ \BBA {} Zenil%
+%}{%
+%German%
+%\ \BBA {} Zenil%
+%}{%
+%{\protect \APACyear {2012}}%
+%}]{%
+%German2012}
+%\APACinsertmetastar {%
+%German2012}%
+%\begin{APACrefauthors}%
+%German, A.%
+%\BCBT {}\ \BBA {} Zenil, H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2012}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Afterword to {K}onrad {Z}use’s \emph{Rechnender Raum}}
+%  {Afterword to {K}onrad {Z}use’s \emph{Rechnender Raum}}.{\BBCQ}
+%\newblock
+%\BIn{} \APACrefbtitle {Calculating Space (``{R}echnender {R}aum'')}
+%  {Calculating space (``{R}echnender {R}aum'')}\ (\BPGS\ 58--65).
+%\newblock
+%\APACaddressPublisher{}{World Scientific}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://www.mathrix.org/zenil/ZuseCalculatingSpace-GermanZenil.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Guthrie%
+%\ \BBA {} Fideler%
+%}{%
+%Guthrie%
+%\ \BBA {} Fideler%
+%}{%
+%{\protect \APACyear {1987}}%
+%}]{%
+%Guthrie1987}
+%\APACinsertmetastar {%
+%Guthrie1987}%
+%\begin{APACrefauthors}%
+%Guthrie, K\BPBI S.%
+%\BCBT {}\ \BBA {} Fideler, D.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1987}.
+%\newblock
+%\APACrefbtitle {The {P}ythagorean Sourcebook and Library: {A}n Anthology of
+%  Ancient Writings Which Relate to {P}ytagoras and {P}ythagorean Philosophy}
+%  {The {P}ythagorean sourcebook and library: {A}n anthology of ancient writings
+%  which relate to {P}ytagoras and {P}ythagorean philosophy}.
+%\newblock
+%\APACaddressPublisher{Gloucester, UK}{Phanes Press}.
+%\newblock
+%\APACrefnote{Compiled \& translated by Kenneth Sylvan Guthrie with additional
+%  translations by Thomas Taylor and Arthur Fairbanks, Jr. Edited \& introduced
+%  by David Fideler with a foreword by Joscelyn Godwin}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hall%
+%}{%
+%Hall%
+%}{%
+%{\protect \APACyear {1956}}%
+%}]{%
+%Hall1956}
+%\APACinsertmetastar {%
+%Hall1956}%
+%\begin{APACrefauthors}%
+%Hall, A\BPBI R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1956}.
+%\newblock
+%\APACrefbtitle {The scientific revolution, 1500--1800: {T}he formation of the
+%  modern scientific attitude} {The scientific revolution, 1500--1800: {T}he
+%  formation of the modern scientific attitude}.
+%\newblock
+%\APACaddressPublisher{Boston}{Beacon Press}.
+%\newblock
+%\APAChowpublished {\url{https://archive.org/details/scientificrevolu00hall}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Heller%
+%}{%
+%Heller%
+%}{%
+%{\protect \APACyear {2013}}%
+%}]{%
+%Heller2013}
+%\APACinsertmetastar {%
+%Heller2013}%
+%\begin{APACrefauthors}%
+%Heller, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2013}.
+%\newblock
+%\APACrefbtitle {Bóg i nauka: {M}oje dwie drogi do jednego celu} {Bóg i nauka:
+%  {M}oje dwie drogi do jednego celu}.
+%\newblock
+%\APACaddressPublisher{Kraków}{Copernicus Center Press}.
+%\newblock
+%\APACrefnote{E. Nicewicz-Staszowska (tłum.)}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Heller%
+%}{%
+%Heller%
+%}{%
+%{\protect \APACyear {2014}}%
+%}]{%
+%Heller2014}
+%\APACinsertmetastar {%
+%Heller2014}%
+%\begin{APACrefauthors}%
+%Heller, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2014}.
+%\newblock
+%\APACrefbtitle {Granice Nauki} {Granice nauki}.
+%\newblock
+%\APACaddressPublisher{Kraków}{Copernicus Center Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hilbert%
+%}{%
+%Hilbert%
+%}{%
+%{\protect \APACyear {1900}}%
+%}]{%
+%Hilbert1900}
+%\APACinsertmetastar {%
+%Hilbert1900}%
+%\begin{APACrefauthors}%
+%Hilbert, D.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1900}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Mathematische {P}robleme} {Mathematische
+%  {P}robleme}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Nachrichten von der K{\"o}niglichen Gesellschaft der
+%  Wissenschaften zu G{\"o}ttingen, Math.-Phys. Klasse}{}{3}{253--297}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://de.wikisource.org/wiki/Mathematische_Probleme}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hilbert%
+%}{%
+%Hilbert%
+%}{%
+%{\protect \APACyear {1935}}%
+%}]{%
+%Hilbert1935a}
+%\APACinsertmetastar {%
+%Hilbert1935a}%
+%\begin{APACrefauthors}%
+%Hilbert, D.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1935}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Naturerkennen und {L}ogik} {Naturerkennen und
+%  {L}ogik}.{\BBCQ}
+%\newblock
+%\BIn{} \APACrefbtitle {David {H}ilbert: {G}esammelte {A}bhandlungen} {David
+%  {H}ilbert: {G}esammelte {A}bhandlungen}\ (\BVOL~3, \BPGS\ 378--387).
+%\newblock
+%\APACaddressPublisher{Berlin}{Verlag von Julius Springer}.
+%\newblock
+%\APAChowpublished {\url{https://gdz.sub.uni-goettingen.de/id/PPN237834022}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hobbes%
+%}{%
+%Hobbes%
+%}{%
+%{\protect \APACyear {1651}}%
+%}]{%
+%Hobbes1651}
+%\APACinsertmetastar {%
+%Hobbes1651}%
+%\begin{APACrefauthors}%
+%Hobbes, T.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1651}.
+%\newblock
+%\APACrefbtitle {Leviathan or the matter, forme, \& power of a common-wealth
+%  ecclesiastical and civill} {Leviathan or the matter, forme, \& power of a
+%  common-wealth ecclesiastical and civill}.
+%\newblock
+%\APACaddressPublisher{Green Dragon in St. Paul's Churchyard}{Andrew Crooke}.
+%\newblock
+%\APAChowpublished {\url{http://www.gutenberg.org/ebooks/3207}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hochstetter%
+%, Greve%
+%\BCBL {}\ \BBA {} Gumin%
+%}{%
+%Hochstetter%
+%\ \protect \BOthers {.}}{%
+%{\protect \APACyear {1979}}%
+%}]{%
+%Hochstetter1979}
+%\APACinsertmetastar {%
+%Hochstetter1979}%
+%\begin{APACrefauthors}%
+%Hochstetter, E.%
+%, Greve, H\BPBI J.%
+%\BCBL {}\ \BBA {} Gumin, H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1979}.
+%\newblock
+%\APACrefbtitle {Herrn von {L}eibniz' {R}echnung mit {N}ull und {E}ins} {Herrn
+%  von {L}eibniz' {R}echnung mit {N}ull und {E}ins}.
+%\newblock
+%\APACaddressPublisher{}{Siemens-Aktien-Ges., [Abt. Verlag]}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Hodges%
+%}{%
+%Hodges%
+%}{%
+%{\protect \APACyear {1997}}%
+%}]{%
+%Hodges1997}
+%\APACinsertmetastar {%
+%Hodges1997}%
+%\begin{APACrefauthors}%
+%Hodges, A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1997}.
+%\newblock
+%\APACrefbtitle {Turing: {A} Natural Philosopher} {Turing: {A} natural
+%  philosopher}.
+%\newblock
+%\APACaddressPublisher{London}{Phoenix}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Ineichen%
+%}{%
+%Ineichen%
+%}{%
+%{\protect \APACyear {2008}}%
+%}]{%
+%Ineichen2008}
+%\APACinsertmetastar {%
+%Ineichen2008}%
+%\begin{APACrefauthors}%
+%Ineichen, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2008}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Leibniz, {C}aramuel, {H}arriot und das {D}ualsystem}
+%  {Leibniz, {C}aramuel, {H}arriot und das {D}ualsystem}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Mitteilungen der deutschen
+%  Mathematiker-Vereinigung}{16}{1}{12--15}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Infeld%
+%}{%
+%Infeld%
+%}{%
+%{\protect \APACyear {1980}}%
+%}]{%
+%Infeld1980}
+%\APACinsertmetastar {%
+%Infeld1980}%
+%\begin{APACrefauthors}%
+%Infeld, L.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1980}.
+%\newblock
+%\APACrefbtitle {Quest: {A}n Autobiography} {Quest: {A}n autobiography}.
+%\newblock
+%\APACaddressPublisher{London}{Chelsea Publishing Company}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{Isidore Hispalensis}%
+%}{%
+%{Isidore Hispalensis}%
+%}{%
+%{\protect \APACyear {1911}}%
+%}]{%
+%Izydor1911}
+%\APACinsertmetastar {%
+%Izydor1911}%
+%\begin{APACrefauthors}%
+%{Isidore Hispalensis}.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1911}.
+%\newblock
+%\APACrefbtitle {Etymologiarvm sive originvm libri {XX}} {Etymologiarvm sive
+%  originvm libri {XX}}.
+%\newblock
+%\APACaddressPublisher{Londini}{Oxonii}.
+%\newblock
+%\APAChowpublished {\url{https://archive.org/details/isidorihispalen00lindgoog},
+%  \url{http://www.thelatinlibrary.com/isidore.html}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Knuth%
+%}{%
+%Knuth%
+%}{%
+%{\protect \APACyear {1997}}%
+%}]{%
+%Knuth1997}
+%\APACinsertmetastar {%
+%Knuth1997}%
+%\begin{APACrefauthors}%
+%Knuth, D\BPBI E.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1997}.
+%\newblock
+%\APACrefbtitle {The art of computer programming} {The art of computer
+%  programming}\ (\BVOL\ {I} Fundamental algorithms).
+%\newblock
+%\APACaddressPublisher{Boston}{Addison-Wesley}.
+%\newblock
+%\APAChowpublished {\url{https://archive.org/details/B-001-001-249}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Kopania%
+%}{%
+%Kopania%
+%}{%
+%{\protect \APACyear {2018}}%
+%}]{%
+%Kopania2018}
+%\APACinsertmetastar {%
+%Kopania2018}%
+%\begin{APACrefauthors}%
+%Kopania, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2018}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Leibniz i jego {B}óg. {R}ozważania z {V}oltaire'em w
+%  tle} {Leibniz i jego {B}óg. {R}ozważania z {V}oltaire'em w tle}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Studia z Historii Filozofii}{3}{9}{69--101}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Krajewski%
+%}{%
+%Krajewski%
+%}{%
+%{\protect \APACyear {2012}}%
+%}]{%
+%Krajewski2012}
+%\APACinsertmetastar {%
+%Krajewski2012}%
+%\begin{APACrefauthors}%
+%Krajewski, S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2012}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The ultimate strenghtening of {T}uring's Test?} {The
+%  ultimate strenghtening of {T}uring's test?}{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Semiotica}{184}{1/4}{203--218}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Krajewski%
+%}{%
+%Krajewski%
+%}{%
+%{\protect \APACyear {2020}}%
+%}]{%
+%Krajewski2020}
+%\APACinsertmetastar {%
+%Krajewski2020}%
+%\begin{APACrefauthors}%
+%Krajewski, S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2020}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {On the Anti-Mechanist Arguments Based on {G}{\"o}del's
+%  Theorem} {On the anti-mechanist arguments based on {G}{\"o}del's
+%  theorem}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Studia Semiotyczne}{34}{1}{9--56}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.26333/sts.xxxiv1.02} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%T.~Kuhn%
+%}{%
+%T.~Kuhn%
+%}{%
+%{\protect \APACyear {1974}}%
+%}]{%
+%Kuhn1974}
+%\APACinsertmetastar {%
+%Kuhn1974}%
+%\begin{APACrefauthors}%
+%Kuhn, T.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1974}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Second thoughts on paradigms} {Second thoughts on
+%  paradigms}.{\BBCQ}
+%\newblock
+%\BIn{} \APACrefbtitle {The structure of scientific theories} {The structure of
+%  scientific theories}\ (\BPGS\ 459--482).
+%\newblock
+%\APACaddressPublisher{Urbana}{University of Illinois}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%T\BPBI S.~Kuhn%
+%}{%
+%T\BPBI S.~Kuhn%
+%}{%
+%{\protect \APACyear {1962}}%
+%}]{%
+%Kuhn1962}
+%\APACinsertmetastar {%
+%Kuhn1962}%
+%\begin{APACrefauthors}%
+%Kuhn, T\BPBI S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1962}.
+%\newblock
+%\APACrefbtitle {The structure of scientific revolutions} {The structure of
+%  scientific revolutions}.
+%\newblock
+%\APACaddressPublisher{Chicago}{The University of Chicago Press}.
+%\newblock
+%\APACrefnote{polski przekład: \parencite{Kuhn1968}}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%T\BPBI S.~Kuhn%
+%}{%
+%T\BPBI S.~Kuhn%
+%}{%
+%{\protect \APACyear {1968}}%
+%}]{%
+%Kuhn1968}
+%\APACinsertmetastar {%
+%Kuhn1968}%
+%\begin{APACrefauthors}%
+%Kuhn, T\BPBI S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1968}.
+%\newblock
+%\APACrefbtitle {Struktura rewolucji naukowych} {Struktura rewolucji naukowych}.
+%\newblock
+%\APACaddressPublisher{Warszawa}{Państwowe Wydawnictwo Naukowe}.
+%\newblock
+%\APAChowpublished
+%  {\url{fem.put.poznan.pl/poli.../4891524Kuhn%20strony%20A.docx}}.
+%\newblock
+%\APACrefnote{\parencite{Kuhn1962}: przekład z angielskiego Heleny Ostromęckiej.
+%  Tłumaczenie przejrzał, redagował i posłowiem zaopatrzył Stefan
+%  Amsterdamski.}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Kurzweil%
+%}{%
+%Kurzweil%
+%}{%
+%{\protect \APACyear {2005}}%
+%}]{%
+%Kurzweil2005}
+%\APACinsertmetastar {%
+%Kurzweil2005}%
+%\begin{APACrefauthors}%
+%Kurzweil, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2005}.
+%\newblock
+%\APACrefbtitle {The Singularity Is Near: {W}hen Humans Transcend Biology} {The
+%  singularity is near: {W}hen humans transcend biology}.
+%\newblock
+%\APACaddressPublisher{New York}{Viking}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://tantor-site-assets.s3.amazonaws.com/...Singularity/B0183_Singularity_PDF_1.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1666}}%
+%}]{%
+%Leibniz1666}
+%\APACinsertmetastar {%
+%Leibniz1666}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1666}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Dissertatio de arte combinatoria} {Dissertatio de arte
+%  combinatoria}.{\BBCQ}
+%\newblock
+%\APACaddressPublisher{Lipsiae}{Joh. Simon. Fickium et Jolh. Polycarp.
+%  Senboldum}.
+%\newblock
+%\APAChowpublished
+%  {\url{abirintoermetico.com/12ArsCombinatoria/Leibniz_G_W_Dissertatio_de_Arte_combinatoria.pdf},
+%  \url{https://archive.org/details/ita-bnc-mag-00000844-001/page/n11/mode/2up}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1679}}%
+%}]{%
+%Leibniz1679}
+%\APACinsertmetastar {%
+%Leibniz1679}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1679}.
+%\newblock
+%\APACrefbtitle {De Progressione Dyadica} {De progressione dyadica}\ (\BVOL\
+%  Pars I).
+%\newblock
+%\APACrefnote{Published in facsimile (with {G}erman translation) in
+%  \parencite{Hochstetter1979}}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1697}}%
+%}]{%
+%list1697}
+%\APACinsertmetastar {%
+%list1697}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1697}{}{}.
+%\newblock
+%\APACrefbtitle {Brief an den {H}erzog von {B}raunschweig-{W}olfenb{\"u}ttel
+%  {R}udolph {A}ugust, 2. {J}anuar 1697.} {Brief an den {H}erzog von
+%  {B}raunschweig-{W}olfenb{\"u}ttel {R}udolph {A}ugust, 2. {J}anuar 1697.}
+%\newblock
+%\APAChowpublished{\url{http://www.fh-augsburg.de/~harsch/germanica/Chronologie/17Jh/Leibniz/lei-bina.html}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1890}}%
+%{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+%Leibniz1677}
+%\APACinsertmetastar {%
+%Leibniz1677}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1890{\protect \BCnt {1}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Dialogus} {Dialogus}.{\BBCQ}
+%\newblock
+%\BIn{} C\BPBI I.~Gerhardt\ (\BED), \APACrefbtitle {Die Philosophischen
+%  {S}chriften von {G.} {W.} {L}eibniz} {Die philosophischen {S}chriften von
+%  {G.} {W.} {L}eibniz}\ (\BVOL~7, \BPGS\ 190--193).
+%\newblock
+%\APACaddressPublisher{Berlin}{}.
+%\newblock
+%\APACrefnote{Reprint: Hildesheim 1960}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1890}}%
+%{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+%Leibniz1890}
+%\APACinsertmetastar {%
+%Leibniz1890}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1890{\protect \BCnt {2}}}.
+%\newblock
+%\APACrefbtitle {Philosophische {S}chriften} {Philosophische {S}chriften}\
+%  (\BVOL~7; C\BPBI I.~Gerhardt, \BED{}).
+%\newblock
+%\APACaddressPublisher{Berlin}{Weidmann}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1929}}%
+%}]{%
+%Leibniz1685}
+%\APACinsertmetastar {%
+%Leibniz1685}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1929}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Machina arithmetica in qua non additio tantum et
+%  subtractio sed et multiplicatio nullo, divisio vero paene nullo animi labore
+%  peragantur} {Machina arithmetica in qua non additio tantum et subtractio sed
+%  et multiplicatio nullo, divisio vero paene nullo animi labore
+%  peragantur}.{\BBCQ}
+%\newblock
+%\BIn{} D\BPBI E.~Smith\ (\BED), \APACrefbtitle {A Source Book in Mathematics}
+%  {A source book in mathematics}\ (\PrintOrdinal{1}\ \BEd, \BPGS\ 173--181).
+%\newblock
+%\APACaddressPublisher{New York}{McGraw Hill Book Company}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/sourcebookinmath00smit/mode/2up}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Leibniz%
+%}{%
+%Leibniz%
+%}{%
+%{\protect \APACyear {1990}}%
+%}]{%
+%Leibniz1990}
+%\APACinsertmetastar {%
+%Leibniz1990}%
+%\begin{APACrefauthors}%
+%Leibniz, G\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1990}.
+%\newblock
+%\APACrefbtitle {Leibniz korrespondiert mit {C}hina: der {B}riefwechsel mit den
+%  {J}esuitenmissionaren (1689--1714)} {Leibniz korrespondiert mit {C}hina: der
+%  {B}riefwechsel mit den {J}esuitenmissionaren (1689--1714)}\ (R.~Widmaier,
+%  \BED{}).
+%\newblock
+%\APACaddressPublisher{Frankfurt am Main}{V. Klostermann}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Lesne%
+%}{%
+%Lesne%
+%}{%
+%{\protect \APACyear {2007}}%
+%}]{%
+%Lesne2007}
+%\APACinsertmetastar {%
+%Lesne2007}%
+%\begin{APACrefauthors}%
+%Lesne, A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2007}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The discrete versus continuous controversy in physics}
+%  {The discrete versus continuous controversy in physics}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Mathematical Structure in Computer
+%  Science}{}{17}{185--223}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Ligonni{\`e}re%
+%}{%
+%Ligonni{\`e}re%
+%}{%
+%{\protect \APACyear {1992}}%
+%}]{%
+%Ligonniere1992}
+%\APACinsertmetastar {%
+%Ligonniere1992}%
+%\begin{APACrefauthors}%
+%Ligonni{\`e}re, R.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1992}.
+%\newblock
+%\APACrefbtitle {Prehistoria i historia komputerów} {Prehistoria i historia
+%  komputerów}.
+%\newblock
+%\APACaddressPublisher{Wrocław}{Ossolineum}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Marciszewski%
+%}{%
+%Marciszewski%
+%}{%
+%{\protect \APACyear {1981}}%
+%}]{%
+%Marciszewski1981}
+%\APACinsertmetastar {%
+%Marciszewski1981}%
+%\begin{APACrefauthors}%
+%Marciszewski, W.%
+%\end{APACrefauthors}%
+%\ (\BED).
+%\unskip\
+%\newblock
+%\APACrefYear{1981}.
+%\newblock
+%\APACrefbtitle {Dictionary of Logic as Applied in the Study of Language:
+%  {C}oncepts Methods Theories} {Dictionary of logic as applied in the study of
+%  language: {C}oncepts methods theories}.
+%\newblock
+%\APACaddressPublisher{The Hague-Boston-London}{Martinus Nijhoff Publishers}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Marciszewski%
+%\ \BBA {} Stacewicz%
+%}{%
+%Marciszewski%
+%\ \BBA {} Stacewicz%
+%}{%
+%{\protect \APACyear {2011}}%
+%}]{%
+%MarciszewskiStacewicz2011}
+%\APACinsertmetastar {%
+%MarciszewskiStacewicz2011}%
+%\begin{APACrefauthors}%
+%Marciszewski, W.%
+%\BCBT {}\ \BBA {} Stacewicz, P.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2011}.
+%\newblock
+%\APACrefbtitle {Umysł--Komputer--Świat: {O} zagadce umysłu z
+%  informatycznego punktu widzenia} {Umysł--komputer--Świat: {O} zagadce
+%  umysłu z informatycznego punktu widzenia}\ (prof. Leonard~Bolc, \BED{}).
+%\newblock
+%\APACaddressPublisher{Warszawa}{Akademicka Oficyna Wydawnicza EXIT}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Martin%
+%\ \BBA {} Augustine%
+%}{%
+%Martin%
+%\ \BBA {} Augustine%
+%}{%
+%{\protect \APACyear {2015}}%
+%}]{%
+%MartinAugustine2015}
+%\APACinsertmetastar {%
+%MartinAugustine2015}%
+%\begin{APACrefauthors}%
+%Martin, M.%
+%\BCBT {}\ \BBA {} Augustine, K.%
+%\end{APACrefauthors}%
+%\ (\BEDS).
+%\unskip\
+%\newblock
+%\APACrefYear{2015}.
+%\newblock
+%\APACrefbtitle {The Myth of an Afterlife: {T}he Case against Life After Death}
+%  {The myth of an afterlife: {T}he case against life after death}.
+%\newblock
+%\APACaddressPublisher{Lanham, MD}{Rowman \& Littlefield Publishers}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Mazur%
+%}{%
+%Mazur%
+%}{%
+%{\protect \APACyear {2014}}%
+%}]{%
+%Mazur2014}
+%\APACinsertmetastar {%
+%Mazur2014}%
+%\begin{APACrefauthors}%
+%Mazur, J\BPBI C.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2014}.
+%\newblock
+%\APACrefbtitle {Enlightening Symbols: {A} Short History of Mathematical
+%  Notation and Its Hidden Powers} {Enlightening symbols: {A} short history of
+%  mathematical notation and its hidden powers}.
+%\newblock
+%\APACaddressPublisher{Princeton}{Princeton University Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Menninger%
+%}{%
+%Menninger%
+%}{%
+%{\protect \APACyear {1934}}%
+%}]{%
+%Menninger1934}
+%\APACinsertmetastar {%
+%Menninger1934}%
+%\begin{APACrefauthors}%
+%Menninger, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1934}.
+%\newblock
+%\APACrefbtitle {Zahlwort und {Z}iffer: {A}us der {K}ulturgeschichte unserer
+%  {Z}ahlsprache, unserer {Z}ahlschrift und des {R}echenbrettes} {Zahlwort und
+%  {Z}iffer: {A}us der {K}ulturgeschichte unserer {Z}ahlsprache, unserer
+%  {Z}ahlschrift und des {R}echenbrettes}.
+%\newblock
+%\APACaddressPublisher{Breslau}{Ferdinand Hirt}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Menninger%
+%}{%
+%Menninger%
+%}{%
+%{\protect \APACyear {1958}}%
+%}]{%
+%Menninger1958}
+%\APACinsertmetastar {%
+%Menninger1958}%
+%\begin{APACrefauthors}%
+%Menninger, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1958}.
+%\newblock
+%\APACrefbtitle {Zahlwort und {Z}iffer: {E}ine {K}ulturgeschichte der {Z}ahl}
+%  {Zahlwort und {Z}iffer: {E}ine {K}ulturgeschichte der {Z}ahl}\
+%  (\PrintOrdinal{2}\ \BEd, \BVOLS\ 1--2).
+%\newblock
+%\APACaddressPublisher{G{\"o}ttingen}{Vandenhoeck \& Ruprecht}.
+%\newblock
+%\APACrefnote{First edition: \parencite{Menninger1934}}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Menninger%
+%}{%
+%Menninger%
+%}{%
+%{\protect \APACyear {1969}}%
+%}]{%
+%Menninger1969}
+%\APACinsertmetastar {%
+%Menninger1969}%
+%\begin{APACrefauthors}%
+%Menninger, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1969}.
+%\newblock
+%\APACrefbtitle {Number Words and Number Symbols: {A} Cultural History of
+%  Numbers} {Number words and number symbols: {A} cultural history of numbers}.
+%\newblock
+%\APACaddressPublisher{Cambridge, MA}{M.I.T. Press}.
+%\newblock
+%\APACrefnote{Translation of \parencite{Menninger1958}}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Newton%
+%}{%
+%Newton%
+%}{%
+%{\protect \APACyear {1675}}%
+%}]{%
+%Newton1675}
+%\APACinsertmetastar {%
+%Newton1675}%
+%\begin{APACrefauthors}%
+%Newton, I.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1675}{}{}.
+%\newblock
+%\APACrefbtitle {Letter from Sir {I}saac {N}ewton to {R}obert {H}ooke.} {Letter
+%  from sir {I}saac {N}ewton to {R}obert {H}ooke.}
+%\newblock
+%\APAChowpublished
+%  {\url{https://digitallibrary.hsp.org/index.php/Detail/objects/9792}}.
+%\newblock
+%\APACaddressPublisher{Historical Society of Pennsylvania}{}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Newton%
+%}{%
+%Newton%
+%}{%
+%{\protect \APACyear {1687}}%
+%}]{%
+%Newton1687}
+%\APACinsertmetastar {%
+%Newton1687}%
+%\begin{APACrefauthors}%
+%Newton, I.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1687}.
+%\newblock
+%\APACrefbtitle {Philosophi{\ae} Naturalis Principia Mathematica}
+%  {Philosophi{\ae} naturalis principia mathematica}.
+%\newblock
+%\APACaddressPublisher{London}{Jussu Societatis Regi{\ae} ac Typis Josephi
+%  Streater. Prostat apud plures Bibliopolas}.
+%\newblock
+%\APAChowpublished {\url{http://www.gutenberg.org/ebooks/28233}}.
+%\newblock
+%\APACrefnote{Project Gutenberg}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Saresberiensis%
+%}{%
+%Saresberiensis%
+%}{%
+%{\protect \APACyear {1159}}%
+%}]{%
+%Saresberiensis1159}
+%\APACinsertmetastar {%
+%Saresberiensis1159}%
+%\begin{APACrefauthors}%
+%Saresberiensis, I.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1159}.
+%\newblock
+%\APACrefbtitle {Metalogicus} {Metalogicus}\ (J\BPBI B.~Hall, \BED{}).
+%\newblock
+%\APACaddressPublisher{}{Logic Museum}.
+%\newblock
+%\APAChowpublished
+%  {\url{http://www.logicmuseum.com/wiki/Authors/John_of_Salisbury/Metalogicon}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Shannon%
+%}{%
+%Shannon%
+%}{%
+%{\protect \APACyear {1958}}%
+%}]{%
+%Shannon1958}
+%\APACinsertmetastar {%
+%Shannon1958}%
+%\begin{APACrefauthors}%
+%Shannon, C\BPBI E.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1958}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Von {N}eumann's contributions to automata theory} {Von
+%  {N}eumann's contributions to automata theory}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Bull. Amer. Math. Soc.}{}{3, Part 2}{123--129}.
+%\newblock
+%\APAChowpublished {\url{https://projecteuclid.org/euclid.bams/1183522376}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Shirley%
+%}{%
+%Shirley%
+%}{%
+%{\protect \APACyear {1951}}%
+%}]{%
+%Shirley1951}
+%\APACinsertmetastar {%
+%Shirley1951}%
+%\begin{APACrefauthors}%
+%Shirley, J\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1951}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Binary Numeration Before {L}eibniz} {Binary numeration
+%  before {L}eibniz}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{American Journal of Physics}{19}{8}{452--454}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Sibley%
+%}{%
+%Sibley%
+%}{%
+%{\protect \APACyear {2013}}%
+%}]{%
+%Sibley2013}
+%\APACinsertmetastar {%
+%Sibley2013}%
+%\begin{APACrefauthors}%
+%Sibley, A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2013}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Lessons from {A}ugustine’s \emph{De Genesi ad
+%  Litteram—Libri Duodecim}} {Lessons from {A}ugustine’s \emph{De Genesi ad
+%  Litteram—Libri Duodecim}}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Journal of Creation}{27}{2}{71--77}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://creation.com/images/pdfs/tj/j27_2/j27_2_71-77.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Sonar%
+%}{%
+%Sonar%
+%}{%
+%{\protect \APACyear {2018}}%
+%}]{%
+%Sonar2018}
+%\APACinsertmetastar {%
+%Sonar2018}%
+%\begin{APACrefauthors}%
+%Sonar, T.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2018}.
+%\newblock
+%\APACrefbtitle {The History of the Priority Di$\int$pute between {N}ewton and
+%  {L}eibniz} {The history of the priority di$\int$pute between {N}ewton and
+%  {L}eibniz}.
+%\newblock
+%\APACaddressPublisher{Basel}{Birkh{\"a}user}.
+%\newblock
+%\APACrefnote{With an Epilogue by {E}berhard {K}nobloch}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Strogatz%
+%}{%
+%Strogatz%
+%}{%
+%{\protect \APACyear {2019}}%
+%}]{%
+%Strogatz2019}
+%\APACinsertmetastar {%
+%Strogatz2019}%
+%\begin{APACrefauthors}%
+%Strogatz, S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2019}.
+%\newblock
+%\APACrefbtitle {Infinite Powers: {H}ow Calculus Reveals the Secrets of the
+%  Universe} {Infinite powers: {H}ow calculus reveals the secrets of the
+%  universe}.
+%\newblock
+%\APACaddressPublisher{Boston, Mass.}{Houghton Mifflin Harcourt}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Swade%
+%}{%
+%Swade%
+%}{%
+%{\protect \APACyear {2002}}%
+%}]{%
+%Swade2002}
+%\APACinsertmetastar {%
+%Swade2002}%
+%\begin{APACrefauthors}%
+%Swade, D.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2002}.
+%\newblock
+%\APACrefbtitle {The Difference Engine: {C}harles {B}abbage and the Quest to
+%  Build the First Computer} {The difference engine: {C}harles {B}abbage and the
+%  quest to build the first computer}.
+%\newblock
+%\APACaddressPublisher{}{Penguin Books}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Swetz%
+%}{%
+%Swetz%
+%}{%
+%{\protect \APACyear {2003}}%
+%}]{%
+%Swetz2003}
+%\APACinsertmetastar {%
+%Swetz2003}%
+%\begin{APACrefauthors}%
+%Swetz, F\BPBI J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2003}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Leibniz, the \emph{{Y}ijing}, and the Religious
+%  Conversion of the {C}hinese} {Leibniz, the \emph{{Y}ijing}, and the religious
+%  conversion of the {C}hinese}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Mathematics Magazine}{76}{4}{276--291}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Swift%
+%}{%
+%Swift%
+%}{%
+%{\protect \APACyear {1892}}%
+%}]{%
+%Swift1892}
+%\APACinsertmetastar {%
+%Swift1892}%
+%\begin{APACrefauthors}%
+%Swift, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1892}.
+%\newblock
+%\APACrefbtitle {Gulliver's Travels Into Several Remote Nations of the World}
+%  {Gulliver's travels into several remote nations of the world}\ (D.~Price,
+%  \BED{}).
+%\newblock
+%\APACaddressPublisher{London}{George Bell and Sons}.
+%\newblock
+%\APAChowpublished {\url{http://www.gutenberg.org/ebooks/829}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Swift%
+%}{%
+%Swift%
+%}{%
+%{\protect \APACyear {2020}}%
+%}]{%
+%Swift2020}
+%\APACinsertmetastar {%
+%Swift2020}%
+%\begin{APACrefauthors}%
+%Swift, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2020}.
+%\newblock
+%\APACrefbtitle {Podróże {G}uliwera} {Podróże {G}uliwera}\ (P\BPBI
+%  C.~Aleksandra~Sekuła, \BED{}).
+%\newblock
+%\APACaddressPublisher{}{Fundacja Nowoczesna Polska}.
+%\newblock
+%\APAChowpublished {\url{https://wolnelektury.pl/szukaj/?q=guliwera}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Tegmark%
+%}{%
+%Tegmark%
+%}{%
+%{\protect \APACyear {2008}}%
+%}]{%
+%Tegmark2008}
+%\APACinsertmetastar {%
+%Tegmark2008}%
+%\begin{APACrefauthors}%
+%Tegmark, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2008}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The Mathematical Universe} {The mathematical
+%  universe}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Foundations of Physics}{38}{2}{101--150}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Tegmark%
+%}{%
+%Tegmark%
+%}{%
+%{\protect \APACyear {2014}}%
+%}]{%
+%Tegmark2014}
+%\APACinsertmetastar {%
+%Tegmark2014}%
+%\begin{APACrefauthors}%
+%Tegmark, M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2014}.
+%\newblock
+%\APACrefbtitle {Our Mathematical Universe} {Our mathematical universe}.
+%\newblock
+%\APACaddressPublisher{New York}{Knopf}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2006}}%
+%{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+%Trzesicki2006slgr}
+%\APACinsertmetastar {%
+%Trzesicki2006slgr}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2006{\protect \BCnt {1}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {From the idea of decidability to the number \
+%  {\font\grmn = grmn1000 at 12pt \grmn \char87}} {From the idea of decidability
+%  to the number \ {\font\grmn = grmn1000 at 12pt \grmn \char87}}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Studies in Grammar, Logic and
+%  Rhetoric}{9}{22}{73--142}.
+%\newblock
+%\APAChowpublished {\url{http://logika.uwb.edu.pl/studies}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2006}}%
+%{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+%Trzesicki2006b}
+%\APACinsertmetastar {%
+%Trzesicki2006b}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2006{\protect \BCnt {2}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Leibniza idea systemu binarnego} {Leibniza idea systemu
+%  binarnego}.{\BBCQ}
+%\newblock
+%\BIn{} J.~Kopania\ \BBA {} H.~Święczkowska\ (\BEDS), \APACrefbtitle
+%  {Filozofia i myśl społeczna {XVII} w.} {Filozofia i myśl społeczna {XVII}
+%  w.}\ (\BPGS\ 183--203).
+%\newblock
+%\APACaddressPublisher{Białystok}{}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2006}}%
+%{\protect \APACexlab {{\protect \BCnt {3}}}}}]{%
+%Trzesicki2006a}
+%\APACinsertmetastar {%
+%Trzesicki2006a}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2006{\protect \BCnt {3}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Leibnizjańskie inspiracje informatyki} {Leibnizjańskie
+%  inspiracje informatyki}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Filozofia Nauki}{55}{3}{21---48}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2016}}%
+%}]{%
+%Trzesicki2016b}
+%\APACinsertmetastar {%
+%Trzesicki2016b}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2016}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Can {AI} be intelligent?} {Can {AI} be
+%  intelligent?}{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Studies in Logic, Grammar and
+%  Rhetoric}{61}{48}{103--131}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2020}}%
+%{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+%Trzesicki2020a}
+%\APACinsertmetastar {%
+%Trzesicki2020a}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2020{\protect \BCnt {1}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Idea of Artificial Intelligence} {Idea of artificial
+%  intelligence}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Studia Humana}{9}{3/4}{37--65}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Trzęsicki%
+%}{%
+%Trzęsicki%
+%}{%
+%{\protect \APACyear {2020}}%
+%{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+%Trzesicki2020}
+%\APACinsertmetastar {%
+%Trzesicki2020}%
+%\begin{APACrefauthors}%
+%Trzęsicki, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2020{\protect \BCnt {2}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Idea Sztucznej Inteligencji} {Idea sztucznej
+%  inteligencji}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Filozofia i Nauka. {S}tudia filozoficzne i
+%  interdyscyplinarne}{8}{}{69--96}.
+%\newblock
+%\APACrefnote{Zeszyt monotematyczny pod redakcją Małgorzaty Czarnockiej i
+%  Mariusza Mazurka}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Turing%
+%}{%
+%Turing%
+%}{%
+%{\protect \APACyear {1936--37}}%
+%}]{%
+%Turing1936}
+%\APACinsertmetastar {%
+%Turing1936}%
+%\begin{APACrefauthors}%
+%Turing, A\BPBI M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1936--37}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {On Computable Numbers, with an Application to the
+%  {E}ntscheidungsproblem} {On computable numbers, with an application to the
+%  {E}ntscheidungsproblem}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Proceedings of the London Mathematical
+%  Society}{42}{Series 2}{230--265}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Turing%
+%}{%
+%Turing%
+%}{%
+%{\protect \APACyear {1950}}%
+%}]{%
+%Turing1950}
+%\APACinsertmetastar {%
+%Turing1950}%
+%\begin{APACrefauthors}%
+%Turing, A\BPBI M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1950}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Computing Machinery and Intelligence} {Computing
+%  machinery and intelligence}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Mind: {A} Quartely Review of Psychology and
+%  Philosophy}{59}{236}{433--460}.
+%\newblock
+%\begin{APACrefURL} \url{www.csee.umbc.edu/courses/471/papers/turing.pdf}
+%  \end{APACrefURL}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Turing%
+%}{%
+%Turing%
+%}{%
+%{\protect \APACyear {1952}}%
+%}]{%
+%Turing1952a}
+%\APACinsertmetastar {%
+%Turing1952a}%
+%\begin{APACrefauthors}%
+%Turing, A\BPBI M.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1952}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The Chemical Basis of Morphogenesis} {The chemical basis
+%  of morphogenesis}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Philosophical Transactions of the Royal Society of
+%  London}{237}{641}{37--72}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{von Neumann}%
+%}{%
+%{von Neumann}%
+%}{%
+%{\protect \APACyear {1958}}%
+%}]{%
+%vonNeumann1958}
+%\APACinsertmetastar {%
+%vonNeumann1958}%
+%\begin{APACrefauthors}%
+%{von Neumann}, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1958}.
+%\newblock
+%\APACrefbtitle {The Computer and the Brain} {The computer and the brain}\
+%  (\PrintOrdinal{1}\ \BEd).
+%\newblock
+%\APACaddressPublisher{New Haven}{Yale University Press}.
+%\newblock
+%\APACrefnote{Third edition (August 28, 2012). Foreword by Ray Kurzweil}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{von Neumann}%
+%}{%
+%{von Neumann}%
+%}{%
+%{\protect \APACyear {1963}}%
+%}]{%
+%vonNeumann1951}
+%\APACinsertmetastar {%
+%vonNeumann1951}%
+%\begin{APACrefauthors}%
+%{von Neumann}, J.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1963}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The General and Logical Theory of Automata} {The general
+%  and logical theory of automata}.{\BBCQ}
+%\newblock
+%\BIn{} A\BPBI H.~Taub\ (\BED), \APACrefbtitle {Collected Works} {Collected
+%  works}\ (\BVOL~V, \BPGS\ 288--328).
+%\newblock
+%\APACaddressPublisher{London}{Pergamon Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%{von Neumann}%
+%\ \BBA {} Burks%
+%}{%
+%{von Neumann}%
+%\ \BBA {} Burks%
+%}{%
+%{\protect \APACyear {1966}}%
+%}]{%
+%Neumann1966}
+%\APACinsertmetastar {%
+%Neumann1966}%
+%\begin{APACrefauthors}%
+%{von Neumann}, J.%
+%\BCBT {}\ \BBA {} Burks, A\BPBI W.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1966}.
+%\newblock
+%\APACrefbtitle {Theory of self-reproducing automata} {Theory of
+%  self-reproducing automata}.
+%\newblock
+%\APACaddressPublisher{Urbana}{University of Illinois Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Westfall%
+%}{%
+%Westfall%
+%}{%
+%{\protect \APACyear {1983}}%
+%}]{%
+%Westfall1983}
+%\APACinsertmetastar {%
+%Westfall1983}%
+%\begin{APACrefauthors}%
+%Westfall, R\BPBI S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1983}.
+%\newblock
+%\APACrefbtitle {Biography of {I}saac {N}ewton} {Biography of {I}saac {N}ewton}.
+%\newblock
+%\APACaddressPublisher{Cambridge}{Cambridge Univeristy Press}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Wheeler%
+%}{%
+%Wheeler%
+%}{%
+%{\protect \APACyear {1989}}%
+%}]{%
+%Wheeler1989}
+%\APACinsertmetastar {%
+%Wheeler1989}%
+%\begin{APACrefauthors}%
+%Wheeler, J\BPBI A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1989}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Information, physics, quantum: {T}he search for links}
+%  {Information, physics, quantum: {T}he search for links}.{\BBCQ}
+%\newblock
+%\BIn{} \APACrefbtitle {Proceedings {III} {I}nternational {S}ymposium on
+%  {F}oundations of {Q}uantum {M}echanics} {Proceedings {III} {I}nternational
+%  {S}ymposium on {F}oundations of {Q}uantum {M}echanics}\ (\BPGS\ 354--386).
+%\newblock
+%\APACaddressPublisher{Tokyo}{}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Whitehead%
+%}{%
+%Whitehead%
+%}{%
+%{\protect \APACyear {1911}}%
+%}]{%
+%Whitehead1911}
+%\APACinsertmetastar {%
+%Whitehead1911}%
+%\begin{APACrefauthors}%
+%Whitehead, A\BPBI N.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1911}.
+%\newblock
+%\APACrefbtitle {An Introduction to Mathematics} {An introduction to
+%  mathematics}.
+%\newblock
+%\APACaddressPublisher{London}{Williams and Norgate}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://archive.org/details/introductiontoma00whitiala}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Wolfram%
+%}{%
+%Wolfram%
+%}{%
+%{\protect \APACyear {2002}}%
+%}]{%
+%Wolfram2002}
+%\APACinsertmetastar {%
+%Wolfram2002}%
+%\begin{APACrefauthors}%
+%Wolfram, S.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2002}.
+%\newblock
+%\APACrefbtitle {A New Kind of Science} {A new kind of science}.
+%\newblock
+%\APACaddressPublisher{Champaign, IL}{Wolfram Media}.
+%\newblock
+%\APAChowpublished {\url{http://www.wolframscience.com/nks/}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Wolfson%
+%}{%
+%Wolfson%
+%}{%
+%{\protect \APACyear {1962}}%
+%}]{%
+%Wolfson1962}
+%\APACinsertmetastar {%
+%Wolfson1962}%
+%\begin{APACrefauthors}%
+%Wolfson, H\BPBI A.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1962}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {The Problem of the Souls of the Spheres from the
+%  {B}yzantine Commentaries on {A}ristotle Through the {A}rabs and St. {T}homas
+%  to {K}epler} {The problem of the souls of the spheres from the {B}yzantine
+%  commentaries on {A}ristotle through the {A}rabs and st. {T}homas to
+%  {K}epler}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Dumbarton Oaks Papers}{16}{}{65--93}.
+%\newblock
+%\begin{APACrefDOI} \doi{10.2307/1291158} \end{APACrefDOI}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Wouk%
+%}{%
+%Wouk%
+%}{%
+%{\protect \APACyear {2010}}%
+%}]{%
+%Wouk2010}
+%\APACinsertmetastar {%
+%Wouk2010}%
+%\begin{APACrefauthors}%
+%Wouk, H.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2010}.
+%\newblock
+%\APACrefbtitle {The Language {G}od Talks: {O}n Science and Religion} {The
+%  language {G}od talks: {O}n science and religion}.
+%\newblock
+%\APACaddressPublisher{London}{Little, Brown and Company}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {1967}}%
+%}]{%
+%Zuse1967}
+%\APACinsertmetastar {%
+%Zuse1967}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1967}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Rechnender {R}aum} {Rechnender {R}aum}.{\BBCQ}
+%\newblock
+%\APACjournalVolNumPages{Elektronische Datenverarbeitung}{8}{}{336--344}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://www.informationphilosopher.com/solutions/scientists/zuse/Rechnender_Raum.pdf}}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {1969}}%
+%}]{%
+%Zuse1969}
+%\APACinsertmetastar {%
+%Zuse1969}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{1969}.
+%\newblock
+%\APACrefbtitle {Rechnender {R}aum: {S}chriften zur {D}atenverarbeitung}
+%  {Rechnender {R}aum: {S}chriften zur {D}atenverarbeitung}.
+%\newblock
+%\APACaddressPublisher{Braunschweig}{Vieweg \& Sohn}.
+%\newblock
+%\APACrefnote{Przekład na angielski \parencite{Zuse1970}}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {1970}}%
+%}]{%
+%Zuse1970}
+%\APACinsertmetastar {%
+%Zuse1970}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{1970}{February}{}.
+%\newblock
+%\APACrefbtitle {Calculating Space} {Calculating space}\ \APACbVolEdTR
+%  {}{Technical Translation AZT-70-164-GEMIT\ \BNUM\ MA 02139.PDF}.
+%\newblock
+%\APACaddressInstitution{Cambridge, MA}{MIT}.
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {2010}}%
+%}]{%
+%Zuse2010}
+%\APACinsertmetastar {%
+%Zuse2010}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2010}.
+%\newblock
+%\APACrefbtitle {Der {C}omputer: {M}ein {L}ebenswerk} {Der {C}omputer: {M}ein
+%  {L}ebenswerk}\ (\PrintOrdinal{5. unver{\"a}nd. Aufl.}\ \BEd).
+%\newblock
+%\APACaddressPublisher{Berlin Heidelberg}{Springer-Verlag}.
+%\newblock
+%\APACrefnote{Bearbeitet von Konrad Zuse, Friedrich L. Bauer, H. Zemanek}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {2012}}%
+%{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
+%Zuse2012a}
+%\APACinsertmetastar {%
+%Zuse2012a}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYear{2012{\protect \BCnt {1}}}.
+%\newblock
+%\APACrefbtitle {Calculating Space (``{R}echnender {R}aum'')} {Calculating space
+%  (``{R}echnender {R}aum'')}.
+%\newblock
+%\APACaddressPublisher{}{World Scientific}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://www.mathrix.org/zenil/ZuseCalculatingSpace-GermanZenil.pdf}}.
+%\newblock
+%\APACrefnote{Followed by an Afterword by Adrian German and Hector Zenil}
+%\PrintBackRefs{\CurrentBib}
+%
+%\bibitem [\protect \parenciteauthoryear {%
+%Zuse%
+%}{%
+%Zuse%
+%}{%
+%{\protect \APACyear {2012}}%
+%{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
+%Zuse2012}
+%\APACinsertmetastar {%
+%Zuse2012}%
+%\begin{APACrefauthors}%
+%Zuse, K.%
+%\end{APACrefauthors}%
+%\unskip\
+%\newblock
+%\APACrefYearMonthDay{2012{\protect \BCnt {2}}}{}{}.
+%\newblock
+%{\BBOQ}\APACrefatitle {Nature as Computation} {Nature as computation}.{\BBCQ}
+%\newblock
+%\BIn{} \APACrefbtitle {A Computable Universe: {U}nderstanding \& Exploring} {A
+%  computable universe: {U}nderstanding \& exploring}\ (\PrintOrdinal{1st.
+%  re-edition1 written in \LaTeX\ by A. German and H. Zenil}\ \BEd).
+%\newblock
+%\APACaddressPublisher{}{World Scientific}.
+%\newblock
+%\APAChowpublished
+%  {\url{https://pdfs.semanticscholar.org/7855/c53d983e816765f5a6c637814768897d903b.pdf}}.
+%\newblock
+%\APACrefnote{Followed by an Afterword by Adrian German and Hector Zenil}
+%\PrintBackRefs{\CurrentBib}
+%
+%\end{thebibliography}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end PP %%%%%%%%%%%%%%%%
+\end{document}
+
