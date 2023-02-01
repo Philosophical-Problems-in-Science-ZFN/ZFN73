@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{setspace}
 
-\usepackage[gray]{xcolor}
+\usepackage[gray,table]{xcolor}
 
 \raggedbottom %usuwa przerwy między akapitami, spowodowane przez klasę book
 \frenchspacing %usuwa podwójną przerwę po krpoce (zdaniu)
@@ -37,13 +37,16 @@
 
 
 
+
+
 \usepackage{longtable}
 \usepackage{tabularx}
 \renewcommand{\tabularxcolumn}[1]{m{#1}}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcolumntype{s}{>{\hsize=.8\hsize}X}
 \renewcommand\arraystretch{1.2}
-\usepackage{float} %umożliwia hard positioning (flaga: H)
+\usepackage{float} % hard positioning (flag H)
+\renewcommand{\floatpagefraction}{.8}% floating on a single page only when figure is 80% of the vertical space
 \usepackage{supertabular}
 
 
@@ -298,10 +301,10 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 
 \usepackage{fancyhdr}
 \pagestyle{fancyplain}
-\renewcommand{\sectionmark}[1]%
-                 {\markright{\thesection\ #1}}
-\renewcommand{\subsectionmark}[1]%
-                 {\markright{\thesubsection\ #1}}
+%\renewcommand{\sectionmark}[1]%
+%                 {\markright{\thesection\ #1}}
+%\renewcommand{\subsectionmark}[1]%
+%                 {\markright{\thesubsection\ #1}}
 \lhead[\fancyplain{}{\pagnum{\thepage}}]%
       {\fancyplain{}{\pagtit{\rightmark}}}
 \rhead[\fancyplain{}{\pagtit{\leftmark}}]%
@@ -834,6 +837,14 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
   	\fi
 }{0.3em}{}
 \titlespacing*{\section}{0pt}{2.0\baselineskip}{1.0\baselineskip}[0pt]
+%
+\titleformat{\subsection}
+{\subsectit\justifyheading}{%
+\thesubsection}{0.3em}{}
+%
+\titleformat{\subsubsection}
+{\subsubsectit\justifyheading}{%
+\thesubsection}{0.3em}{}
 \makeatother
 
 
@@ -847,14 +858,14 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 \flushright\sectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip}}
 
 
-\renewcommand{\subsection}[1]{{\par\vskip 2\baselineskip
-\flushright\subsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip\addtocounter{subsection}{1}}}
+%\renewcommand{\subsection}[1]{{\par\vskip 2\baselineskip
+%\flushright\subsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip\addtocounter{subsection}{1}}}
 
 \newcommand{\subsectionno}[1]{{\par\vskip 2\baselineskip
 		\flushright\subsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip}}
 
-\renewcommand{\subsubsection}[1]{{\par\vskip 2\baselineskip
-\flushright\subsubsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip\addtocounter{subsubsection}{1}}}
+%\renewcommand{\subsubsection}[1]{{\par\vskip 2\baselineskip
+%\flushright\subsubsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip\addtocounter{subsubsection}{1}}}
 
 \newcommand{\subsubsectionno}[1]{{\par\vskip 2\baselineskip
 		\flushright\subsubsectit{#1}\par\nopagebreak[4]\vskip 1\baselineskip}}
@@ -994,12 +1005,14 @@ backend=biber]{biblatex}
 
 %\addbibresource{EDI_Krzanowski/xyz.bib}
 \addbibresource{ART_Dodig-Crnkovic/Dodig-Crnkovic.bib}
+\addbibresource{ART_Toscano/Toscano.bib}
+\addbibresource{ART_Martin/Martin.bib}
 \addbibresource{ART_Krzanowski_Polak/Krzanowski_Polak.bib}
 \addbibresource{ART_Mscislawski/Mscislaw.bib}
 \addbibresource{ART_Noh/Noh.bib}
 \addbibresource{ART_Sekrst/Sekrst.bib}
 \addbibresource{ART_Soloducha/Soloducha.bib}
-\addbibresource{ART_Toscano/Toscano.bib}
+
 \addbibresource{ESS_Olszewski/Olszewski.bib}
 \addbibresource{ESS_Trzesicki/Trzesicki.bib}
 
@@ -1262,6 +1275,14 @@ backend=biber]{biblatex}
 
 \addto\captionspolish{\renewcommand{\figurename}{Ilustracja}}
 
+
+
+%%%% Martin et al.
+%\usepackage{listings}
+
+
+
+
 %--------------------------------------------
 
 \begin{document}
@@ -1322,12 +1343,13 @@ backend=biber]{biblatex}
 
 \input{ART_Dodig-Crnkovic/Dodig-Crnkovic.tex}
 \input{ART_Toscano/Toscano.tex}
+\input{ART_Martin/Martin.tex}
 %\input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
 %\input{ART_Mscislawski/Mscislaw.tex}
 %\input{ART_Noh/Noh.tex}
 %\input{ART_Sekrst/Sekrst.tex}
 %\input{ART_Soloducha/Soloducha.tex}
-%\input{ART_Toscano/Toscano.tex}
+%\input{ART_Martin/Martin.tex}
 %\input{ESS_Olszewski/Olszewski.tex}
 %\input{ESS_Trzesicki/Trzesicki.tex}
 
