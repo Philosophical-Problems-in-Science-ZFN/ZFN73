@@ -1283,9 +1283,51 @@ backend=biber]{biblatex}
 %\usepackage{listings}
 
 
+%-------------------------------------------
 
+
+\usepackage{epigraph}
+\makeatletter
+    \newlength\epitextskip
+    \pretocmd{\@epitext}{\em}{}{}
+    \apptocmd{\@epitext}{\em}{}{}
+    \patchcmd{\epigraph}{\@epitext{#1}\\}{\@epitext{#1}\\[\epitextskip]}{}{}
+\makeatother
+\setlength\epigraphrule{0pt}
+\setlength\epitextskip{.1ex}
+\setlength\epigraphwidth{.5\textwidth}
 
 %--------------------------------------------
+
+
+\newcommand{\newmarkedtheorem}[1]{%
+	\newenvironment{#1}
+	{\pushQED{\qed}\csname inner@#1\endcsname}
+	{\popQED\csname endinner@#1\endcsname}%
+	\newtheorem{inner@#1}%
+}
+
+\DeclareRobustCommand{\qed}{%
+  \ifmmode%
+  \else \leavevmode\unskip\penalty9999 \hbox{}\nobreak%\hfill
+  \fi
+  \space\hbox{\qedsymbol}}
+  
+  \renewcommand{\qedsymbol}{\openbox}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Corollary}
+
+
+\theoremstyle{definition} \newmarkedtheorem{definition}{Definition}
+
+
+
+
+
+
+
 
 \begin{document}
 
@@ -1343,25 +1385,21 @@ backend=biber]{biblatex}
 %\renewcommand{\theequation}{\arabic{equation}}
 
 
-\input{ART_Dodig-Crnkovic/Dodig-Crnkovic.tex}
-\input{ART_Toscano/Toscano.tex}
-\input{ART_Martin/Martin.tex}
-\input{ART_Noh/Noh.tex}
-\input{ART_Mscislawski/Mscislaw.tex}
-\input{ART_Sekrst/Sekrst.tex}
-\input{ART_Soloducha/Soloducha.tex}
-\input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
-
-
-
-%\input{ART_Noh/Noh.tex}
-
-
+%\input{ART_Dodig-Crnkovic/Dodig-Crnkovic.tex}
+%\input{ART_Toscano/Toscano.tex}
 %\input{ART_Martin/Martin.tex}
+%\input{ART_Noh/Noh.tex}
+%\input{ART_Mscislawski/Mscislaw.tex}
+%\input{ART_Sekrst/Sekrst.tex}
+%\input{ART_Soloducha/Soloducha.tex}
+%\input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
 
 
 
-%\input{ESS_Olszewski/Olszewski.tex}
+
+\sekcja{Essays}{Eseje}
+
+\input{ESS_Olszewski/Olszewski.tex}
 %\input{ESS_Trzesicki/Trzesicki.tex}
 
 
@@ -1392,8 +1430,8 @@ backend=biber]{biblatex}
 
 
 %\input{REV_Mscislawski/xyz.tex}
-\input{REV_Polak1/Polak1.tex}
-\input{REV_Polak2/Polak2.tex}
+%\input{REV_Polak1/Polak1.tex}
+%\input{REV_Polak2/Polak2.tex}
 
 
 
