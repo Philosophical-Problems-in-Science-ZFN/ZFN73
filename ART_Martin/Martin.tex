@@ -8,9 +8,11 @@
 	In that field, the formal modelling of interactive computing systems has been brought down to whether the new interaction models are reducible to Turing Machines. There are three areas where interaction models are framed. The comparison between TMs and interactive system models is at stake in all of them. These areas are namely some works on concurrency by Milner, on Reactive Turing Machines, and on interaction as a~new computing paradigm. For each of the three identified models, we present its motivation, sum up its account for interaction and its legacy, and point out issues regarding the understanding of computers. The survey shows difficulties for epistemologists. The reason is that these analyses focus on the formal equivalence between interactive models of computation and classic ones. Such a~project is different from addressing how a~computing machine can be interactive: in other words, which mechanisms allow it.}
 	{philosophy of computing, models of computation, interactive computing, computing mechanism, computational mechanistic explanation.}
 	{%
-		{\flushright\subbold{Alice Martin}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
-		{\flushright\subbold{Mathieu Magnaudet}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
-		{\flushright\subbold{Stéphane Conversy}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
+%		{\flushright\subbold{Alice Martin}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
+%		{\flushright\subbold{Mathieu Magnaudet}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
+%		{\flushright\subbold{Stéphane Conversy}\\\subsubsectit\small{ENAC, Université de Toulouse}\par}%
+				{\flushright\subbold{Alice Martin}\\\subbold{Mathieu Magnaudet}\\\subbold{Stéphane Conversy}\\
+				\subsubsectit\small{ENAC, Université de Toulouse}\par}%
 	}
 
 %\documentclass[a4paper, 11pt, twoside]{article}
@@ -68,7 +70,8 @@
 %\renewcommand{\thesection}{.\arabic{section}}
 \section*{Introduction}
 
-In the philosophy of computing, we are paying increased attention to a~set of new features of computers. This set has led to the introduction of a~new label for these computing machines: they are referred to as interactive computing machines \parencite{Dodig-Crnkovic2011, Goldin2006, Soare2013, VanLeeuwen2001, Wegner1997}. The set of new features can be captured in the following statement made in a~2011 paper by Gordana Dodig-Crnkovic (our highlights): 
+\lettrine[loversize=0.13,lines=2,lraise=-0.03,nindent=0em,findent=0.2pt]%
+{I}{}n the philosophy of computing, we are paying increased attention to a~set of new features of computers. This set has led to the introduction of a~new label for these computing machines: they are referred to as interactive computing machines \parencite{Dodig-Crnkovic2011, Goldin2006, Soare2013, VanLeeuwen2001, Wegner1997}. The set of new features can be captured in the following statement made in a~2011 paper by Gordana Dodig-Crnkovic (our highlights): 
 
 \myquote{
  Present day computers are very different from the early stand-alone calculators designed for mechanizing mathematical operations. They are largely \emph{used for communication in world-wide networks} and variety of information processing and knowledge management. Moreover, they play \emph{an important role in the control of physical processes and thus connect to the physical world}, especially in automation and robotics. [\ldots] Computational processes are nowadays \emph{distributed, reactive, agent-based, and concurrent}. The main criterion of success of the computation is not its termination, but its \emph{response to the outside world}, its speed, generality and flexibility; adaptability, and tolerance to noise, error, faults, and damage. \parencite{Dodig-Crnkovic2011}

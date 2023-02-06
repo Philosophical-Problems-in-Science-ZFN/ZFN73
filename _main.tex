@@ -321,8 +321,8 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 \newcommand{\zfntitleeng}{Philosophical Problems in Science}
 \newcommand{\rok}{2022} % lub rok
 %\newcommand{\rok}{\the\year} % lub rok
-\newcommand{\numerarabski}{72}
-\newcommand{\numerrzymski}{LXXII}
+\newcommand{\numerarabski}{73}
+\newcommand{\numerrzymski}{LXXIII}
 \newcommand{\infbiblio}{\zfntitle, nr \numerarabski\ (\rok), ss.~}
 \newcommand{\infbiblioeng}{\zfntitle, No \numerarabski\ (\rok), pp.~}
 
@@ -932,7 +932,7 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 	\vfill
 	\cleardoublepage
 %	\addcontentsline{toc}{chapter}{#1}%
-	\addtocontents{toc}{\vskip0.3\baselineskip}
+	\addtocontents{toc}{\vskip0.7\baselineskip}
 	\addtocontents{toc}{%
 		\hfill%
 		{\noindent\toclight{#1}\par}%
@@ -1018,9 +1018,11 @@ backend=biber]{biblatex}
 \addbibresource{ESS_Trzesicki/Trzesicki.bib}
 
 
-\addbibresource{REV_Polak1/Polak1.bib}
+\addbibresource{REV_Mscislawski/Mscislawski.bib}
 \addbibresource{REV_Polak2/Polak2.bib}
-%\addbibresource{REV_Mscislawski/xyz.bib}
+\addbibresource{REV_Polak1/Polak1.bib}
+
+
 
 
 
@@ -1279,11 +1281,9 @@ backend=biber]{biblatex}
 
 
 
-%%%% Martin et al.
-%\usepackage{listings}
 
 
-%-------------------------------------------
+%-----------------mottos-------------------------
 
 
 \usepackage{epigraph}
@@ -1297,9 +1297,13 @@ backend=biber]{biblatex}
 \setlength\epitextskip{.1ex}
 \setlength\epigraphwidth{.5\textwidth}
 
-%--------------------------------------------
 
 
+
+
+%------------------------------Theorem envs definitions for Olszewski's paper----------------------
+
+%---New enviroment with proof-like qed symbol
 \newcommand{\newmarkedtheorem}[1]{%
 	\newenvironment{#1}
 	{\pushQED{\qed}\csname inner@#1\endcsname}
@@ -1307,15 +1311,20 @@ backend=biber]{biblatex}
 	\newtheorem{inner@#1}%
 }
 
+
+%---Qed symbol after last word in the line
 \DeclareRobustCommand{\qed}{%
   \ifmmode%
   \else \leavevmode\unskip\penalty9999 \hbox{}\nobreak%\hfill
   \fi
   \space\hbox{\qedsymbol}}
   
-  \renewcommand{\qedsymbol}{\openbox}
+
+%---end-of-proof symbol
+\renewcommand{\qedsymbol}{\openbox}
 
 
+%---standard definitions
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Corollary}
 
@@ -1323,7 +1332,11 @@ backend=biber]{biblatex}
 \theoremstyle{definition} \newmarkedtheorem{definition}{Definition}
 
 
-
+%---theorem with custom numbering/labelling
+\newtheorem{innercustomthm}{Theorem}
+\newenvironment{customthm}[1]
+  {\renewcommand\theinnercustomthm{#1}\innercustomthm}
+  {\endinnercustomthm}
 
 
 
@@ -1372,10 +1385,10 @@ backend=biber]{biblatex}
 
 
 
-%\sekcja{Editorial}{Od Redakcji}
+\sekcja{Editorial}{Od Redakcji}
 
 %\input{EDI/editorial-PU.tex}
-%\input{EDI_Krzanowski/xyz.tex}
+\input{EDI_Krzanowski/Krzanowski.tex}
 
 
 \sekcja{Articles}{Artykuły}
@@ -1385,22 +1398,22 @@ backend=biber]{biblatex}
 %\renewcommand{\theequation}{\arabic{equation}}
 
 
-%\input{ART_Dodig-Crnkovic/Dodig-Crnkovic.tex}
-%\input{ART_Toscano/Toscano.tex}
-%\input{ART_Martin/Martin.tex}
-%\input{ART_Noh/Noh.tex}
-%\input{ART_Mscislawski/Mscislaw.tex}
-%\input{ART_Sekrst/Sekrst.tex}
-%\input{ART_Soloducha/Soloducha.tex}
-%\input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
+\input{ART_Dodig-Crnkovic/Dodig-Crnkovic.tex}
+\input{ART_Toscano/Toscano.tex}
+\input{ART_Martin/Martin.tex}
+\input{ART_Noh/Noh.tex}
+\input{ART_Mscislawski/Mscislaw.tex}
+\input{ART_Sekrst/Sekrst.tex}
+\input{ART_Soloducha/Soloducha.tex}
+\input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
 
 
 
-
+\addtocontents{toc}{\protect\pagebreak}
 \sekcja{Essays}{Eseje}
 
 \input{ESS_Olszewski/Olszewski.tex}
-%\input{ESS_Trzesicki/Trzesicki.tex}
+\input{ESS_Trzesicki/Trzesicki.tex}
 
 
 
@@ -1423,16 +1436,15 @@ backend=biber]{biblatex}
 
 
 
-
+%\addtocontents{toc}{\protect\pagebreak}
 \sekcja{Review articles}{Artykuły recenzyjne}
 
 
 
 
-%\input{REV_Mscislawski/xyz.tex}
-%\input{REV_Polak1/Polak1.tex}
-%\input{REV_Polak2/Polak2.tex}
-
+\input{REV_Polak2/Polak2.tex}
+\input{REV_Polak1/Polak1.tex}
+\input{REV_Mscislawski/Mscislawski.tex}
 
 
 

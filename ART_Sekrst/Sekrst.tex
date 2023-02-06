@@ -4,11 +4,12 @@
 	{Machine learning and essentialism}
 	{\textsuperscript{1}Departments of Philosophy and Mathematics, Carnegie Mellon University\\
 		\textsuperscript{2}Copernicus Center for Interdisciplinary Studies, Jagiellonian University}
-	{Machine learning and essentialism have been connected in the past by various researchers, in order to state that the main paradigm in machine learning processes is equivalent to choosing the ``essential'' attributes for the machine to search for. Our goal in this paper is to show that there are connections between machine learning and essentialism, but only for some kinds of machine learning, and often not including deep learning methods. Similarity-based approaches, more connected to the overall prototype theory, spanning from psychology and linguistics, seem more suited for pattern recognition and complex deep-learning issues, while for classification problems, mostly for unsupervised learning, essentialism seems like the best choice. In order to illustrate the difference better, we will connect both paths to their sources in other disciplines and see how human psychology influences our decision in machine-learning modeling as well. This leads to a~philosophically very interesting consequence: even in the setting of supervised machine learning, essences are not present in data, but in targets, which in turn means that the categories which purport to be essences are in fact human-made, and hand-coded in the targets. The success of machine learning, therefore, does not give any substantial evidence for the independent existence of essential properties. Our stance here is to state that neither the existence nor the lack of ``essential'' properties in machine learning can lead to metaphysical, i.e., ontological claims.}
+	{\label{sekrst_start}Machine learning and essentialism have been connected in the past by various researchers, in order to state that the main paradigm in machine learning processes is equivalent to choosing the ``essential'' attributes for the machine to search for. Our goal in this paper is to show that there are connections between machine learning and essentialism, but only for some kinds of machine learning, and often not including deep learning methods. Similarity-based approaches, more connected to the overall prototype theory, spanning from psychology and linguistics, seem more suited for pattern recognition and complex deep-learning issues, while for classification problems, mostly for unsupervised learning, essentialism seems like the best choice. In order to illustrate the difference better, we will connect both paths to their sources in other disciplines and see how human psychology influences our decision in machine-learning modeling as well. This leads to a~philosophically very interesting consequence: even in the setting of supervised machine learning, essences are not present in data, but in targets, which in turn means that the categories which purport to be essences are in fact human-made, and hand-coded in the targets. The success of machine learning, therefore, does not give any substantial evidence for the independent existence of essential properties. Our stance here is to state that neither the existence nor the lack of ``essential'' properties in machine learning can lead to metaphysical, i.e., ontological claims.}
 	{essentialism, machine learning, accidental properties, similarity-based approach, pattern recognition, modal necessity.}
 	{%
-		{\flushright\subbold{Kristina Šekrst}\\\subsubsectit\small{University of Zagreb}\par}%
-		{\flushright\subbold{Sandro Skansi}\\\subsubsectit\small{University of Zagreb}\par}%
+%		{\flushright\subbold{Kristina Šekrst}\\\subsubsectit\small{University of Zagreb}\par}%
+%		{\flushright\subbold{Sandro Skansi}\\\subsubsectit\small{University of Zagreb}\par}%
+				{\flushright\subbold{Kristina Šekrst}\\\subbold{Sandro Skansi}\\\subsubsectit\small{University of Zagreb}\par}%
 	}
 
 
@@ -28,15 +29,16 @@
 
 
 
-\section{Essential and accidental properties: introduction}
-The purpose of this paper is to show that the existence of essential-like features in machine learning, or the lack of them, cannot provide an ontological commitment.\footnote{The authors would like to thank the anonymous reviewers for their detailed analyses and insights.} Researchers have connected machine-learning practices with essentialist and anti-essentialist stances, but we feel that such claims ignore that both ``essentialist'' and ``anti-essentialist'' paradigms in machine learning are both influenced by human psychology and have no real consequence on the verification of whether there \textit{are} essential properties in nature or not.\footnote{It is necessary to distinguish between ontological commitments regarding nature and ontological commitments that are necessary in every AI system (we call this difference an ontological gap). The former are the subject of this article, and the latter were analyzed by Krzanowski \& Polak
+\section*{Essential and accidental properties: introduction}
+\lettrine[loversize=0.13,lines=2,lraise=-0.03,nindent=0em,findent=0.2pt]%
+{T}{}he purpose of this paper is to show that the existence of essential-like features in machine learning, or the lack of them, cannot provide an ontological commitment.\footnote{The authors would like to thank the anonymous reviewers for their detailed analyses and insights.} Researchers have connected machine-learning practices with essentialist and anti-essentialist stances, but we feel that such claims ignore that both ``essentialist'' and ``anti-essentialist'' paradigms in machine learning are both influenced by human psychology and have no real consequence on the verification of whether there \textit{are} essential properties in nature or not.\footnote{It is necessary to distinguish between ontological commitments regarding nature and ontological commitments that are necessary in every AI system (we call this difference an ontological gap). The former are the subject of this article, and the latter were analyzed by Krzanowski \& Polak
 %\label{ref:RNDU3VddFbPO5}(2022a; 2022b).
 \parencites*[][]{krzanowski_ontology_2022}[][]{krzanowski_meta-ontology_2022}.%
 }
 
 The outline of the paper is as follows. First, we will give a~brief overview of what philosophical essentialism is and mention the scarce research on (anti-)essentialism in machine learning. Next, we will provide insight into the basics of machine-learning paradigms, namely supervised and unsupervised learning. The notion of essential properties is often connected to supervised learning, but we would like to find out why, so we will connect it to psychological essentialism and the development of human epistemological stances. We will notice that prototype theory seems closer to human understanding, and it can be seen as present in both supervised and unsupervised paradigms, even though they might be a~better fit for the latter. The notion of a~\textit{feature} \textit{vector}, as a~collection of properties, will be connected to psychological prototypes. Last, we will observe how in both supervised and unsupervised learning, the human factor involved guides the learning, but this cannot be equated with the existence or non-existence of essentialism. Namely, some supervised tasks are better for some real-life or mathematical problems, while some unsupervised tasks are better for others. The question of essentialist-like or anti-essentialist paradigm here is just a~question of using the right tool for your problem, and not an ontological consequence.
 
-\section{Philosophical essentialism}
+\section*{Philosophical essentialism}
 An \textit{essential} property of an object is a~property that an object must have, while an \textit{accidental} one is the one the object happens could have, but that it could lack. That is, in modal terms,\footnote{Standard modal characterizations have been disseminated with the works of Ruth Barcan Marcus and Saul Kripke. Kripke's work on semantics is taking the truth of a~formula relative to a~possible world, since its truth value depends on what is true in accessible world. See Barcan Marcus
 %\label{ref:RNDktVIAPuvSw}(1993)
 \parencite*[][]{marcus_modalities_1993} %
@@ -94,7 +96,7 @@ Previous work on machine learning and essentialism dealt with various types of m
 \parencite*[][]{duin_dissimilarity_2015} %
  provides an anti-essentialist approach in pattern-recognition systems, claiming that in most of the applications in pattern recognition, there is no known, small set of essential features (a notion we agree with). Our goal is to show how various cases of essentialist-like and non-essentialist-like stances can be seen manifested in machine-learning choices, but that does not mean we are talking about real essentialist or anti-essentialist ontology.
 
-\section{Machine-learning basics}
+\section*{Machine-learning basics}
 \textit{Machine learning}, as a~part of artificial intelligence and computer science, is a~field of approaches and methods that use data in order to improve their performance on some problems. Artificial intelligence can be seen as a~certain type of philosophical engineering
 %\label{ref:RNDwNayypCdyS}(Skansi, 2018, p.vii):
 \parencite[][p.vii]{skansi_introduction_2018}: %
@@ -129,7 +131,7 @@ We might start to notice something interesting here. First, if we are telling th
 \parencite*[][]{zhang_google_2015}.%
 } However, why did we choose some features on top of others? The answer might lie in human psychology.
 
-\section{Psychological essentialism}
+\section*{Psychological essentialism}
 Gelman
 %\label{ref:RNDqWgJbFowwn}(2004, p.405)
 \parencite*[][p.405]{gelman_psychological_2004} %
@@ -160,7 +162,7 @@ By the age of two, children view \textit{causes} as vital to what something is
 
 Here, the notion of a~\textit{feature} comes in handy as an individual measurable property. In character recognition, features might be shapes and pixels, and in voice recognition, frequency, noise, and strength. In computer vision, we might be talking about blobs, i.e., regions in images that differ in properties from the rest of the surrounding regions, for example, in color or brightness. Basically, it is a~collection of information used for future problem resolution. In the case of classification, this may be compared to children learning about classes, memberships, and categories. But, how to describe a~dog, say, using words? What are some essential properties the algorithm would be searching for? For example, a~type of face, number of various body parts, color, etc. Children learn to recognize various members of the class and then generalize and use this knowledge in novel situations, i.e., previously unseen examples of that class. We want the computer to follow a~similar process. In order to generalize well, a~good selection of features needs to be selected. In the next section, we will observe how such a~process is followed in machine learning and how the question of feature selection has important philosophical consequences.
 
-\section{Features and prototypes}
+\section*{Features and prototypes}
 As mentioned, \textit{features} tend to be measurable properties that are successful in discriminating and differentiating between different categories of data. For example, in face detection
 %\label{ref:RND7NdRdpncD9}(Bishop, 2006, p.3),
 \parencite[][p.3]{bishop_pattern_2006}, %
@@ -194,7 +196,7 @@ We have mentioned that a~strict binarist approach may seem inadequate in many ca
 
 In machine learning, a~feature does not have to be a~binary Boolean, it can also be seen and created as a~certain prototype. For example, in image recognition, there is a~need to give the best prototype for a~category. In the case of supervised learning, if we are training our models to recognize birds, and we are only using edge-case birds, we are not using the most generalized and best prototype or a~versatile dataset consisting of central and edge-case members. The majority of images presented in a~labeled training dataset would be close to being a~prototype of the category. If we wanted to recognize apples, a~rotten or a~half-eaten apple would not be a~prototype but would be a~wanted member of the class, and if we wanted to recognize cats, a~one-eyed cat without ears would not be a~prototypical image, but we would somehow like to get the essentials with our prototypes in order to also include this as a~result. In this case, we would expect percentages stating the probability that something is a~dog or a~cat to be higher for prototypical members, possessing all the necessary features, and less for edge-case or less prototypical members of a~category.
 
-\section{Essentialist paradigm(s) in machine learning}
+\section*{Essentialist paradigm(s) in machine learning}
 It seems intuitive and obvious that supervised machine learning incorporates some kind of essentialism. That is, we are either given discrete or continuous features in datasets that are used for our predictions, usually whether something is a~member of a~class or not. But there are other kinds of machine learning, and we must not ignore the notion of unsupervised learning. We have already mentioned unsupervised learning, in which a~model tries to establish regularities, clusters, or patterns in previously unseen data. This can be compared to the process of human learning at an early age, in which a~human being tries to generalize the already acquired knowledge. Consider this, even if you are getting an unlabeled dataset of weird alien creatures, you will most certainly be able to connect similar ones together in groups or do classifications, even if you do not know what \textit{is} actually in the background of your dataset. We would like the computer to do the same. For example, if we trained our models on a~certain map, they might recognize landmasses, developed areas, forests, or wetlands and group them together, by finding similarities between them. In non-visual data, you might be presented with some numbers, say bank transfers, and you might connect the usual activity into groups, while the outliers might be suspicious.
 
 Pelillo and Scantamburlo
@@ -233,7 +235,7 @@ The notion of a \textit{feature vector} is often used in machine learning: an \t
 \parencite[][p.4]{pelillo_introduction_2013}. %
  We have to note that such an approach is analogous to a~prototypical relationship, where members are grouped around a~prototype in a~certain graph-like manner. A~green apple is more similar to the prototype of a~red apple than a~red strawberry, and if such connections would be shown as a~weighted graph, then we would expect a~less expensive traversal to a~red apple.
 
-\section{Accidental properties in machine learning}
+\section*{Accidental properties in machine learning}
 The processes and disciplines of \textit{feature selection} and \textit{extraction} show us that there is a~strong presupposition that something as essential as a~feature exists. There is no doubt that machine learning today is still enveloped in a~strong essentialist paradigm. In feature engineering,\footnote{For more details about feature engineering, see Zheng and Casari
 %\label{ref:RNDzLhpHmjkOb}(2018).
 \parencite*[][]{zheng_feature_2018}.%
@@ -248,7 +250,7 @@ Namely, sometimes, features even outside deep learning that generate best models
 
 When it is led by humans, that does not mean that there is an omniscient metaphysicist in computer engineers deciding what is essential and what is not. There are two important problems in machine learning. The first one is \textit{underfitting}, the case in which a~model is too general and does not fit the data property. For example, if we were doing dog recognition, from the training set, our underfitted model would consider that necessary features would be to have pointy ears and tails. In this case, we might recognize cats and rabbits too. An \textit{overfitted} model has the opposite problem, it too closely responds to training data, and it is too specific. Basically, as if you only knew how to solve problems that appeared in your homework, but you are unable to solve the same problem when the numbers are replaced with other numbers. Our model might only recognize white and fluffy dogs with grey spots on their backs. Such a~case might also be a~result of bad feature engineering in the first place. Using automated feature engineering actually reduces the overfitting of your models, taking into account the standardized method of figuring out which one of your selected features might cause problems for your model to be too specific. We might imagine a~case in which that also might seem like an essential property, but not for machine-learning purposes. Properties chosen or discovered might not be relevant or essential but make the model perform well.
 
-\section{Machine learning or essentialism?}
+\section*{Machine learning or essentialism?}
 Our previous conclusion might imply two separate things. Either there is an anti-cybernetic stance in which human learning that encompasses a~certain kind of innate essentialist knowledge is a~different process in machine learning, or that, for practical purposes, knowledge of essential properties is not a~necessary prerequisite for everyday classifications and predictions. The latter seems more intuitive. It does seem that a~similarity-based approach, mimicking the prototypical relationships found in psychological and linguistic research, may work well in various human and machine usages, along with a~combination of properties (features) together with their relations (cf. feature vectors). For some machine-learning tasks, pure essentialism, often a~binary or Boolean one, works best. We believe that essentialism and anti-essentialisms are not binary choices a~computer scientist or a~philosopher must make in order to describe how processes are being generated and run in machine learning paradigms today, but it is a~matter of choice \textit{for a~specific type of task}. There is no essentialism equated with machine learning, but there is both essentialism and anti-essentialism for specific tasks. For some classification tasks and simple pattern recognitions, essentialist features are often the best choice, and for others, systems will work better with combinations of these properties. For unsupervised learning and pattern recognition, prototypical systems, i.e., similarity-based approaches, perform better. A~philosophical take here is that, at least in machine learning, there is no ontological obligation towards either of these stances, but rightful usage for rightful tasks. The choice of your machine-learning system, and therefore, a~supervised or unsupervised approach, will depend on the type of task in question: \textit{what performs better}. It is just a~matter of technical performance that has no metaphysical consequences of the existence of essentialism or anti-essentialism.
 
 From a~psychological standpoint, Gelman
@@ -283,67 +285,4 @@ Essentialist and anti-essentialist stances are both present in supervised and un
 
 
 \end{artengenv2auth}
-
-%\section{Bibliography}
-%Aristotle, 2014. Categories. In: Jonathan Barnes, ed. \textit{The Complete Works of Aristotle: The Revised Oxford Translation, One-Volume Digital Edition}, Bollingen series, 6. print., with corr. Princeton, N.J: Princeton University Press. pp.25–70.
-%
-%Ben-Menahem, Y., 2006. \textit{Conventionalism[202F?]: From Poincare to Quine}. [online] Cambridge; New York: Cambridge University Press. Available at: {\textless}https://search.ebscohost.com/login.aspx?direct=true\&db=e000xww\&AN=529339\&lang=pl\&site=ehost-live{\textgreater} [Accessed 13 January 2023].
-%
-%Bishop, C.M., 2006. \textit{Pattern Recognition and Machine Learning}. Information science and statistics. New York: Springer.
-%
-%Cartwright, R.L., 1968. Some Remarks on Essentialism. \textit{The Journal of Philosophy}, [online] 65(20), pp.615–626. https://doi.org/10.2307/2024315.
-%
-%Cohen, M.F., 1968. Wittgenstein's anti-essentialism. \textit{Australasian Journal of Philosophy}, [online] 46(3), pp.210–224. https://doi.org/10.1080/00048406812341181.
-%
-%Descartes, R., 1641. \textit{Renati Des-Cartes Meditationes de prima philosophia, in qua Dei existentia et animae immortalitas demonstratur.} [online] Paris: Michael Soly. Available at: {\textless}https://gallica.bnf.fr/ark:/12148/btv1b86002964{\textgreater} [Accessed 25 August 2021].
-%
-%Descartes, R., 1991. Meditations on First Philosophy. Translated by J. Cottingham, R. Stoothoff and D. Murdoch. In: \textit{The Philosophical Writings of Descartes, vol. 2}. Cambridge: Cambridge University Press. pp.1–63.
-%
-%Duin, R.P.W., 2015. The dissimilarity representation for finding universals from particulars by an anti-essentialist approach. \textit{Pattern Recognition Letters}, [online] 64(C), pp.37–43. https://doi.org/10.1016/j.patrec.2015.04.015.
-%
-%Gelman, S., 2004. Psychological essentialism in children. \textit{Trends in Cognitive Sciences}, [online] 8(9), pp.404–409. https://doi.org/10.1016/j.tics.2004.07.001.
-%
-%Gelman, S.A., 2005. \textit{Essentialism in Everyday Thought}. [online] https://www.apa.org. Available at: {\textless}https://www.apa.org/science/about/psa/2005/05/gelman{\textgreater} [Accessed 12 January 2023].
-%
-%Gibbs, C., 2018. Causal essentialism and the identity of indiscernibles. \textit{Philosophical Studies}, [online] 175(9), pp.2331–2351. https://doi.org/10.1007/s11098-017-0961-y.
-%
-%Kripke, S.A., 1972. Naming and Necessity. In: D. Davidson and G. Harman, eds. \textit{Semantics of Natural Language}, Synthese Library. [online] Dordrecht: Springer Netherlands. pp.253–355. https://doi.org/10.1007/978-94-010-2557-7\_9.
-%
-%Krzanowski, R. and Polak, P., 2022a. Ontology and AI Paradigms. \textit{Proceedings}, [online] 81(1), p.119. https://doi.org/10.3390/proceedings2022081119.
-%
-%Krzanowski, R. and Polak, P., 2022b. The Meta-Ontology of AI systems with Human-Level Intelligence. \textit{Philosophical Problems in Science (Zagadnienia Filozoficzne w~Nauce}), (73), p.??-??
-%
-%Lapuschkin, S., Wäldchen, S., Binder, A., Montavon, G., Samek, W. and Müller, K.-R., 2019. Unmasking Clever Hans predictors and assessing what machines really learn. \textit{Nature Communications}, [online] 10(1), p.1096. https://doi.org/10.1038/s41467-019-08987-4.
-%
-%Liu, H. and Motoda, H., 1998. \textit{Feature Selection for Knowledge Discovery and Data Mining}. Norwell, MA: Kluwer Academic Publishers.
-%
-%Mackie, P., 2006. \textit{How Things Might Have Been: Individuals, Kinds, and Essential Properties}. 1st ed. [online] Oxford: Oxford University Press. https://doi.org/10.1093/0199272204.001.0001.
-%
-%Marcus, R.B., 1993. \textit{Modalities: Philosophical Essays}. [online] New York: Oxford University Press. Available at: {\textless}http://catdir.loc.gov/catdir/enhancements/fy0638/91048105-t.html{\textgreater} [Accessed 12 January 2023].
-%
-%Matthews, G.B., 1990. Aristotelian Essentialism. \textit{Philosophy and Phenomenological Research}, [online] 50, pp.251–262. https://doi.org/10.2307/2108042.
-%
-%Mohri, M., Rostamizadeh, A. and Talwalkar, A., 2018. \textit{Foundations of Machine Learning}. 2nd ed. Adaptive computation and machine learning. [online] Cambridge, MA: The MIT Press. Available at: {\textless}https://cs.nyu.edu/\}~{mohri/mlbook/{\textgreater} [Accessed 13 January 2023].
-%
-%Palmer, F.R., 1981. \textit{Semantics}. 2nd ed. [online] Cambridge: Cambridge University Press. Available at: {\textless}http://archive.org/details/semantics00palm{\textgreater} [Accessed 13 January 2023].
-%
-%Pelillo, M., 2013. Introduction: The SIMBAD Project. In: M. Pelillo, ed. \textit{Similarity-Based Pattern Analysis and Recognition}, Advances in Computer Vision and Pattern Recognition. [online] London; Heildelberg; New York; Dordrecht: Springer. pp.1–10. https://doi.org/10.1007/978-1-4471-5628-4\_1.
-%
-%Pelillo, M. and Scantamburlo, T., 2013. How Mature Is the Field of Machine Learning? In: M. Baldoni, C. Baroglio, G. Boella and R. Micalizio, eds. \textit{AI*IA 2013: Advances in Artificial} \textit{Intelligence}, Lecture Notes in Computer Science. [online] Cham: Springer International Publishing. pp.121–132. https://doi.org/10.1007/978-3-319-03524-6\_11.
-%
-%Pottier, B., 1964. \textit{Vers une sémantique moderne}. Strassbourg: Klincksieck.
-%
-%Robertson Ishii, T. and Atkins, P., 2020. Essential vs. Accidental Properties. In: E.N. Zalta, ed. \textit{The Stanford Encyclopedia of Philosophy}, Winter 2020. [online] Stanford, CA: Metaphysics Research Lab, Stanford University. Available at: {\textless}https://plato.stanford.edu/archives/win2020/entries/essential-accidental/{\textgreater}.
-%
-%Rosch, E.H., 1973. Natural categories. \textit{Cognitive Psychology}, [online] 4(3), pp.328–350. https://doi.org/10.1016/0010-0285(73)90017-0.
-%
-%Skansi, S., 2018. \textit{Introduction to Deep Learning: From Logical Calculus to Artificial Intelligence}. Undergraduate Topics in Computer Science. [online] Cham: Springer International Publishing. https://doi.org/10.1007/978-3-319-73004-2.
-%
-%Tunç, B., 2015. Semantics of object representation in machine learning. \textit{Pattern Recognition Letters}, [online] 64(15), pp.30–36. https://doi.org/10.1016/j.patrec.2015.03.016.
-%
-%Watanabe, S., 1985. \textit{Pattern Recognition: Human and Mechanical}. New York: John Wiley \& Sons, Inc.
-%
-%Zhang, M., 2015. \textit{Google Photos Tags Two African-Americans As Gorillas Through Facial Recognition Software}. [online] Forbes. Available at: {\textless}https://www.forbes.com/sites/mzhang/2015/07/01/google-photos-tags-two-african-americans-as-gorillas-through-facial-recognition-software/{\textgreater} [Accessed 13 January 2023].
-%
-%Zheng, A. and Casari, A., 2018. \textit{Feature Engineering for Machine Learning: Principles and Techniques for Data Scientists}. 1st ed. Beijing; Boston; Farnham; Sebastopol; Tokyo: O'Reilly.
-%\end{document}
+\label{sekrst_stop}
