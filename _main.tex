@@ -942,14 +942,16 @@ twoside,top=25mm,bottom=20mm,left=23mm,right=23mm,headheight=14pt}
 		\addtocontents{toc}{\vskip0.5\baselineskip}
 }
 
-\newcommand{\sekcjatoconly}[1]{%
+\newcommand{\sekcjatoconly}[2]{%
 	%	\addcontentsline{toc}{chapter}{#1}%
-	\addtocontents{toc}{\vskip0.3\baselineskip}
+	\addtocontents{toc}{\vskip0.7\baselineskip}
 	\addtocontents{toc}{%
 		\hfill%
-		{\noindent\toclight{#1}}%
+		{\noindent\toclight{#1}\par}%
+		\hfill%
+		\mbox{\noindent\toclight\small{#2}\par}%
 	}%
-	\addtocontents{toc}{\vskip0.5\baselineskip}
+		\addtocontents{toc}{\vskip0.5\baselineskip}
 }
 
 
@@ -1385,7 +1387,7 @@ backend=biber]{biblatex}
 
 
 
-\sekcja{Editorial}{Od Redakcji}
+\sekcjatoconly{Editorial}{Od redakcji}
 
 %\input{EDI/editorial-PU.tex}
 \input{EDI_Krzanowski/Krzanowski.tex}
@@ -1404,9 +1406,8 @@ backend=biber]{biblatex}
 \input{ART_Noh/Noh.tex}
 \input{ART_Mscislawski/Mscislaw.tex}
 \input{ART_Sekrst/Sekrst.tex}
-\input{ART_Soloducha/Soloducha.tex}
 \input{ART_Krzanowski_Polak/Krzanowski_Polak.tex}
-
+\input{ART_Soloducha/Soloducha.tex}
 
 
 \addtocontents{toc}{\protect\pagebreak}
