@@ -2,7 +2,7 @@
 	{Will a~human always outsmart a~computer? An essay}
 	{Will a~human always outsmart a~computer? An essay}
 	{Will a~human always outsmart a~computer? An essay}
-	{Pontifical University of John Paul II in Kraków}
+	{Pontifical University of John Paul II in Kraków, Poland}
 	{The title question of the paper has its empirical origin in the form of an individual's existential experience arising from the personal use of a~computer, which we attempt to describe in the first section. The rest of the entire paper can be understood as a~philosophical essay answering the question posed. First the connection between the main problem of the article and its ``premonition'' by mankind, which was expressed in the form of ancient myths and legends, is briefly suggested. After shortly discussing the problems that early considerations of AI focused on, i.e. whether machines can think at all, we move on to reformulate our title question, about the possibility of outsmarting AI. This outsmarting will be understood by us in a~rather limited way as to prevent a~machine from completing its implemented task. To achieve this objective, after softly clarifying the basic terms, an analogy is built between the ``outsmarting'' of a~machine by a~human (the target domain) and the playing of a~mathematical game between two players (the base domain), where this outsmarting is assigned a~``winning strategy'' in the certain game. This mathematical model is formed by games similar to Banach-Mazur games. The strict theorems of such games are then proved and applied to the target of the analogy. We then draw conclusions and look for counter-examples to our findings. The answer to the title question posed is negative, and it is not clear how far it should be taken seriously.
 	}
 	{existential experience, myth, computer, machine, Banach-Mazur games, winning strategy.}
@@ -341,7 +341,7 @@ Player \textbf{II} has a~winning strategy in the Banach-Mazur game $G^{**}(A)$ i
 %\parencite[][p.213]{soare_turing_2016}.%
 
 
-The meager and comeager sets relate to Baire space $\Box^\Box$. Intuitively ``comeager sets are large. They form a~filter, are dense, uncountable, and are closed under countable intersections. Meager sets are small. They form an ideal, and countable sets are meager.''
+The meager and comeager sets relate to Baire space $\omega^{\omega}$. Intuitively ``comeager sets are large. They form a~filter, are dense, uncountable, and are closed under countable intersections. Meager sets are small. They form an ideal, and countable sets are meager.''
 %\label{ref:RNDIAkiz5FrEH}(Soare, 2016, p.212).
 \parencite[][p.212]{soare_turing_2016}. %
  I~mention this because the matter may be of interest to philosophers.
@@ -350,14 +350,14 @@ Let $A=GR_{1}$, then there is a~winning strategy for Player \textbf{II}.
 \end{proposition}
 %\textbf{Corollary 7.4}. Let A=GR\textsubscript{1}, then there is a~winning strategy for Player \textbf{II}.
 \begin{proof}
-Let $A=GR_{1}$, i.e. $A$~is the set of all unary generally recursive functions. The set $GR_{1}$ is countable. Therefore, by virtue of theorem~\ref{olsz71}, there exists a~winning strategy for Player \textbf{II}.
+Let $A=GR_{1}$, i.e. $A$~is the set of all unary general recursive functions. The set $GR_{1}$ is countable. Therefore, by virtue of theorem~\ref{olsz71}, there exists a~winning strategy for Player \textbf{II}.
 \end{proof}
 %Proof:
 %
 %Let A=GR\textsubscript{1}, i.e. A~is the set of all unary generally recursive functions. The set GR\textsubscript{1} is countable. Therefore, by virtue of theorem 7.1., there exists a~winning strategy for Player \textbf{II}.[F07F?]
 
 \begin{proposition}
-Let $A \subset \omega^{\omega}$ and $A = \{f: f \in GR_{1}$ and $f(n)=s$, for even $n$\}. Then Player \textbf{II} has a~winning strategy.
+Let $A \subset \omega^{\omega}$ and $A = \{f: f \in GR_{1}$ and $f(n)=s$, for even $n\}$. Then Player \textbf{II} has a~winning strategy.
 \end{proposition}
 %\textbf{Corollary 7.5}. Let A~${\subset}$ ${\omega}$\textsuperscript{${\omega}$} and A~= \{f: f${\in}$GR\textsubscript{1} and f(n)=s, for even n\}. Then Player \textbf{II} has a~winning strategy.
 \begin{proof}
@@ -372,7 +372,7 @@ Let $A \subset \omega^{\omega}$ and $A = \{f: f(2n) = s\}$. Then Player~\textbf{
 \end{proposition}
 %\textbf{Corollary 7.6}. Let A~${\subset}$ ${\omega}$\textsuperscript{${\omega}$} and A~= \{f: f(2n) = s\}. Then Player \textbf{I} has a~winning strategy.
 \begin{proof}
-Since $|A| = |\omega^{\omega}|$, we cannot use Theorem\ref{olsz71}. The winning strategy for Player~\textbf{I} consists in continuously choosing a~constant $s$, i.e, $\sigma (\langle x_{0}, y_{0}, x_{1}, y_{1}, \ldots, y_{i} \rangle) := s$, for any $i$. Let any $y\in\omega^{\omega}$ be a~sequence of the moves of Player~\textbf{II}. Then for each $y$, $\sigma^*y = z$, where $z := \langle x_{0}(=s), y_{0}, x_{1}(=s), y_{1}, \ldots \rangle$. Sequence $z$~has such a~form that for each $i$, $z(2i) = s = x_{i} = f(2i)$ for any function $f\in A$.
+Since $|A| = |\omega^{\omega}|$, we cannot use Theorem \ref{olsz71}. The winning strategy for Player~\textbf{I} consists in continuously choosing a~constant $s$, i.e, $\sigma (\langle x_{0}, y_{0}, x_{1}, y_{1}, \ldots, y_{i} \rangle) := s$, for any $i$. Let any $y\in\omega^{\omega}$ be a~sequence of the moves of Player~\textbf{II}. Then for each $y$, $\sigma^*y = z$, where $z := \langle x_{0}(=s), y_{0}, x_{1}(=s), y_{1}, \ldots \rangle$. Sequence $z$~has such a~form that for each $i$, $z(2i) = s = x_{i} = f(2i)$ for any function $f\in A$.
 \end{proof}
 %Proof:
 %
@@ -394,7 +394,7 @@ In this section we will perform the final step announced in section five, which 
 
 Let us now formulate Theorem \ref{olszTY}, which---for obvious reasons---will not be precise in the case considered in the paper:
 \begin{customthm}{T(Y)}\label{olszTY}
-Any program (algorithm) implemented on a~machine will accomplish the goal written into the program, and a~\textit{ordinary user} cannot change it, which means that the user will always lose.
+Any program (algorithm) implemented on a~machine will accomplish the goal written into the program, and an \textit{ordinary user} cannot change it, which means that the user will always lose.
 \end{customthm}
 %\begin{enumerate}
 %\item \begin{itemize}

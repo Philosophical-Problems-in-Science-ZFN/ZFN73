@@ -2,7 +2,7 @@
 	{Shannon-inspired information in the clinical use of neural signals concerning post-comatose patients}
 	{Shannon-inspired information in the clinical use of neural signals\ldots}
 	{Shannon-inspired information in the clinical use of neural signals\\concerning post-comatose patients}
-	{Sunchon National Unviersity}
+	{Sunchon National University, South Korea}
 	{Post-comatose patients are classified as being in a~minimally conscious state when they have executive functions. Because traditional behavioral assessments may not capture signs of executive functions in post-comatose patients, clinicians look to localized brain activities in response to task instructions, such as imagining wiggling toes, to diagnose minimal consciousness. This paper critically assesses the assumption underlying such alternative methods: that brain activities are neural signals conveying information about minimal consciousness. Based on a~Shannon-inspired idea of information, I~distinguish between informational and engineering aspects of clinical tasks. The informational aspect concerns the conditional probability that, for example, given activity in the motor areas of the brain in response to task instructions, a~patient is imagining wiggling toes. The engineering aspect concerns efficient activation of the relevant brain areas in a~patient under the task conditions. This distinction shows that the current alternative methods are not informationally problematic, but are structurally ``ill-formed.'' For instance, the toe-imagery task requires the capacity to comprehend syntactically complex sentences, which can be dissociated from minimal consciousness. I~propose a~misrepresentation task, which tests the capacity to misconceptualize lukewarm water as melting wax, as a~supplement to the current alternative methods. This task is as informationally reliable as these methods, but is structurally ``well-formed,'' as it does not rely methodologically on prerequisites such as language comprehension.
 	}
 	{post-comatose disorders of consciousness, Shannon's theory of information, minimal consciousness, mental action.}
@@ -97,26 +97,33 @@ Consider Cruse et al.'s
  provides good clarification of fundamental issues concerning classical and quantum nature of information storing and processing in the brain.} To analyze the informational aspect for active paradigms is to compare $M_1$ and $M_2$.\footnote{Strictly speaking, $M_1$ should be a~disjunction of the minimally conscious state and the fully conscious state (in Cruse et al., the healthy controls were fully conscious). Because the primary concern of NSAs is the minimally conscious state, however, we can safely ignore the information about the fully conscious state possibly conveyed by the neural signals.}
 
 Mutual information between the brain event, $S$, and a~set of mental events, $M$, is:
-$$I(S:M)=H(M)H(MS).\footnote{The idea of analyzing the informational aspect of active paradigm tasks originates from Noh
+$$I(S:M)=H(M)-H(M|S).\footnote{The idea of analyzing the informational aspect of active paradigm tasks originates from Noh
 %\label{ref:RNDjBvUliVaOb}(2018, pp.181–185).
 \parencite*[][pp.181–185]{noh_no-report_2018}.%
 }$$
 \textit{H} refers to Shannon entropy. To compare $M_1$ and $M_2$, however, individual events need to be considered rather than the average. Because the toe-imagery task depends on the assumption that the detection of $S$ particularly reduces the uncertainty of the mental event that subjects are imagining wiggling toes, let's take $M_1$ as referring to this mental event. The amount of uncertainty of $M_1$ that $S$ reduces is:
-$$I(S:M_1)=I(M_1)I(M_1S)\log _2P(M_1)\log _2P(M_1S)\log _2\frac{P(M_1S)}{P(M_1)}.$$
-As $\log _2\frac{P(M_1S)}{P(M_1)}$ gets more and more positive, $S$ will represent greater accuracy about $M_1$. If $\log _2\frac{P(M_1S}{P(M_1)}$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$, then the observation of $S$ provides clinicians with evidence that patients in the toe-imagery task who show activities in the medial premotor cortex are minimally conscious. If the latter is greater than, or equivalent to, the former, then $S$ alone cannot provide that evidence.
+%$$I(S:M_1)=I(M_1)-I(M_1|S)=-\log _2P(M_1)+\log _2P(M_1|S)=\log _2\frac{P(M_1|S)}{P(M_1)}.$$
+\begin{equation*}
+\begin{split}
+I(S:M_1)&=I(M_1)-I(M_1|S)\\
+&=-\log _2P(M_1)+\log _2P(M_1|S)\\
+&=\log _2\frac{P(M_1|S)}{P(M_1)}.
+\end{split}
+\end{equation*}
+As $\log _2\frac{P(M_1|S)}{P(M_1)}$ gets more and more positive, $S$ will represent greater accuracy about $M_1$. If $\log _2\frac{P(M_1|S)}{P(M_1)}$ is greater than $\log _2\frac{P(M_2|S)}{P(M_2)}$, then the observation of $S$ provides clinicians with evidence that patients in the toe-imagery task who show activities in the medial premotor cortex are minimally conscious. If the latter is greater than, or equivalent to, the former, then $S$ alone cannot provide that evidence.
 
-To estimate the value of $\log _2\frac{P(M_1S)}{P(M_1)}$, we need to understand the background conditions of the toe-imagery task. Notice that the patients in Cruse et al.'s
+To estimate the value of $\log _2\frac{P(M_1|S)}{P(M_1)}$, we need to understand the background conditions of the toe-imagery task. Notice that the patients in Cruse et al.'s
 %\label{ref:RND2y1XLkJnMb}(2011)
 \parencite*[][]{cruse_bedside_2011} %
  experiment were initially diagnosed with the vegetative state by traditional behavioral assessments. Given that the misdiagnosis rate of traditional behavioral assessments is 41\% 
 %\label{ref:RNDQvnJPYKu8r}(Schnakers et al., 2009),
 \parencite[][]{schnakers_diagnostic_2009}, %
- the unconditional probability that Cruse et al.'s patients were conscious, i.e., $P(M_1)$, is lower than the unconditional probability that they were in the vegetative state, i.e., $P(M_2)$. So, $\log _2\frac{P(M_1S}{P(M_1)}$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$ if $P(M_1 | S)$ is greater than, or equivalent to, $P(M_2 | S)$.
+ the unconditional probability that Cruse et al.'s patients were conscious, i.e., $P(M_1)$, is lower than the unconditional probability that they were in the vegetative state, i.e., $P(M_2)$. So, $\log _2\frac{P(M_1|S)}{P(M_1)}$ is greater than $\log _2\frac{P(M_2|S)}{P(M_2)}$ if $P(M_1 | S)$ is greater than, or equivalent to, $P(M_2 | S)$.
 
 $P(M_1 | S)$ can be accounted for by the reversed strong correlation that holds between activities in motor areas and the corresponding mental-motor action. According to relevant experiments
 %\label{ref:RND3XvevSKtpr}(e.g. Pfurtscheller and Neuper, 1997; Ehrsson, Geyer and Naito, 2003)
 \parencites[e.g.,][]{pfurtscheller_motor_1997}[][]{ehrsson_imagery_2003} %
- in which healthy subjects were instructed to mentally act (e.g., they were instructed to imagine raising their left arms without making any actual motor movement), activities in the relevant motor areas were observed in the majority of the subjects. Provided that $P$ (activities in the relevant motor areas{\textbar}mental-motor action) is high, it seems that $P(M_1 | S)$ is relatively high as well.
+ in which healthy subjects were instructed to mentally act (e.g., they were instructed to imagine raising their left arms without making any actual motor movement), activities in the relevant motor areas were observed in the majority of the subjects. Provided that $P$(activities in the relevant motor areas{\textbar}mental-motor action) is high, it seems that $P(M_1 | S)$ is relatively high as well.
 
 On the other hand, $P(M_2 | S)$ concerns a~situation in which the medial premotor cortex activity in a~mental-motor action task, such as the toe-imagery task, is somehow automated (i.e., a~nonconscious response). Provided the strong functional relationship between the body surface and a~localized motor area (i.e., the well-established somatotopic map in motor areas), it seems possible to take the medial premotor cortex activity observed in the toe-imagery task as a~toe-related nonconscious mental event. In turn, to account for $P(M_2 | S)$ would require finding a~toe-related nonconscious explanation (that does not involve volition, linguistic understanding of the verbal instruction, etc.) of why the activity occurred.
 
@@ -126,7 +133,7 @@ Nonetheless, no such explanation is available. Consider a~semantic priming effec
  Now, consider $M_2$ as a~toe-related nonconscious mental event grounded by a~semantic priming effect. $P(M_2 | S)$ in this sense, however, is very low for two reasons. First, the semantic priming effect has been observed when a~single word is given, but not when a~whole sentence, such as ``Imagine wiggling all of your toes,'' is given 
 %\label{ref:RND5xoKfn4zNx}(Raposo et al., 2009).
 \parencite[][]{raposo_modulation_2009}. %
- Second, the effect lasts for a~very short time, but the activity in Cruse et al.'s experiment persisted for more than a~few seconds. Because there is no alternative explanation, $\log _2\frac{P(M_1S}{P(M_1)}$ is greater than $\log _2\frac{P(M_2S)}{P(M_2)}$.
+ Second, the effect lasts for a~very short time, but the activity in Cruse et al.'s experiment persisted for more than a~few seconds. Because there is no alternative explanation, $\log _2\frac{P(M_1|S)}{P(M_1)}$ is greater than $\log _2\frac{P(M_2|S)}{P(M_2)}$.
 
 Following the same line of reasoning to analyze the informational aspect of passive paradigm tasks, let us consider King et al.'s
 %\label{ref:RND2LXLkT9KBe}(2013)
@@ -147,7 +154,7 @@ The oddball task takes the P300b response as a~neural signal conveying the messa
 Recall that in Cruse et al.'s
 %\label{ref:RND5hclfQLLkX}(2011)
 \parencite*[][]{cruse_bedside_2011} %
- toe-imagery task, a~strong correlation between activities in motor areas and the corresponding mental-motor action holds because $P(M_1 | S)$ is relatively greater than $P(M_2 | S)$.\footnote{Notice that $P(M_2)$ is always greater than $P(M_1)$ in both active and passive paradigms because every MCP patient in the experiments was initially diagnosed with the vegetative state by traditional behavioral assessments. Specifically, because the misdiagnosis rate of traditional behavior assessments is 41\%, $P(M_2)$ is roughly 60\%.} So, we should compare $P$ (the subject is minimally conscious{\textbar}the P300b response) and $P$ (the subject is nonconscious{\textbar}the P300b response). According to the relevant studies, the P300b response requires working memory. Specifically, the P300b response is accounted for by the following hypotheses: Noticing global oddballs requires working memory and predictive coding 
+ toe-imagery task, a~strong correlation between activities in motor areas and the corresponding mental-motor action holds because $P(M_1 | S)$ is relatively greater than $P(M_2 | S)$.\footnote{Notice that $P(M_2)$ is always greater than $P(M_1)$ in both active and passive paradigms because every MCP patient in the experiments was initially diagnosed with the vegetative state by traditional behavioral assessments. Specifically, because the misdiagnosis rate of traditional behavior assessments is 41\%, $P(M_2)$ is roughly 60\%.} So, we should compare $P$(the subject is minimally conscious{\textbar}the P300b response) and $P$(the subject is nonconscious{\textbar}the P300b response). According to the relevant studies, the P300b response requires working memory. Specifically, the P300b response is accounted for by the following hypotheses: Noticing global oddballs requires working memory and predictive coding 
 %\label{ref:RNDXe3oyEzvUf}(Garrido et al., 2008; 2009);
 \parencites[][]{garrido_functional_2008}[][]{garrido_repetition_2009}; %
  the P300b response is a~neural signature of postperceptual processing, such as working memory 
@@ -159,7 +166,7 @@ Recall that in Cruse et al.'s
  If there is no alternative explanation of the P300b response, and if working memory is a~sign of minimal consciousness 
 %\label{ref:RNDkNGafGH8qa}(Ansell, 1993; Bekinschtein et al., 2009; King et al., 2013),
 \parencites[][]{ansell_slow--recover_1993}[][]{bekinschtein_neural_2009}[][]{king_single-trial_2013}, %
- then $P$(the subject is minimally conscious{\textbar}the P300b response) is greater than $P$ (the subject is nonconscious{\textbar}the P300b response).
+ then $P$(the subject is minimally conscious{\textbar}the P300b response) is greater than $P$(the subject is nonconscious{\textbar}the P300b response).
 
 A~false positive occurs when evidence of an effect is measured, yet the target phenomenon is absent from the test conditions
 %\label{ref:RNDZp6f0RAzSS}(Peterson et al., 2015, p.591),
@@ -187,7 +194,7 @@ NSAs should be designed to handle any message that behaviorally nonresponsive MC
 
 In order to analyze the engineering aspect of the toe-imagery task, we must first distinguish between types of mental action. An essential component of mental-motor action is that a~subject mentally executes an instructed mental-motor action from the first-person perspective
 %\label{ref:RND1pm2quQW6r}(i.e. kinesthetic mental-motor action Ehrsson, Geyer and Naito, 2003).
-\parencite[i.e., kinesthetic mental-motor action][]{ehrsson_imagery_2003}. %
+\parencite[i.e., kinesthetic mental-motor action;][]{ehrsson_imagery_2003}. %
  Alternatively, subjects can imagine seeing themselves or another person performing an action from an external view (i.e., visual motor imagery), which may be primarily visual in character rather than involving kinesthetic characteristics 
 %\label{ref:RNDNPkyueF1mq}(Sekiyama, 1983).
 \parencite[][]{sekiyama_mental_1983}. %
@@ -296,7 +303,7 @@ In order to analyze the informational aspect of the misrepresentation task, a~di
  observational social learning produces placebo/nocebo responses by expectation. The purported brain activity in the misrepresentation task is a~mark of a~nocebo response due to expectation produced by social learning (i.e., the instructor displays a~painful facial expression when the tactile stimulus is paired with melting wax). Most importantly, placebo/nocebo responses by expectation generally require executive functions 
 %\label{ref:RND0aFSOWMyRk}(Benedetti, Carlino and Pollo, 2011, p.239).
 \parencite[][p.239]{benedetti_how_2011}. %
- Thus, if localized activities in prefrontal areas are observed in the melting-wax task but not in the control task, then the best explanation for the activities is the one that appeals to minimal consciousness. In a~nutshell, the misrepresentation task is informationally reliable because $P$ (nocebo effect by expectation{\textbar}activities in prefrontal areas) is greater than $P$ (nocebo effect by conditioning{\textbar}activities in prefrontal areas).
+ Thus, if localized activities in prefrontal areas are observed in the melting-wax task but not in the control task, then the best explanation for the activities is the one that appeals to minimal consciousness. In a~nutshell, the misrepresentation task is informationally reliable because $P$(nocebo effect by expectation{\textbar}activities in prefrontal areas) is greater than $P$(nocebo effect by conditioning{\textbar}activities in prefrontal areas).
 
 Notice that although the misrepresentation task is structurally ``well-formed'' in the sense that it does not depend on either language comprehension or sufficient attention to notice global oddballs, it might still structurally generate false positives. Placebo responses of patients with dementia of the Alzheimer's type are reduced or totally lacking
 %\label{ref:RNDd8LSyO9bdB}(Benedetti, Carlino and Pollo, 2011, p.349).
